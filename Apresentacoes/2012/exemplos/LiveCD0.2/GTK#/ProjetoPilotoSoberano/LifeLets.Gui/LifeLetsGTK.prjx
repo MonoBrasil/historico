@@ -1,0 +1,53 @@
+<Project name="LifeLetsGTK" description="" newfilesearch="None" enableviewstate="True" version="1.1" projecttype="C#">
+  <Contents>
+    <File name="./Main.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name="./AssemblyInfo.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name="./MyNickname.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name="./LLMainWindow.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name="./SovereChat.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name="./MainLLGTK.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name="./resources/LLChatWindow.glade" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name="./LLChatWindow.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name="./resources/gui.glade" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name="./LLChangeName.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name="./LLAddContactWindow.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name="./resources/llwindowaddcontact.glade" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name="./resources/llchangepicturewindow.glade" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name="./resources/LLChangeName.glade" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name="./LLTrustWindow.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name="./resources/llTrustWindow.glade" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name="./resources/LLNavigation.glade" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name="./LLNavigateWindow.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name="./resources/LLCreditsWindow.glade" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+    <File name="./LLCreditsWindow.cs" subtype="Code" buildaction="Compile" dependson="" data="" />
+    <File name="./resources/logoLifeLets.jpg" subtype="Code" buildaction="EmbedAsResource" dependson="" data="" />
+  </Contents>
+  <References>
+    <Reference type="Assembly" refto="../lib/Bamboo.Prevalence.dll" localcopy="True" />
+    <Reference type="Project" refto="LifeLets.Core" localcopy="True" />
+    <Reference type="Gac" refto="glade-sharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" localcopy="True" />
+    <Reference type="Gac" refto="glib-sharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" localcopy="True" />
+    <Reference type="Gac" refto="pango-sharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" localcopy="True" />
+    <Reference type="Gac" refto="atk-sharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" localcopy="True" />
+    <Reference type="Gac" refto="gdk-sharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" localcopy="True" />
+    <Reference type="Gac" refto="gtk-sharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" localcopy="True" />
+  </References>
+  <DeploymentInformation target="" script="" strategy="File" />
+  <Configuration runwithwarnings="False" name="Debug">
+    <CodeGeneration runtime="MsNet" compiler="Csc" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Exe" definesymbols="" generatexmldocumentation="False" win32Icon="" />
+    <Execution commandlineparameters="" consolepause="True" />
+    <Output directory="../build/bin" assembly="LifeLetsGTK" executeScript="" executeBeforeBuild="" executeAfterBuild="" />
+  </Configuration>
+  <Configurations active="Debug">
+    <Configuration runwithwarnings="False" name="Debug">
+      <CodeGeneration runtime="MsNet" compiler="Csc" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Exe" definesymbols="" generatexmldocumentation="False" win32Icon="" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory="../build/bin" assembly="LifeLetsGTK" executeScript="" executeBeforeBuild="" executeAfterBuild="" />
+    </Configuration>
+    <Configuration runwithwarnings="False" name="Release">
+      <CodeGeneration runtime="MsNet" compiler="Csc" warninglevel="4" nowarn="" includedebuginformation="True" optimize="True" unsafecodeallowed="False" generateoverflowchecks="True" mainclass="" target="Exe" definesymbols="" generatexmldocumentation="False" win32Icon="" />
+      <Execution commandlineparameters="" consolepause="True" />
+      <Output directory="./bin/Release" assembly="LifeLetsGTK" executeScript="" executeBeforeBuild="" executeAfterBuild="" />
+    </Configuration>
+  </Configurations>
+</Project>

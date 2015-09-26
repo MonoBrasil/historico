@@ -1,0 +1,28 @@
+What is mCatalog
+================
+mCatalog is a film and book catalog. It's completely written it C#, and
+designed for working in the GNOME desktop. It can get the films/books data
+from amazon, and has a nice themeable interface.
+
+NOTE: The mCatalog interface was based on Delicious Library from Delicious
+Monster Software, LLC, and is used with permission, although Delicious Monster
+does not endorse or support this project. 
+
+Requirements:
+=============
+
+* Gtk >= 2.2
+* sqlite 2.8
+* gnome-sharp 1.0
+* gecko-sharp >= 0.6
+* Mono 1.0
+* GConf 2.4
+
+Report bugs:
+============
+Please report bugs and feature requests to gnome bugzilla at:
+http://bugzilla.gnome.org
+
+Feedback:
+=========
+If you have feedback, please mail me at tapia@mcatalog.net

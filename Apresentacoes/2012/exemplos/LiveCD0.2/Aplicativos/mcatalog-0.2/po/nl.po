@@ -1,0 +1,496 @@
+# translation of mcatalog.
+# Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the mcatalog package.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: mcatalog cvs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-06-11 12:05+0000\n"
+"PO-Revision-Date: 2005-06-11 19:02+0200\n"
+"Last-Translator: Wouter Bolsterlee <uws@xs4all.nl>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: ../mcatalog.schemas.in.h:1
+msgid "Default catalog"
+msgstr "Standaardcatalogus"
+
+#: ../mcatalog.schemas.in.h:2
+msgid "Height of borrowers list"
+msgstr "Hoogte van lenerslijst"
+
+#: ../mcatalog.schemas.in.h:3
+msgid "Height of main window"
+msgstr "Hoogte van hoofdscherm"
+
+#: ../mcatalog.schemas.in.h:4
+msgid "Save preview images in a cache"
+msgstr "Voorbeeldafbeeldingen bewaren in een buffer"
+
+#: ../mcatalog.schemas.in.h:5
+msgid "Save preview images in a cache (faster rendering)"
+msgstr "Voorbeeldafbeeldingen bewaren in een buffer (snellere weergave)"
+
+#: ../mcatalog.schemas.in.h:6
+msgid "The active theme."
+msgstr "Het actieve thema."
+
+#: ../mcatalog.schemas.in.h:7
+#, fuzzy
+msgid "The default actived catalog."
+msgstr "De catalogus voor standaardgebruik."
+
+#: ../mcatalog.schemas.in.h:8
+msgid "The height of the borrowers list."
+msgstr "De hoogte van de lenerslijst."
+
+#: ../mcatalog.schemas.in.h:9
+msgid "The height of the main window."
+msgstr "De hoogte van het hoofdscherm."
+
+#: ../mcatalog.schemas.in.h:10
+msgid "The width of the catalog list."
+msgstr "De hoogte van de cataloguslijst."
+
+#: ../mcatalog.schemas.in.h:11
+msgid "The width of the item list."
+msgstr "De breedte van de itemlijst."
+
+#: ../mcatalog.schemas.in.h:12
+msgid "The width of the main window."
+msgstr "De breedte van het hoofdscherm."
+
+#: ../mcatalog.schemas.in.h:13 ../src/dialogs/PreferencesDialog.cs:32
+#: ../src/dialogs/PreferencesDialog.cs:48
+msgid "Theme"
+msgstr "Thema"
+
+#: ../mcatalog.schemas.in.h:14
+msgid "Width of catalog list"
+msgstr "Breedte van de cataloguslijst"
+
+#: ../mcatalog.schemas.in.h:15
+msgid "Width of item list"
+msgstr "Breedte van itemlijst"
+
+#: ../mcatalog.schemas.in.h:16
+msgid "Width of the main window"
+msgstr "Breedte van het hoofdscherm"
+
+#: ../resources/dialogaddalbum.glade.h:1 ../resources/dialogaddbook.glade.h:1
+#: ../resources/dialogaddfilm.glade.h:1
+msgid "<b>Comments: </b>"
+msgstr "<b>Opmerkingen: </b>"
+
+#: ../resources/dialogaddalbum.glade.h:2
+msgid "ASIN: "
+msgstr "ASIN: "
+
+#: ../resources/dialogaddalbum.glade.h:3
+msgid "Add a new album"
+msgstr "Nieuw album toevoegen"
+
+#: ../resources/dialogaddalbum.glade.h:4
+msgid "Artists: "
+msgstr "Artiesten: "
+
+#: ../resources/dialogaddalbum.glade.h:5 ../resources/dialogaddbook.glade.h:5
+#: ../resources/dialogaddfilm.glade.h:4
+msgid "Date: "
+msgstr "Datum: "
+
+#: ../resources/dialogaddalbum.glade.h:6
+msgid "Label: "
+msgstr "Label: "
+
+#: ../resources/dialogaddalbum.glade.h:7 ../resources/dialogaddfilm.glade.h:9
+msgid "Medium: "
+msgstr "Medium: "
+
+#: ../resources/dialogaddalbum.glade.h:8 ../resources/dialogaddbook.glade.h:12
+#: ../resources/dialogaddfilm.glade.h:11
+msgid "Rating: "
+msgstr "Waardering: "
+
+#: ../resources/dialogaddalbum.glade.h:9 ../resources/dialogaddfilm.glade.h:12
+msgid "Runtime: "
+msgstr "Speelduur: "
+
+#: ../resources/dialogaddalbum.glade.h:10
+#: ../resources/dialogaddbook.glade.h:13 ../resources/dialogaddfilm.glade.h:13
+msgid "Search Amazon"
+msgstr "Zoeken bij Amazon"
+
+#: ../resources/dialogaddalbum.glade.h:11
+msgid "Style: "
+msgstr "Stijl: "
+
+#: ../resources/dialogaddalbum.glade.h:12
+#: ../resources/dialogaddbook.glade.h:14 ../resources/dialogaddfilm.glade.h:15
+msgid "Title: "
+msgstr "Titel: "
+
+#: ../resources/dialogaddalbum.glade.h:13
+msgid "Tracks: "
+msgstr "Tracks: "
+
+#: ../resources/dialogaddbook.glade.h:2 ../src/dialogs/AddBookDialog.cs:50
+msgid "Add a new book"
+msgstr "Nieuw boek toevoegen"
+
+#: ../resources/dialogaddbook.glade.h:3
+msgid "Author: "
+msgstr "Auteur: "
+
+#: ../resources/dialogaddbook.glade.h:4 ../resources/dialogaddfilm.glade.h:3
+msgid "Country: "
+msgstr "Land: "
+
+#: ../resources/dialogaddbook.glade.h:6 ../resources/dialogaddfilm.glade.h:7
+msgid "Genre: "
+msgstr "Genre: "
+
+#: ../resources/dialogaddbook.glade.h:7
+msgid "ISBN: "
+msgstr "ISBN: "
+
+#: ../resources/dialogaddbook.glade.h:8 ../resources/dialogaddfilm.glade.h:8
+msgid "Language: "
+msgstr "Taal: "
+
+#: ../resources/dialogaddbook.glade.h:9 ../resources/dialogaddfilm.glade.h:10
+msgid "Original title: "
+msgstr "Oorspronkelijke titel: "
+
+#: ../resources/dialogaddbook.glade.h:10
+msgid "Pages: "
+msgstr "Pagina's: "
+
+#: ../resources/dialogaddbook.glade.h:11
+msgid "Publisher: "
+msgstr "Uitgever: "
+
+#: ../resources/dialogaddfilm.glade.h:2 ../src/dialogs/AddFilmDialog.cs:51
+msgid "Add a new film"
+msgstr "Nieuwe film toevoegen"
+
+#: ../resources/dialogaddfilm.glade.h:5
+msgid "Director: "
+msgstr "Regisseur: "
+
+#: ../resources/dialogaddfilm.glade.h:6
+msgid "Distributor: "
+msgstr "Distributeur: "
+
+#: ../resources/dialogaddfilm.glade.h:14
+msgid "Starring: "
+msgstr "Hoofdrolspelers: "
+
+#: ../resources/dialogexport.glade.h:1
+msgid "<b>Catalog</b>"
+msgstr "<b>Catalogus</b>"
+
+#: ../resources/dialogexport.glade.h:2
+msgid "<b>Output</b>"
+msgstr "<b>Uitvoer</b>"
+
+#: ../resources/dialogexport.glade.h:3
+msgid "<b>Preview</b>"
+msgstr "<b>Voorbeeld</b>"
+
+#: ../resources/dialogexport.glade.h:4
+msgid "<b>Template</b>"
+msgstr "<b>Sjabloon</b>"
+
+#: ../resources/dialogexport.glade.h:5
+msgid "Choose a template"
+msgstr "Kies een sjabloon"
+
+#: ../resources/dialogexport.glade.h:6
+msgid "Choose the output file"
+msgstr "Kies het uitvoerbestand"
+
+#: ../resources/dialogexport.glade.h:7
+msgid "Export Catalog"
+msgstr "Catalogus exporteren"
+
+#: ../resources/dialogexport.glade.h:8
+msgid "Open preview in browser"
+msgstr "Voorbeeld tonen in browser"
+
+#: ../resources/dialogexport.glade.h:9
+msgid "The active catalog"
+msgstr "De actieve catalogus"
+
+#: ../resources/dialogexport.glade.h:10
+#, fuzzy
+msgid "The current search view"
+msgstr "De view met zoekresultaten"
+
+#: ../resources/dialogexport.glade.h:11
+msgid "What do you want to export?"
+msgstr "Wat wilt u exporteren?"
+
+#: ../resources/mainwindow.glade.h:1
+msgid "<b>Borrowers</b>"
+msgstr "<b>Leners</b>"
+
+#: ../resources/mainwindow.glade.h:2
+msgid "<b>Collections</b>"
+msgstr "<b>Verzamelingen</b>"
+
+#: ../resources/mainwindow.glade.h:3
+#, fuzzy
+msgid "Actual view"
+msgstr "Echte weergave"
+
+#: ../resources/mainwindow.glade.h:4
+msgid "Add item"
+msgstr "Item toevoegen"
+
+#: ../resources/mainwindow.glade.h:5 ../src/ItemList.cs:253
+#: ../src/ItemShelf.cs:358 ../src/dialogs/AddAlbumDialog.cs:56
+#: ../src/dialogs/AddFilmDialog.cs:58
+msgid "Edit"
+msgstr "Bewerken"
+
+#: ../resources/mainwindow.glade.h:6 ../src/dialogs/ExportDialog.cs:47
+msgid "Export"
+msgstr "Exporteren"
+
+#: ../resources/mainwindow.glade.h:7 ../src/ItemList.cs:263
+#: ../src/ItemShelf.cs:366 ../src/Main.cs:342
+#: ../src/dialogs/LendItemDialog.cs:26
+msgid "Lend"
+msgstr "Uitlenen"
+
+#: ../resources/mainwindow.glade.h:8
+msgid "List"
+msgstr "Lijst"
+
+#: ../resources/mainwindow.glade.h:9
+msgid "Normal Size"
+msgstr "Normale grootte"
+
+#: ../resources/mainwindow.glade.h:10
+msgid "Remove item"
+msgstr "Item verwijderen"
+
+#: ../resources/mainwindow.glade.h:11
+msgid "Search: "
+msgstr "Zoeken: "
+
+#: ../resources/mainwindow.glade.h:12
+msgid "Shelf"
+msgstr "Plank"
+
+#: ../resources/mainwindow.glade.h:13
+msgid "Zoom"
+msgstr "Zoom"
+
+#: ../resources/mainwindow.glade.h:14
+msgid "Zoom In"
+msgstr "Inzoomen"
+
+#: ../resources/mainwindow.glade.h:15
+msgid "Zoom Out"
+msgstr "Uitzoomen"
+
+#: ../resources/title.glade.h:1
+msgid ","
+msgstr ","
+
+#: ../resources/title.glade.h:2 ../src/TitleWidget.cs:57
+msgid "by"
+msgstr "door"
+
+#: ../src/AmazonQuery.cs:52
+msgid "No matches for your query"
+msgstr "Geen resultaten voor deze zoekopdracht"
+
+#: ../src/Catalog.cs:277
+#, csharp-format
+#, fuzzy
+msgid "Return {0}?"
+msgstr "{0} teruggeven?"
+
+#: ../src/Database.cs:714 ../src/Database.cs:733 ../src/Database.cs:751
+msgid "Id"
+msgstr "Id"
+
+#: ../src/Database.cs:715 ../src/Database.cs:734 ../src/Database.cs:752
+msgid "Image"
+msgstr "Afbeelding"
+
+#: ../src/Database.cs:716 ../src/Database.cs:735 ../src/Database.cs:753
+msgid "Rating"
+msgstr "Waardering"
+
+#: ../src/Database.cs:717 ../src/Database.cs:736 ../src/Database.cs:754
+#: ../src/dialogs/AmazonSelectDialog.cs:65
+msgid "Title"
+msgstr "Titel"
+
+#: ../src/Database.cs:718 ../src/Database.cs:737
+msgid "Original Title"
+msgstr "Oorspronkelijke titel"
+
+#: ../src/Database.cs:719 ../src/dialogs/AmazonSelectDialog.cs:68
+msgid "Director"
+msgstr "Regisseur"
+
+#: ../src/Database.cs:720
+msgid "Starring"
+msgstr "Hoofdrolspelers"
+
+#: ../src/Database.cs:721 ../src/Database.cs:739 ../src/Database.cs:757
+msgid "Date"
+msgstr "Datum"
+
+#: ../src/Database.cs:722 ../src/Database.cs:740
+msgid "Genre"
+msgstr "Genre"
+
+#: ../src/Database.cs:723 ../src/Database.cs:762
+msgid "Runtime"
+msgstr "Speelduur"
+
+#: ../src/Database.cs:724 ../src/Database.cs:744
+msgid "Country"
+msgstr "Land"
+
+#: ../src/Database.cs:725 ../src/Database.cs:745
+msgid "Language"
+msgstr "Taal"
+
+#: ../src/Database.cs:726
+msgid "Distributor"
+msgstr "Distributeur"
+
+#: ../src/Database.cs:727 ../src/Database.cs:761
+msgid "Medium"
+msgstr "Medium"
+
+#: ../src/Database.cs:728 ../src/Database.cs:746 ../src/Database.cs:763
+msgid "Comments"
+msgstr "Opmerkingen"
+
+#: ../src/Database.cs:738 ../src/Database.cs:755
+#: ../src/dialogs/AmazonSelectDialog.cs:71
+msgid "Author"
+msgstr "Auteur"
+
+#: ../src/Database.cs:741
+msgid "Pages"
+msgstr "Pagina's"
+
+#: ../src/Database.cs:742
+msgid "Publisher"
+msgstr "Uitgever"
+
+#: ../src/Database.cs:743
+msgid "ISBN"
+msgstr "ISBN"
+
+#: ../src/Database.cs:756
+msgid "Label"
+msgstr "Label"
+
+#: ../src/Database.cs:758
+msgid "Style"
+msgstr "Stijl"
+
+#: ../src/Database.cs:759
+msgid "ASIN"
+msgstr "ASIN"
+
+#: ../src/Database.cs:760
+msgid "Tracks"
+msgstr "Tracks"
+
+#: ../src/ItemList.cs:92
+msgid "Cover"
+msgstr "Hoes"
+
+#: ../src/ItemList.cs:259 ../src/ItemShelf.cs:362 ../src/Main.cs:339
+#, fuzzy
+msgid "Return"
+msgstr "Teruggeven"
+
+#: ../src/Main.cs:420
+#, fuzzy
+msgid "Remove the selected items?"
+msgstr "De geselecteerde items verwijderen?"
+
+#: ../src/Main.cs:518
+msgid "translator-credits"
+msgstr "Wouter Bolsterlee <uws@xs4all.nl>\n"
+"\n"
+"Kijk voor meer info op http://nl.gnome.org/"
+#: ../src/Main.cs:523
+msgid "Media cataloger"
+msgstr ""
+
+#: ../src/dialogs/AddAlbumDialog.cs:49
+msgid "Add a new Album"
+msgstr "Nieuw album toevoegen"
+
+#: ../src/dialogs/AddBookDialog.cs:57
+msgid "Editing"
+msgstr ""
+
+#: ../src/dialogs/AmazonSelectDialog.cs:51
+msgid "Select your choice"
+msgstr "Maak uw keuze"
+
+#: ../src/dialogs/AmazonSelectDialog.cs:74
+msgid "Artists"
+msgstr "Artiesten"
+
+#: ../src/dialogs/CatalogPropertiesDialog.cs:39
+#, csharp-format
+msgid "{0} properties"
+msgstr "{0} eigenschappen"
+
+#: ../src/dialogs/CatalogPropertiesDialog.cs:49
+msgid "Columns to show"
+msgstr "Weer te geven kolommen"
+
+#: ../src/dialogs/ExportDialog.cs:70
+#, csharp-format
+msgid "Export the whole {0} catalog"
+msgstr "De gehele {0} catalogus exporteren"
+
+#: ../src/dialogs/ExportDialog.cs:143
+msgid "Catalog succesfully exported"
+msgstr "Catalogus succesvol geëxporteerd"
+
+#: ../src/dialogs/ExportDialog.cs:153
+msgid "Some error while exporting the catalog"
+msgstr "Fout bij exporteren van de catalogus"
+
+#: ../src/dialogs/LendItemDialog.cs:47
+msgid "Borrower:"
+msgstr "Lener:"
+
+#: ../src/dialogs/LendItemDialog.cs:121
+#, fuzzy
+msgid "You must write the borrower name"
+msgstr "De naam van de lener moet ingevuld worden"
+
+#: ../src/dialogs/PreferencesDialog.cs:18
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#: ../src/dialogs/ProgressDialog.cs:38
+msgid "Wait, please"
+msgstr "Even geduld alstublieft"
+
+#: ../src/dialogs/ProgressDialog.cs:44
+msgid "Searching Amazon...."
+msgstr "Amazon doorzoeken..."
+

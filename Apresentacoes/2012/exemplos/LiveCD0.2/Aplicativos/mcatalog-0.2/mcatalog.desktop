@@ -1,0 +1,18 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=mCatalog
+Name[en_GB]=mCatalog
+Name[pt_BR]=mCatalog
+Name[sv]=mCatalog
+Name[zh_CN]=mCatalog
+Comment=Tool for cataloging films, books and music CDs
+Exec=mcatalog
+Icon=@prefix@/share/mcatalog/pixmaps/mcatalog.png
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;Application;AudioVideo;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=mcatalog
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=0.1

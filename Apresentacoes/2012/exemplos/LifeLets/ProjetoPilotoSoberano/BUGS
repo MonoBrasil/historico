@@ -1,0 +1,91 @@
+
+Erro1:
+Digite o caminho da sua foto:
+file:/home/kurumin/Mapa.gif
+
+Unhandled Exception: System.IO.FileNotFoundException: File not found.
+in <0x00601> System.Runtime.Remoting.Proxies.RealProxy:PrivateInvoke (System.Runtime.Remoting.Proxies.RealProxy,System.Runtime.Remoting.Messaging.IMessage,System.Exception&,object[]&)
+
+
+
+Erro 2:
+ao colocar /home/kurumin/Mapa.gif
+konqueror: ERROR: Error in BrowserExtension::actionSlotMap(), unknown action : searchProvider
+ASSERT: "newView" in ../../konqueror/konq_mainwindow.cc (2558)
+
+
+
+
+Erro 3
+Ao compilara ele ta  gerando o .exe na raiz e no diretorio build
+kurumin@kurumin:~/Projects/ProjetoPilotoSoberano$ rm *.exe
+rm: remove arquivo comum `Dia1ComputacaoSoberana.exe'? y
+kurumin@kurumin:~/Projects/ProjetoPilotoSoberano$ ./make.sh
+make[1]: Entering directory `/home/kurumin/Projects/ProjetoPilotoSoberano'
+Checking for nunit.framework.dll...yes
+Checking for System.Drawing.dll...yes
+make[1]: Leaving directory `/home/kurumin/Projects/ProjetoPilotoSoberano'
+mkdir -p ./build/bin
+make[1]: Entering directory `/home/kurumin/Projects/ProjetoPilotoSoberano'
+mcs  -target:exe -out:"Dia1ComputacaoSoberana.exe" -r:"./lib/Bamboo.Prevalence.dll" -r:nunit.framework.dll -r:System.Drawing.dll ./Main.cs ./AssemblyInfo.cs ./Vida.cs ./Console.cs  \
+&& cp "Dia1ComputacaoSoberana.exe" ./build/bin/.
+Compilation succeeded
+make[1]: Leaving directory `/home/kurumin/Projects/ProjetoPilotoSoberano'
+kurumin@kurumin:~/Projects/ProjetoPilotoSoberano$ ls -la
+total 620
+drwxr-xr-x    6 kurumin  kurumin       840 2004-11-25 00:15 .
+drwxr-xr-x    3 kurumin  kurumin        88 2004-11-24 23:31 ..
+-rw-r--r--    1 kurumin  kurumin    545048 2004-11-25 00:02 Alessandro BinharaFoto
+-rw-r--r--    1 kurumin  kurumin      1067 2004-11-24 23:31 AssemblyInfo.cs
+-rw-r--r--    1 kurumin  kurumin       524 2004-11-25 00:14 BUGS
+drwxr-xr-x    3 kurumin  kurumin        72 2004-11-24 23:55 build
+-rw-r--r--    1 kurumin  kurumin       533 2004-11-24 23:31 changelog
+-rw-r--r--    1 kurumin  kurumin      2433 2004-11-24 23:31 Console.cs
+-rw-r--r--    1 kurumin  kurumin       639 2004-11-24 23:31 Dia1ComputacaoSoberana.cmbx
+-rwxr-xr-x    1 kurumin  kurumin      6656 2004-11-25 00:15 Dia1ComputacaoSoberana.exe
+-rw-r--r--    1 kurumin  kurumin       117 2004-11-24 23:31 Dia1ComputacaoSoberana.mdsx
+-rw-r--r--    1 kurumin  kurumin      6619 2004-11-24 23:31 Dia1ComputacaoSoberana.pidb
+-rw-r--r--    1 kurumin  kurumin      2789 2004-11-24 23:31 Dia1ComputacaoSoberana.prjx
+drwxr-xr-x    4 kurumin  kurumin       136 2004-11-24 23:31 doc
+-rw-r--r--    1 kurumin  kurumin        30 2004-11-24 23:31 INSTALL
+drwxr-xr-x    3 kurumin  kurumin       616 2004-11-24 23:31 lib
+-rw-r--r--    1 kurumin  kurumin       607 2004-11-24 23:31 Main.cs
+-rw-r--r--    1 kurumin  kurumin      1068 2004-11-24 23:55 Makefile.Dia1ComputacaoSoberana
+-rw-r--r--    1 kurumin  kurumin       420 2004-11-24 23:31 Makefile.solution.Dia1ComputacaoSoberana
+-rwxr-xr-x    1 kurumin  kurumin       127 2004-11-24 23:31 make.sh
+-rw-r--r--    1 kurumin  kurumin      1646 2004-11-24 23:31 mono_logo_b.gif
+-rw-r--r--    1 kurumin  kurumin      2503 2004-11-24 23:31 msdn_masthead_ltr.gif
+-rw-r--r--    1 kurumin  kurumin        40 2004-11-24 23:31 README
+drwxr-xr-x    7 kurumin  kurumin       296 2004-11-24 23:31 .svn
+-rw-r--r--    1 kurumin  kurumin      1372 2004-11-24 23:31 Vida.cs
+
+
+
+BUG 4 : Ao adicionar  um nick duplicado esta gerando um erro ... 
+
+Unhandled Exception: System.ArgumentException: Key duplication when adding: Alexandre M
+
+Server stack trace:
+in <0x0025a> System.Collections.Hashtable:PutImpl (object,object,bool)
+in <0x00019> System.Collections.Hashtable:Add (object,object)
+in <0x00064> LifeLets.Lib.Life:AddContact (string,string)
+in (unmanaged) (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[])
+in <0x00004> (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[])
+in <0x00097> System.Reflection.MonoMethod:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+
+
+Exception rethrown at [0]:
+
+in <0x00601> System.Runtime.Remoting.Proxies.RealProxy:PrivateInvoke (System.Runtime.Remoting.Proxies.RealProxy,System.Runtime.Remoting.Messaging.IMessage,System.Exception&,object[]&)
+
+
+
+BUG 5 - Não esta Salvando o nível de confiança
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+<Combine name="MenuEX" fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="MenuEX" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="MenuEX" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="MenuEX" single="True">
+    <Execute type="None" entry="MenuEX" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./MenuEX.mdp" />
+  </Entries>
+</Combine>

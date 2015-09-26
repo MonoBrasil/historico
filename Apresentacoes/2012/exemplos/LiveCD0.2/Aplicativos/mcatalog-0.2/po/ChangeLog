@@ -1,0 +1,98 @@
+2005-06-12  Vincent van Adrighem  <adrighem@gnome.org>
+
+	* nl.po: Translation added by Wouter Bolsterlee.
+
+2005-06-12  Christophe Merlet  <redfox@redfoxcenter.org>
+
+	* fr.po: Added French translation from
+	Christophe Sauthier <christophe.sauthier@gmail.com>.
+
+2005-06-08  Adam Weinberger  <adamw@gnome.org>
+
+	* en_CA.po: Updated Canadian English translation.
+
+2005-06-04  Francisco Javier F. Serrador  <serrador@cvs.gnome.org>
+
+	* es.po: Updated Spanish translation.
+
+2005-06-01  Adam Weinberger  <adamw@gnome.org>
+
+	* en_CA.po: Updated Canadian English translation.
+
+2005-05-24  Frank Arnold  <farnold@cvs.gnome.org>
+
+	* de.po: Updated German translation.
+
+2005-05-23  Adam Weinberger  <adamw@gnome.org>
+
+	* en_CA.po: Updated Canadian English translation.
+
+2005-05-20  Frank Arnold  <farnold@cvs.gnome.org>
+
+	* de.po: Updated German translation.
+
+2005-04-22  Francisco Javier F. Serrador  <serrador@cvs.gnome.org>
+
+	* es.po: Updated Spanish translation.
+
+2005-04-19  Adam Weinberger  <adamw@gnome.org>
+
+	* en_CA.po: Updated Canadian English translation.
+
+2005-04-19  Frank Arnold  <farnold@cvs.gnome.org>
+
+	* de.po: Updated German translation.
+
+2005-04-17  Christopher Orr  <chris@orr.me.uk>
+
+	* en_GB.po: Added British English translation.
+
+2005-04-16  Adam Weinberger  <adamw@gnome.org>
+
+	* en_CA.po: Updated Canadian English translation.
+
+2005-04-01  Steve Murphy  <murf@e-tools.com>
+
+        * rw.po: Added Kinyarwanda translation.
+
+2005-03-25  Raphael Higino  <raphaelh@cvs.gnome.org>
+
+	* pt_BR.po: Added Brazilian Portuguese translation.
+
+2005-03-22  Adam Weinberger  <adamw@gnome.org>
+
+	* en_CA.po: Added Canadian English translation.
+
+2005-03-22  Frank Arnold  <farnold@cvs.gnome.org>
+
+	* de.po: Updated German translation.
+
+2005-03-22  Funda Wang  <fundawang@linux.net.cn>
+
+	* zh_CN.po: Added Simplified Chinese translation.
+
+2005-03-21  Christian Rose  <menthos@menthos.com>
+
+	* sv.po: Added Swedish translation.
+
+2005-03-21  Christian Rose  <menthos@menthos.com>
+
+	* .cvsignore: Added this.
+	* POTFILES.in: Added missing entries, added comment,
+	and sorted the file.
+
+2004-11-29  Christoph Brill <egore@gmx.de>
+
+	* de.po: Added german translation
+
+2004-11-29  Fabio Bonelli <fabiobonelli@libero.it>
+
+	* it.po: Added italian translation
+
+2004-10-06  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* en.po: Added english translation
+
+2004-10-06  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* es.po: Added spanish translation

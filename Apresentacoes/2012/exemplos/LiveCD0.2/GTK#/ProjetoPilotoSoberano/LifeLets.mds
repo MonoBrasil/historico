@@ -1,0 +1,20 @@
+<Combine name="LifeLets" fileversion="2.0" description="Sovereign computing everyday small helpers">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="LifeLets.Core" />
+      <Entry configuration="Debug" build="True" name="Test.LifeLets.Core" />
+      <Entry configuration="Debug" build="True" name="LifeLets.Console" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="LifeLetsGTK" single="True">
+    <Execute type="None" entry="LifeLets.Core" />
+    <Execute type="None" entry="LifeLets.Console" />
+    <Execute type="None" entry="Test.LifeLets.Core" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./LifeLets.Core/LifeLets.Core.mdp" />
+    <Entry filename="./LifeLets.Console/LifeLets.Console.mdp" />
+    <Entry filename="./LifeLets.Gui/LifeLetsGTK.mdp" />
+    <Entry filename="./Test/Test.LifeLets.Core.mdp" />
+  </Entries>
+</Combine>

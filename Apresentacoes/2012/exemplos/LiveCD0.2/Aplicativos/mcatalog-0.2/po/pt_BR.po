@@ -1,0 +1,342 @@
+# Brazilian Portuguese translation of mcatalog.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the mcatalog package.
+# Raphael Higino <raphaelh@uai.com.br>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mcatalog\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-03-25 11:12-0300\n"
+"PO-Revision-Date: 2005-03-24 09:18-0300\n"
+"Last-Translator: Raphael Higino <raphaelh@uai.com.br>\n"
+"Language-Team: Brazilian Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../mcatalog.desktop.in.h:1
+msgid "Multimedia cataloguer"
+msgstr "Catalogador multimídia"
+
+#: ../mcatalog.desktop.in.h:2
+msgid "mCatalog"
+msgstr "mCatalog"
+
+#: ../mcatalog.schemas.in.h:1
+msgid "Default catalog"
+msgstr "Catálogo padrão"
+
+#: ../mcatalog.schemas.in.h:2
+msgid "Height of borrowers list"
+msgstr "Altura da lista de usuários"
+
+#: ../mcatalog.schemas.in.h:3
+msgid "Height of main window"
+msgstr "Altura da janela principal"
+
+#: ../mcatalog.schemas.in.h:4
+msgid "Save preview images in a cache"
+msgstr "Salvar imagens de visualização num cache"
+
+#: ../mcatalog.schemas.in.h:5
+msgid "Save preview images in a cache (faster rendering)"
+msgstr "Salvar imagens de visualização num cache (renderização mais rápida)"
+
+#: ../mcatalog.schemas.in.h:6
+msgid "The active theme."
+msgstr "O tema ativo."
+
+#: ../mcatalog.schemas.in.h:7
+msgid "The default actived catalog."
+msgstr "O catálogo ativado padrão."
+
+#: ../mcatalog.schemas.in.h:8
+msgid "The height of the borrowers list."
+msgstr "A altura da lista de usuários."
+
+#: ../mcatalog.schemas.in.h:9
+msgid "The height of the main window."
+msgstr "A altura da janela principal."
+
+#: ../mcatalog.schemas.in.h:10
+msgid "The width of the catalog list."
+msgstr "A largura da lista de catálogo."
+
+#: ../mcatalog.schemas.in.h:11
+msgid "The width of the item list."
+msgstr "A largura da lista de itens."
+
+#: ../mcatalog.schemas.in.h:12
+msgid "The width of the main window."
+msgstr "A largura da janela principal."
+
+#: ../mcatalog.schemas.in.h:13 ../src/dialogs/PreferencesDialog.cs:30
+#: ../src/dialogs/PreferencesDialog.cs:46
+msgid "Theme"
+msgstr "Tema"
+
+#: ../mcatalog.schemas.in.h:14
+msgid "Width of catalog list"
+msgstr "Largura da lista de catálogo"
+
+#: ../mcatalog.schemas.in.h:15
+msgid "Width of item list"
+msgstr "Largura da lista de itens"
+
+#: ../mcatalog.schemas.in.h:16
+msgid "Width of the main window"
+msgstr "Largura da janela principal"
+
+#: ../resources/dialogaddalbum.glade.h:1 ../resources/dialogaddbook.glade.h:1
+#: ../resources/dialogaddfilm.glade.h:1
+msgid "<b>Comments: </b>"
+msgstr "<b>Comentários: </b>"
+
+#: ../resources/dialogaddalbum.glade.h:2
+msgid "ASIN: "
+msgstr "ASIN: "
+
+#: ../resources/dialogaddalbum.glade.h:3
+msgid "Add a new album"
+msgstr "Adicionar um novo álbum"
+
+#: ../resources/dialogaddalbum.glade.h:4
+msgid "Artists: "
+msgstr "Artistas: "
+
+#: ../resources/dialogaddalbum.glade.h:5 ../resources/dialogaddbook.glade.h:5
+#: ../resources/dialogaddfilm.glade.h:4
+msgid "Date: "
+msgstr "Data: "
+
+#: ../resources/dialogaddalbum.glade.h:6
+msgid "Label: "
+msgstr "Rótulo"
+
+#: ../resources/dialogaddalbum.glade.h:7 ../resources/dialogaddfilm.glade.h:9
+msgid "Medium: "
+msgstr "Meio: "
+
+#: ../resources/dialogaddalbum.glade.h:8 ../resources/dialogaddbook.glade.h:12
+#: ../resources/dialogaddfilm.glade.h:11
+msgid "Rating: "
+msgstr "Avaliação: "
+
+#: ../resources/dialogaddalbum.glade.h:9 ../resources/dialogaddfilm.glade.h:12
+msgid "Runtime: "
+msgstr "Tempo de execução: "
+
+#: ../resources/dialogaddalbum.glade.h:10
+#: ../resources/dialogaddbook.glade.h:13 ../resources/dialogaddfilm.glade.h:13
+msgid "Search Amazon"
+msgstr "Busca na Amazon"
+
+#: ../resources/dialogaddalbum.glade.h:11
+msgid "Style: "
+msgstr "Estilo: "
+
+#: ../resources/dialogaddalbum.glade.h:12
+#: ../resources/dialogaddbook.glade.h:14 ../resources/dialogaddfilm.glade.h:15
+msgid "Title: "
+msgstr "Título: "
+
+#: ../resources/dialogaddalbum.glade.h:13
+msgid "Tracks: "
+msgstr "Faixas: "
+
+#: ../resources/dialogaddbook.glade.h:2 ../src/dialogs/AddBookDialog.cs:65
+msgid "Add a new book"
+msgstr "Adicionar um novo livro"
+
+#: ../resources/dialogaddbook.glade.h:3
+msgid "Author: "
+msgstr "Autor: "
+
+#: ../resources/dialogaddbook.glade.h:4 ../resources/dialogaddfilm.glade.h:3
+msgid "Country: "
+msgstr "País: "
+
+#: ../resources/dialogaddbook.glade.h:6 ../resources/dialogaddfilm.glade.h:7
+msgid "Genre: "
+msgstr "Gênero: "
+
+#: ../resources/dialogaddbook.glade.h:7
+msgid "ISBN: "
+msgstr "ISBN: "
+
+#: ../resources/dialogaddbook.glade.h:8 ../resources/dialogaddfilm.glade.h:8
+msgid "Language: "
+msgstr "Idioma: "
+
+#: ../resources/dialogaddbook.glade.h:9 ../resources/dialogaddfilm.glade.h:10
+msgid "Original title: "
+msgstr "Título original: "
+
+#: ../resources/dialogaddbook.glade.h:10
+msgid "Pages: "
+msgstr "Páginas: "
+
+#: ../resources/dialogaddbook.glade.h:11
+msgid "Publisher: "
+msgstr "Editora: "
+
+#: ../resources/dialogaddfilm.glade.h:2 ../src/dialogs/AddFilmDialog.cs:67
+msgid "Add a new film"
+msgstr "Adicionar um novo filme"
+
+#: ../resources/dialogaddfilm.glade.h:5
+msgid "Director: "
+msgstr "Diretor: "
+
+#: ../resources/dialogaddfilm.glade.h:6
+msgid "Distributor: "
+msgstr "Distribuidora: "
+
+#: ../resources/dialogaddfilm.glade.h:14
+msgid "Starring: "
+msgstr "Estrelando: "
+
+#: ../resources/mainwindow.glade.h:1
+msgid "<b>Borrowers</b>"
+msgstr "<b>Usuários</b>"
+
+#: ../resources/mainwindow.glade.h:2
+msgid "<b>Collections</b>"
+msgstr "<b>Coleções</b>"
+
+#: ../resources/mainwindow.glade.h:3
+msgid "Actual view"
+msgstr "Visão real"
+
+#: ../resources/mainwindow.glade.h:4
+msgid "Add item"
+msgstr "Adicionar item"
+
+#: ../resources/mainwindow.glade.h:5
+msgid "List"
+msgstr "Lista"
+
+#: ../resources/mainwindow.glade.h:6
+msgid "Normal Size"
+msgstr "Tamanho normal"
+
+#: ../resources/mainwindow.glade.h:7
+msgid "Remove item"
+msgstr "Remover item"
+
+#: ../resources/mainwindow.glade.h:8
+msgid "Search: "
+msgstr "Procurar: "
+
+#: ../resources/mainwindow.glade.h:9
+msgid "Shelf"
+msgstr "Prateleira"
+
+#: ../resources/mainwindow.glade.h:10
+msgid "Zoom"
+msgstr "Zoom"
+
+#: ../resources/mainwindow.glade.h:11
+msgid "Zoom In"
+msgstr "Mais zoom"
+
+#: ../resources/mainwindow.glade.h:12
+msgid "Zoom Out"
+msgstr "Menos zoom"
+
+#: ../resources/title.glade.h:1
+msgid ","
+msgstr ","
+
+#: ../resources/title.glade.h:2 ../src/TitleWidget.cs:51
+msgid "by"
+msgstr "de"
+
+#: ../src/AmazonQuery.cs:51
+msgid "No matches for your query"
+msgstr "Nenhum resultado para a sua consulta"
+
+#: ../src/Catalog.cs:276
+#, csharp-format
+msgid "Return {0}?"
+msgstr "Devolver {0}?"
+
+#: ../src/ItemList.cs:246 ../src/ItemShelf.cs:322
+#: ../src/dialogs/AddAlbumDialog.cs:112 ../src/dialogs/AddFilmDialog.cs:104
+msgid "Edit"
+msgstr "Editar"
+
+#: ../src/ItemList.cs:252 ../src/ItemShelf.cs:326
+msgid "Return"
+msgstr "Devolver"
+
+#: ../src/ItemList.cs:256 ../src/ItemShelf.cs:330
+#: ../src/dialogs/LendItemDialog.cs:22
+msgid "Lend"
+msgstr "Emprestar"
+
+#: ../src/Main.cs:327
+msgid "Remove the selected items?"
+msgstr "Deseja remover os itens selecionador?"
+
+#: ../src/Main.cs:415
+msgid "translator-credits"
+msgstr "Raphael Higino <raphaelh@uai.com.br>"
+
+#: ../src/Main.cs:420
+msgid "Media cataloger"
+msgstr "Catalogador de mídia"
+
+#: ../src/dialogs/AddAlbumDialog.cs:68
+msgid "Add a new Album"
+msgstr "Adicionar um novo álbum"
+
+#: ../src/dialogs/AddBookDialog.cs:103
+msgid "Editing"
+msgstr "Edição"
+
+#: ../src/dialogs/AmazonSelectDialog.cs:48
+msgid "Select your choice"
+msgstr "Faça sua escolha"
+
+#: ../src/dialogs/AmazonSelectDialog.cs:62
+msgid "Title"
+msgstr "Título"
+
+#: ../src/dialogs/AmazonSelectDialog.cs:65
+msgid "Director"
+msgstr "Diretor"
+
+#: ../src/dialogs/AmazonSelectDialog.cs:68
+msgid "Author"
+msgstr "Autor"
+
+#: ../src/dialogs/AmazonSelectDialog.cs:71
+msgid "Artists"
+msgstr "Artistas"
+
+#: ../src/dialogs/CatalogPropertiesDialog.cs:36
+#, csharp-format
+msgid "{0} properties"
+msgstr "Propriedades de {0}"
+
+#: ../src/dialogs/CatalogPropertiesDialog.cs:46
+msgid "Columns to show"
+msgstr "Exibir as colunas"
+
+#: ../src/dialogs/LendItemDialog.cs:43
+msgid "Borrower:"
+msgstr "Usuário:"
+
+#: ../src/dialogs/PreferencesDialog.cs:16
+msgid "Preferences"
+msgstr "Preferências"
+
+#: ../src/dialogs/ProgressDialog.cs:34
+msgid "Wait, please"
+msgstr "Aguarde, por favor"
+
+#: ../src/dialogs/ProgressDialog.cs:40
+msgid "Searching Amazon...."
+msgstr "Procurando na Amazon..."

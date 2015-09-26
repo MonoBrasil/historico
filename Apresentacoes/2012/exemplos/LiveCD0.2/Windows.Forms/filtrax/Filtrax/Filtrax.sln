@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiltraxCore", "..\FiltraxCore\FiltraxCore\FiltraxCore.csproj", "{B6DB39AF-C02A-4028-99BA-24F3B7CD8A69}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiltraxGUI", "..\FiltraxGUI\FiltraxGUI\FiltraxGUI.csproj", "{38D82160-DC7C-4193-9ABD-844D6E047F8B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{B6DB39AF-C02A-4028-99BA-24F3B7CD8A69}.Debug.ActiveCfg = Debug|.NET
+		{B6DB39AF-C02A-4028-99BA-24F3B7CD8A69}.Debug.Build.0 = Debug|.NET
+		{B6DB39AF-C02A-4028-99BA-24F3B7CD8A69}.Release.ActiveCfg = Release|.NET
+		{B6DB39AF-C02A-4028-99BA-24F3B7CD8A69}.Release.Build.0 = Release|.NET
+		{38D82160-DC7C-4193-9ABD-844D6E047F8B}.Debug.ActiveCfg = Debug|.NET
+		{38D82160-DC7C-4193-9ABD-844D6E047F8B}.Debug.Build.0 = Debug|.NET
+		{38D82160-DC7C-4193-9ABD-844D6E047F8B}.Release.ActiveCfg = Release|.NET
+		{38D82160-DC7C-4193-9ABD-844D6E047F8B}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

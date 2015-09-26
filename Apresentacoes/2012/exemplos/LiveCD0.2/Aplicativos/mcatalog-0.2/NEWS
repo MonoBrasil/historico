@@ -1,0 +1,61 @@
+0.2
+=====
+
+* Use of Gecko instead of Gnome.Canvas. It's much faster and easier to code.
+* New music Albums catalog.
+* New Export feature. You can export your catalogs to HTML.
+* New Search Engine motor.
+* Search engines:
+	* Amazon
+	* IMDB
+* Performance improvements, bugfixes and code cleanups.
+
+0.1
+=====
+
+* Now it's possible to change the order of the shelf. You can order by
+    any field of the item, ascending or descending.
+* Each catalogs saves his state in the database.
+* Double click on empty space at shelf view shows the New Item dialog.
+* Performance improvements.
+
+0.0.6
+=====
+
+* Minor bugfixes.
+
+0.0.5
+=====
+
+* Double click on items (both in shelf and list views) shows the Edit dialog.
+* Fixed lots of small bugs.
+* Updates the database version if needed.
+* Improvements to the database.
+
+0.0.4
+=====
+
+* Lots of performance improvements.
+* Fixed some bugs about the Amazon Web Service.
+* Fixed UI bugs.
+
+0.0.3
+=====
+
+* Bugfix release.
+* Lots of bugfixes in the autotools scripts.
+* Minor changes in the UI.
+
+0.0.2
+=====
+
+* Added themes support.
+* Improved the overview view with zoom support.
+* Added i18n support.
+* Added autotools scripts.
+* Removed all the monodevelop stuff.
+
+0.0.1
+=====
+
+* First release

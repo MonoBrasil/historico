@@ -1,0 +1,214 @@
+/**
+   +----------------------------------------------------------------------+
+   | mPHP Lexer 0.1                                                       |
+   +----------------------------------------------------------------------+
+   | Copyright (c) 2005 Raphael Romeikat (http://www.romeikat.com)        |
+   +----------------------------------------------------------------------+
+   | Author: Raphael Romeikat <raffa@raffa.de>                            |
+   +----------------------------------------------------------------------+
+*/
+
+Boolean short_tags = false;
+Boolean asp_tags = false;
+
+class Yytoken {
+
+  public int m_index;
+  public string m_text;
+  public int m_line;
+  public int m_charBegin;
+  public int m_charEnd;
+
+  public Yytoken (int index, string text, int line, int charBegin, int charEnd) {
+	m_index = index;
+	m_text = text;
+	m_line = line;
+	m_charBegin = charBegin;
+	m_charEnd = charEnd;
+  }
+
+  public override string ToString() {
+      return "Token #"+m_index+": "+m_text+" (line "+m_line+")";
+  }
+}
+
+%%
+
+%char
+%line
+%cup
+%unicode
+%ignorecase
+
+%state ST_IN_SCRIPTING
+%state ST_DOUBLE_QUOTES
+%state ST_SINGLE_QUOTE
+%state ST_BACKQUOTE
+%state ST_HEREDOC
+%state ST_LOOKING_FOR_PROPERTY
+%state ST_LOOKING_FOR_VARNAME
+%state ST_COMMENT
+%state ST_DOC_COMMENT
+%state ST_ONE_LINE_COMMENT
+
+LNUM = [0-9]+
+DNUM = ([0-9]*[\.][0-9]+)|([0-9]+[\.][0-9]*)
+EXPONENT_DNUM = (({LNUM}|{DNUM})[eE][+-]?{LNUM})
+HNUM = "0x"[0-9a-fA-F]+
+LABEL = [a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*
+WHITESPACE = [ \n\r\t]+
+TABS_AND_SPACES = [ \t]*
+TOKENS = [;:,.\[\]()|^&+-/*=%!~$<>?@]
+ENCAPSED_TOKENS = [\[\]{}$]
+ESCAPED_AND_WHITESPACE = [\n\t\r #'.:;,()|^&+-/*=%!~<>?@]+
+ANY_CHAR = (.|[\n])
+NEWLINE = ("\r"|"\n"|"\r\n")
+
+%%
+
+<YYINITIAL>(([^<]|"<"[^?%s<]))|"<s"|"<" {
+	return T_INLINE_HTML;
+}
+
+<YYINITIAL>"<?"|"<script"({WHITESPACE})+"language"({WHITESPACE})*"="({WHITESPACE})*("php"|"\"php\""|"\'php\'")({WHITESPACE})*">" {
+	if (short_tags || yylength()>2) { /* yylength()>2 means it's not <? but <script> */
+		BEGIN(ST_IN_SCRIPTING);
+		return T_OPEN_TAG;
+	} else {
+		return T_INLINE_HTML;
+	}
+}
+
+
+<YYINITIAL>"<%="|"<?=" {
+	if ((yytext[1]=='%' /*&& CG(asp_tags)*/) || (yytext[1]=='?' /*&& CG(short_tags)*/)) {
+		//zendlval->value.str.val = yytext; /* no copying - intentional */
+		//zendlval->value.str.len = yyleng;
+		//zendlval->type = IS_STRING;
+		BEGIN(ST_IN_SCRIPTING);
+		return T_OPEN_TAG_WITH_ECHO;
+	} else {
+		//zendlval->value.str.val = (char *) estrndup(yytext, yyleng);
+		//zendlval->value.str.len = yyleng;
+		//zendlval->type = IS_STRING;
+		return T_INLINE_HTML;
+	}
+}
+
+
+<YYINITIAL>"<%" {
+	//if (CG(asp_tags)) {
+		//zendlval->value.str.val = yytext; /* no copying - intentional */
+		//zendlval->value.str.len = yyleng;
+		//zendlval->type = IS_STRING;
+		BEGIN(ST_IN_SCRIPTING);
+		return T_OPEN_TAG;
+	//} else {
+		//zendlval->value.str.val = (char *) estrndup(yytext, yyleng);
+		//zendlval->value.str.len = yyleng;
+		//zendlval->type = IS_STRING;
+		//return T_INLINE_HTML;
+	//}
+}
+
+
+<YYINITIAL>"<?php"([ \t]|{NEWLINE}) {
+	//zendlval->value.str.val = yytext; /* no copying - intentional */
+	//zendlval->value.str.len = yyleng;
+	//zendlval->type = IS_STRING;
+	//HANDLE_NEWLINE(yytext[yyleng-1]);
+	BEGIN(ST_IN_SCRIPTING);
+	return T_OPEN_TAG;
+}
+
+<ST_IN_SCRIPTING>"#"|"//" {
+	BEGIN(ST_ONE_LINE_COMMENT);
+	yymore();
+}
+
+<ST_ONE_LINE_COMMENT>"?"|"%"|">" {
+	yymore();
+}
+
+<ST_ONE_LINE_COMMENT>[^\n\r?%>]+ {
+	yymore();
+}
+
+<ST_ONE_LINE_COMMENT>{NEWLINE} {
+	//zendlval->value.str.val = yytext; /* no copying - intentional */
+	//zendlval->value.str.len = yyleng;
+	//zendlval->type = IS_STRING;
+	BEGIN(ST_IN_SCRIPTING);
+	//CG(zend_lineno)++;
+	return T_COMMENT;
+}
+
+<ST_ONE_LINE_COMMENT>"?>"|"%>" {
+    if (CG(asp_tags) || yytext[yyleng-2] != '%') { /* asp comment? */
+		//zendlval->value.str.val = yytext; /* no copying - intentional */
+		//zendlval->value.str.len = yyleng;
+		//zendlval->type = IS_STRING;
+		yyless(yyleng-2);
+		BEGIN(ST_IN_SCRIPTING);
+		return T_COMMENT;
+	} else {
+		yymore();
+	}
+}
+
+<ST_IN_SCRIPTING>"/**"{WHITESPACE} {
+	//CG(comment_start_line) = CG(zend_lineno);
+	BEGIN(ST_DOC_COMMENT);
+	yymore();
+}
+
+<ST_IN_SCRIPTING>"/*" {
+	//CG(comment_start_line) = CG(zend_lineno);
+	BEGIN(ST_COMMENT);
+	yymore();
+}
+
+
+<ST_COMMENT,ST_DOC_COMMENT>[^*]+ {
+	yymore();
+}
+
+<ST_DOC_COMMENT>"*/" {
+	//CG(doc_comment) = yytext;     /* no copying - intentional */
+	//CG(doc_comment_len) = yyleng;
+	//HANDLE_NEWLINES(yytext, yyleng);
+	BEGIN(ST_IN_SCRIPTING);
+	return T_DOC_COMMENT;
+}
+
+<ST_COMMENT>"*/" {
+	//HANDLE_NEWLINES(yytext, yyleng);
+	BEGIN(ST_IN_SCRIPTING);
+	return T_COMMENT;
+}
+
+<ST_COMMENT,ST_DOC_COMMENT>"*" {
+	yymore();
+}
+
+<ST_IN_SCRIPTING>("?>"|"</script"({WHITESPACE})*">"){NEWLINE}? {
+	//zendlval->value.str.val = yytext; /* no copying - intentional */
+	//zendlval->value.str.len = yyleng;
+	//zendlval->type = IS_STRING;
+	BEGIN(YYINITIAL);
+	return T_CLOSE_TAG;  /* implicit ';' at php-end tag */
+}
+
+
+<ST_IN_SCRIPTING>"%>"{NEWLINE}? {
+	//if (CG(asp_tags)) {
+		BEGIN(YYINITIAL);
+		//zendlval->value.str.len = yyleng;
+		//zendlval->type = IS_STRING;
+		//zendlval->value.str.val = yytext; /* no copying - intentional */
+		return T_CLOSE_TAG;  /* implicit ';' at php-end tag */
+	//} else {
+		//yyless(1);
+		//return yytext[0];
+	//}
+}

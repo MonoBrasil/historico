@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export LD_LIBRARY_PATH="@prefix@/lib/mcatalog:$LD_LIBRARY_PATH"
+EXE_TO_RUN="@prefix@/lib/mcatalog/mcatalog.exe"
+
+mono $EXE_TO_RUN "$@"

@@ -1,0 +1,87 @@
+[Dir .svn]
+Dirs=prop-base/props/text-base/tmp/wcprops
+Files=empty-file/entries/format/README.txt
+
+[Dir LifeLets.Console]
+Dirs=
+Files=AssemblyInfo.cs/Console.cs/ConsoleNovo.cs/ConsoleOptions.cs/ContactsConsole.cs/LifeLets.Console.prjx/Main.cs/MenuOption.cs/Navigator.cs/SovereChat.cs/Makefile.am
+
+[Dir LifeLets.Core]
+Dirs=
+Files=AssemblyInfo.cs/Contact.cs/File.cs/Life.cs/LifeLets.Core.prjx/PeerNetwork.cs/Photo.cs/Makefile.am
+
+[Dir LifeLets.Gui]
+Dirs=GUI/resources
+Files=AssemblyInfo.cs/gui.glade/LifeLetsGTK.cmbx/LifeLetsGTK.mdsx/LifeLetsGTK.prjx/LLMainWindow.cs/Main.cs/MainLLGTK.cs/make.sh/MyNickname.cs/MyWindow.cs/SovereChat.cs/Makefile.am
+
+[Dir LifeLets.Gui/GUI]
+Dirs=ChatWindow/CreditsWindow/MainWindow/MyName/SovereChatWindow/TEST
+Files=
+
+[Dir LifeLets.Gui/GUI/ChatWindow]
+Dirs=
+Files=AssemblyInfo.cs/ChatWindow.cs/Main.cs/soverechatwindow.glade
+
+[Dir LifeLets.Gui/GUI/CreditsWindow]
+Dirs=
+Files=creditswindow.glade/creditswindow.gladep
+
+[Dir LifeLets.Gui/GUI/MainWindow]
+Dirs=
+Files=AssemblyInfo.cs/gui.glade/gui.gladep/LiveLetsMainWindow.cmbx/LiveLetsMainWindow.mdsx/LiveLetsMainWindow.pidb/LiveLetsMainWindow.prjx/Main.cs/Makefile.LiveLetsMainWindow/Makefile.solution.LiveLetsMainWindow/make.sh
+
+[Dir LifeLets.Gui/GUI/MainWindow/pixmaps]
+Dirs=
+Files=lifelets.jpg
+
+[Dir LifeLets.Gui/GUI/MyName]
+Dirs=
+Files=
+
+[Dir LifeLets.Gui/GUI/SovereChatWindow]
+Dirs=
+Files=AssemblyInfo.cs/gui.glade/Main.cs/Makefile.solution.SovereChat/Makefile.SovereChat/make.sh/SovereChat.cmbx/SovereChat.mdsx/SovereChat.pidb/SovereChat.prjx/soverechatwindow.glade
+
+[Dir LifeLets.Gui/GUI/TEST]
+Dirs=BootSplash/MyNameWindow
+Files=
+
+[Dir LifeLets.Gui/GUI/TEST/BootSplash]
+Dirs=
+Files=AssemblyInfo.cs/BootSplash.cmbx/BootSplash.mdsx/BootSplash.pidb/BootSplash.prjx/gui.glade/Main.cs/Makefile.BootSplash/Makefile.solution.BootSplash/make.sh
+
+[Dir LifeLets.Gui/GUI/TEST/MyNameWindow]
+Dirs=
+Files=AssemblyInfo.cs/gui.glade/Main.cs/Makefile.MyNameWindow/Makefile.solution.MyNameWindow/make.sh/MyNameGUI.cs/MyNameWindow.cmbx/mynamewindow.glade/mynamewindow.gladep/MyNameWindow.mdsx/MyNameWindow.pidb/MyNameWindow.prjx
+
+[Dir LifeLets.Gui/pixmap]
+Dirs=
+Files=
+
+[Dir LifeLets.Gui/resources]
+Dirs=
+Files=gui.glade/MyNickname.glade
+
+[Dir TOOLS]
+Dirs=
+Files=GladeSync.cs
+
+[Dir Test]
+Dirs=
+Files=AssemblyInfo.cs/TestLife.cs/Test.LifeLets.Core.prjx/Makefile.am
+
+[Dir doc]
+Dirs=EN-US
+Files=ComputacaoSoberana.txt
+
+[Dir doc/EN-US]
+Dirs=
+Files=SovereignComputing.txt
+
+[Project Dir]
+Dirs=doc/LifeLets.Console/LifeLets.Core/LifeLets.Gui/Test/TOOLS
+Files=INSTALL/make.sh/ProjetoPilotoSoberano.kateproject/README/AUTHORS/BUGS/CREDITOS/LICENSE/LifeLets.cmbx/lifelets.nunit/Makefile/TODO/ChangeLog/NEWS/configure.ac/Makefile.am
+
+[Project File]
+Name=ProjetoPilotoSoberano
+Type=Default

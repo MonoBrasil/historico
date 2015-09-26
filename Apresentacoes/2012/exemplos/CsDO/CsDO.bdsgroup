@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{7EBF9B96-5511-4F56-9CFA-3C0B0A272830}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects>
+      <Projects Name="CsDO.Lib.dll">src\Lib\CsDO.Lib.bdsproj</Projects>
+      <Projects Name="CsDO.Drivers.Npgsql.dll">src\Drivers\CsDO.Drivers.Npgsql.bdsproj</Projects>
+      <Projects Name="CsDO.Driver.OleDb.dll">src\Drivers\CsDO.Driver.OleDb.bdsproj</Projects>
+      <Projects Name="CsDO.Driver.SqlServer.dll">src\Drivers\CsDO.Driver.SqlServer.bdsproj</Projects>
+      <Projects Name="CsDO.Tests.dll">tests\src\Lib\CsDO.Tests.bdsproj</Projects>
+      <Projects Name="CsDO.Driver.Npgsql.Tests.dll">tests\src\Drivers\CsDO.Driver.Npgsql.Tests.bdsproj</Projects>
+      <Projects Name="CsDO.Driver.OleDb.Tests.dll">tests\src\Drivers\CsDO.Driver.OleDb.Tests.bdsproj</Projects>
+      <Projects Name="CsDO.Driver.SqlServer.Tests.dll">tests\src\Drivers\CsDO.Driver.SqlServer.Tests.bdsproj</Projects>
+      <Projects Name="Targets">CsDO.Lib.dll CsDO.Drivers.Npgsql.dll CsDO.Driver.OleDb.dll CsDO.Driver.SqlServer.dll CsDO.Tests.dll CsDO.Driver.Npgsql.Tests.dll CsDO.Driver.OleDb.Tests.dll CsDO.Driver.SqlServer.Tests.dll</Projects>
+    </Projects>
+    <Dependencies>
+      <Dependency GUID="{1FEEA806-E921-4750-9757-BED41501953B}">
+        <Dependency GUID="{9335077E-B8D7-477B-8DBE-EA8DF58F0794}"/>
+      </Dependency>
+      <Dependency GUID="{4367CB49-3234-4A95-B7E1-439C48C8C502}">
+        <Dependency GUID="{9335077E-B8D7-477B-8DBE-EA8DF58F0794}"/>
+      </Dependency>
+      <Dependency GUID="{11145F28-DB83-4330-85DB-D98E718E77CC}">
+        <Dependency GUID="{9335077E-B8D7-477B-8DBE-EA8DF58F0794}"/>
+      </Dependency>
+      <Dependency GUID="{AD7AD99A-224A-4C68-A87B-F2334DB999FF}">
+        <Dependency GUID="{9335077E-B8D7-477B-8DBE-EA8DF58F0794}"/>
+      </Dependency>
+      <Dependency GUID="{AC6FCF12-F85E-4781-889A-E828AB2F63E3}">
+        <Dependency GUID="{9335077E-B8D7-477B-8DBE-EA8DF58F0794}"/>
+        <Dependency GUID="{1FEEA806-E921-4750-9757-BED41501953B}"/>
+      </Dependency>
+      <Dependency GUID="{B0FDF151-133F-4D8F-B3F1-A411BB4FD5C0}">
+        <Dependency GUID="{9335077E-B8D7-477B-8DBE-EA8DF58F0794}"/>
+        <Dependency GUID="{4367CB49-3234-4A95-B7E1-439C48C8C502}"/>
+      </Dependency>
+      <Dependency GUID="{1788911B-6D93-4015-AC56-398DCAB8ED1B}">
+        <Dependency GUID="{9335077E-B8D7-477B-8DBE-EA8DF58F0794}"/>
+        <Dependency GUID="{11145F28-DB83-4330-85DB-D98E718E77CC}"/>
+      </Dependency>
+    </Dependencies>
+  </Default.Personality>
+</BorlandProject>

@@ -1,0 +1,37 @@
+# MonoUML i18n files
+# If you found any error please report it to the mailing list
+#[encoding: UTF-8]
+src/GUI/Glade/gui.glade
+src/GUI/MonoUML.cs
+src/GUI/SelectProjectDialog.cs
+src/CodeGeneration/Wizard.cs
+src/ReverseEngineering/Wizard.cs
+src/Widgets/Toolbar/ToolbarUseCase.cs
+src/Widgets/Toolbar/ToolbarClass.cs
+src/Widgets/Toolbar/ToolbarBase.cs
+src/Widgets/AggregationKindViewer.cs
+src/Widgets/CommentsViewer.cs
+src/Widgets/ElementChooserDialog.cs
+src/Widgets/DiagramTypeChooserDialog.cs
+src/Widgets/ExtendViewer.cs
+src/Widgets/ExtendedCaseViewer.cs
+src/Widgets/ExtendConditionViewer.cs
+src/Widgets/ExtensionLocationViewer.cs
+src/Widgets/GeneralizationsViewer.cs
+src/Widgets/GeneralizationGeneralViewer.cs
+src/Widgets/Hub.cs
+src/Widgets/Helper.cs
+src/Widgets/InterfaceRealizationContractViewer.cs
+src/Widgets/IncludeViewer.cs
+src/Widgets/NoteBookLabel.cs
+src/Widgets/NamedElementVisibilityViewer.cs
+src/Widgets/MultiChooserDialog.cs
+src/Widgets/MixedElementsViewer.cs
+src/Widgets/OwnedAttributesViewer.cs
+src/Widgets/OwnedOperationsViewer.cs
+src/Widgets/OwnedTypeViewer.cs
+src/Widgets/ParameterDirectionKindViewer.cs
+src/Widgets/RootLevelElementChooserDialog.cs
+src/Widgets/UMLPropertiesTab.cs
+src/Widgets/TypeKindChooserDialog.cs
+src/Widgets/TypedElementTypeViewer.cs

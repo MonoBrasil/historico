@@ -1,0 +1,4 @@
+create table $SchemaName!.$TableName!(
+	$ColumsName*
+	constraint pk_$SchemaName!_$TableName! primary key ($PrimaryKey*)
+);

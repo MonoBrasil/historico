@@ -1,0 +1,448 @@
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/apps/mcatalog/ui/main_window_width</key>
+      <applyto>/apps/mcatalog/ui/main_window_width</applyto>
+      <owner>mcatalog</owner>
+      <type>int</type>
+      <default>600</default>
+      <locale name="C">
+         <short>Width of the main window</short>
+         <long>
+           The width of the main window.
+         </long>
+      </locale>
+
+      <locale name="de">
+         <short>Breite des Hautfensters</short>
+         <long>Die Breite des Hauptfensters.</long>
+      </locale>
+
+      <locale name="en_CA">
+         <short>Width of the main window</short>
+         <long>The width of the main window.</long>
+      </locale>
+
+      <locale name="en_GB">
+         <short>Width of the main window</short>
+         <long>The width of the main window.</long>
+      </locale>
+
+      <locale name="es">
+         <short>Anchura de la ventana principal</short>
+         <long>La anchura de la ventana principal.</long>
+      </locale>
+
+      <locale name="fr">
+         <short>Largeur de la fenêtre principale</short>
+         <long>La largeur de la fenêtre principale.</long>
+      </locale>
+
+      <locale name="nl">
+         <short>Breedte van het hoofdscherm</short>
+         <long>De breedte van het hoofdscherm.</long>
+      </locale>
+
+      <locale name="pt_BR">
+         <short>Largura da janela principal</short>
+         <long>A largura da janela principal.</long>
+      </locale>
+
+      <locale name="zh_CN">
+         <short>主窗口高度</short>
+         <long>主窗口的宽度。</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/mcatalog/ui/main_window_height</key>
+      <applyto>/apps/mcatalog/ui/main_window_height</applyto>
+      <owner>mcatalog</owner>
+      <type>int</type>
+      <default>400</default>
+      <locale name="C">
+         <short>Height of main window</short>
+         <long>
+           The height of the main window.
+         </long>
+      </locale>
+
+      <locale name="de">
+         <short>Höhe des Hauptfensters</short>
+         <long>Die Höhe des Hauptfensters.</long>
+      </locale>
+
+      <locale name="en_CA">
+         <short>Height of main window</short>
+         <long>The height of the main window.</long>
+      </locale>
+
+      <locale name="en_GB">
+         <short>Height of main window</short>
+         <long>The height of the main window.</long>
+      </locale>
+
+      <locale name="es">
+         <short>Altura de la ventana principal</short>
+         <long>La altura de la ventana principal.</long>
+      </locale>
+
+      <locale name="fr">
+         <short>Hauteur de la fenêtre principale</short>
+         <long>La hauteur de la fenêtre principale.</long>
+      </locale>
+
+      <locale name="nl">
+         <short>Hoogte van hoofdscherm</short>
+         <long>De hoogte van het hoofdscherm.</long>
+      </locale>
+
+      <locale name="pt_BR">
+         <short>Altura da janela principal</short>
+         <long>A altura da janela principal.</long>
+      </locale>
+
+      <locale name="zh_CN">
+         <short>主窗口高度</short>
+         <long>主窗口的高度。</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/mcatalog/ui/catalog_list_width</key>
+      <applyto>/apps/mcatalog/ui/catalog_list_width</applyto>
+      <owner>mcatalog</owner>
+      <type>int</type>
+      <default>180</default>
+      <locale name="C">
+         <short>Width of catalog list</short>
+         <long>
+           The width of the catalog list.
+         </long>
+      </locale>
+
+      <locale name="de">
+         <short>Breite der Katalogliste</short>
+         <long>Die Breite der Katalogliste.</long>
+      </locale>
+
+      <locale name="en_CA">
+         <short>Width of catalogue list</short>
+         <long>The width of the catalogue list.</long>
+      </locale>
+
+      <locale name="en_GB">
+         <short>Width of catalogue list</short>
+         <long>The width of the catalogue list.</long>
+      </locale>
+
+      <locale name="es">
+         <short>Anchura de la lista del catálogo</short>
+         <long>La anchura de la lista del catálogo.</long>
+      </locale>
+
+      <locale name="fr">
+         <short>Largeur de la liste du catalogue</short>
+         <long>La largeur de la liste du catalogue.</long>
+      </locale>
+
+      <locale name="nl">
+         <short>Breedte van de cataloguslijst</short>
+         <long>De hoogte van de cataloguslijst.</long>
+      </locale>
+
+      <locale name="pt_BR">
+         <short>Largura da lista de catálogo</short>
+         <long>A largura da lista de catálogo.</long>
+      </locale>
+
+      <locale name="zh_CN">
+         <short>编目列表宽度</short>
+         <long>编目列表的宽度。</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/mcatalog/ui/item_list_width</key>
+      <applyto>/apps/mcatalog/ui/item_list_width</applyto>
+      <owner>mcatalog</owner>
+      <type>int</type>
+      <default>360</default>
+      <locale name="C">
+         <short>Width of item list</short>
+         <long>
+           The width of the item list.
+         </long>
+      </locale>
+
+      <locale name="de">
+         <short>Breite der Eintragsliste</short>
+         <long>Die Breite der Eintragsliste.</long>
+      </locale>
+
+      <locale name="en_CA">
+         <short>Width of item list</short>
+         <long>The width of the item list.</long>
+      </locale>
+
+      <locale name="en_GB">
+         <short>Width of item list</short>
+         <long>The width of the item list.</long>
+      </locale>
+
+      <locale name="es">
+         <short>Anchura de la lista de artículos</short>
+         <long>La anchura de la lista de artículos.</long>
+      </locale>
+
+      <locale name="fr">
+         <short>Largeur de la liste des éléments</short>
+         <long>La largeur de la liste des éléments.</long>
+      </locale>
+
+      <locale name="nl">
+         <short>Breedte van itemlijst</short>
+         <long>De breedte van de itemlijst.</long>
+      </locale>
+
+      <locale name="pt_BR">
+         <short>Largura da lista de itens</short>
+         <long>A largura da lista de itens.</long>
+      </locale>
+
+      <locale name="zh_CN">
+         <short>项目列表宽度</short>
+         <long>项目列表的宽度。</long>
+      </locale>
+    </schema>   
+
+    <schema>
+      <key>/schemas/apps/mcatalog/ui/borrowers_list_height</key>
+      <applyto>/apps/mcatalog/ui/borrowers_list_height</applyto>
+      <owner>mcatalog</owner>
+      <type>int</type>
+      <default>360</default>
+      <locale name="C">
+         <short>Height of borrowers list</short>
+         <long>
+           The height of the borrowers list.
+         </long>
+      </locale>
+
+      <locale name="de">
+         <short>Höhe der Entleiherliste</short>
+         <long>Die Höhe der Entleiherliste.</long>
+      </locale>
+
+      <locale name="en_CA">
+         <short>Height of borrowers list</short>
+         <long>The height of the borrowers list.</long>
+      </locale>
+
+      <locale name="en_GB">
+         <short>Height of borrowers list</short>
+         <long>The height of the borrowers list.</long>
+      </locale>
+
+      <locale name="es">
+         <short>Altura de la lista de prestatarios</short>
+         <long>La altura de la lista de prestatarios.</long>
+      </locale>
+
+      <locale name="fr">
+         <short>Hauteur de la liste des emprunteurs</short>
+         <long>La hauteur de la liste des emprunteurs.</long>
+      </locale>
+
+      <locale name="nl">
+         <short>Hoogte van lenerslijst</short>
+         <long>De hoogte van de lenerslijst.</long>
+      </locale>
+
+      <locale name="pt_BR">
+         <short>Altura da lista de usuários</short>
+         <long>A altura da lista de usuários.</long>
+      </locale>
+
+      <locale name="zh_CN">
+         <short>借阅者列表高度</short>
+         <long>借阅者列表的高度。</long>
+      </locale>
+    </schema>  
+
+    <schema>
+      <key>/schemas/apps/mcatalog/active_catalog</key>
+      <applyto>/apps/mcatalog/active_catalog</applyto>
+      <owner>mcatalog</owner>
+      <type>string</type>
+      <default>books</default>
+      <locale name="C">
+         <short>Default catalog</short>
+         <long>
+           The default actived catalog.
+         </long>
+      </locale>
+
+      <locale name="de">
+         <short>Vorgabekatalog</short>
+         <long>Der per Vorgabe eingestellte Katalog.</long>
+      </locale>
+
+      <locale name="en_CA">
+         <short>Default catalogue</short>
+         <long>The default actived catalogue.</long>
+      </locale>
+
+      <locale name="en_GB">
+         <short>Default catalogue</short>
+         <long>The default active catalogue.</long>
+      </locale>
+
+      <locale name="es">
+         <short>Catálogo predeterminado</short>
+         <long>El catálogo activado predeterminado.</long>
+      </locale>
+
+      <locale name="fr">
+         <short>Catalogue par défaut</short>
+         <long>Le catalogue courant par défaut.</long>
+      </locale>
+
+      <locale name="nl">
+         <short>Standaardcatalogus</short>
+         
+      </locale>
+
+      <locale name="pt_BR">
+         <short>Catálogo padrão</short>
+         <long>O catálogo ativado padrão.</long>
+      </locale>
+
+      <locale name="sv">
+         <short>Standardkatalog</short>
+         
+      </locale>
+
+      <locale name="zh_CN">
+         <short>默认编目</short>
+         <long>默认激活的编目。</long>
+      </locale>
+    </schema>       
+     
+     <schema>
+      <key>/schemas/apps/mcatalog/ui/theme</key>
+      <applyto>/apps/mcatalog/ui/theme</applyto>
+      <owner>mcatalog</owner>
+      <type>string</type>
+      <default>default</default>
+      <locale name="C">
+         <short>Theme</short>
+         <long>
+           The active theme.
+         </long>
+      </locale>
+
+      <locale name="cs">
+         <short>Téma</short>
+         
+      </locale>
+
+      <locale name="de">
+         <short>Thema</short>
+         <long>Das eingestellte Thema.</long>
+      </locale>
+
+      <locale name="en_CA">
+         <short>Theme</short>
+         <long>The active theme.</long>
+      </locale>
+
+      <locale name="en_GB">
+         <short>Theme</short>
+         <long>The active theme.</long>
+      </locale>
+
+      <locale name="es">
+         <short>Tema</short>
+         <long>El tema activo.</long>
+      </locale>
+
+      <locale name="fr">
+         <short>Thème</short>
+         <long>Le thème courant.</long>
+      </locale>
+
+      <locale name="nl">
+         <short>Thema</short>
+         <long>Het actieve thema.</long>
+      </locale>
+
+      <locale name="pt_BR">
+         <short>Tema</short>
+         <long>O tema ativo.</long>
+      </locale>
+
+      <locale name="sv">
+         <short>Tema</short>
+         
+      </locale>
+
+      <locale name="zh_CN">
+         <short>主题</short>
+         <long>当前主题。</long>
+      </locale>
+    </schema>       
+    
+    <schema>
+      <key>/schemas/apps/mcatalog/preview_cache</key>
+      <applyto>/apps/mcatalog/preview_cache</applyto>
+      <owner>mcatalog</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+         <short>Save preview images in a cache</short>
+         <long>Save preview images in a cache (faster rendering)</long>
+      </locale>
+
+      <locale name="de">
+         <short>Ablegen von Vorschaubildern in einem Zwischenspeicher</short>
+         <long>Ablegen von Vorschaubildern in einem Zwischenspeicher (schnellere Darstellung)</long>
+      </locale>
+
+      <locale name="en_CA">
+         <short>Save preview images in a cache</short>
+         <long>Save preview images in a cache (faster rendering)</long>
+      </locale>
+
+      <locale name="en_GB">
+         <short>Save preview images in a cache</short>
+         <long>Save preview images in a cache (faster rendering)</long>
+      </locale>
+
+      <locale name="es">
+         <short>Guardar imágenes de previsualización en caché</short>
+         <long>Guardar imágenes de previsualización en caché (representación más rápida)</long>
+      </locale>
+
+      <locale name="fr">
+         <short>Enregistrer les images d&apos;aperçu dans un cache</short>
+         <long>Enregistrer les images d&apos;aperçu dans un cache (rendu plus rapide)</long>
+      </locale>
+
+      <locale name="nl">
+         <short>Voorbeeldafbeeldingen bewaren in een buffer</short>
+         <long>Voorbeeldafbeeldingen bewaren in een buffer (snellere weergave)</long>
+      </locale>
+
+      <locale name="pt_BR">
+         <short>Salvar imagens de visualização num cache</short>
+         <long>Salvar imagens de visualização num cache (renderização mais rápida)</long>
+      </locale>
+
+      <locale name="zh_CN">
+         <short>在缓存中保存预览图像</short>
+         <long>在缓存中保存预览图像(渲染更快)</long>
+      </locale>
+    </schema>  
+   </schemalist>  
+</gconfschemafile>

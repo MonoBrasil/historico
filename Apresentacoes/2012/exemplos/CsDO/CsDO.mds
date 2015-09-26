@@ -1,0 +1,44 @@
+<Combine name="CsDO" fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="CsDO.Driver.OleDb.dll" />
+      <Entry configuration="Debug" build="True" name="CsDO.Driver.Npgsql.dll" />
+      <Entry configuration="Debug" build="True" name="CsDO.dll" />
+      <Entry configuration="Debug" build="True" name="CsDO.Tests.dll" />
+      <Entry configuration="Debug" build="True" name="CsDO.Driver.Npgsql.Tests.dll" />
+      <Entry configuration="Debug" build="True" name="CsDO.Driver.OleDb.Tests.dll" />
+      <Entry configuration="Debug" build="True" name="CsDO.Driver.SqlServer.dll" />
+      <Entry configuration="Debug" build="True" name="CsDO.Driver.SqlServer.Tests.dll" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry configuration="Release" build="True" name="CsDO.Driver.OleDb.dll" />
+      <Entry configuration="Release" build="True" name="CsDO.Driver.Npgsql.dll" />
+      <Entry configuration="Release" build="True" name="CsDO.dll" />
+      <Entry configuration="Release" build="True" name="CsDO.Tests.dll" />
+      <Entry configuration="Release" build="True" name="CsDO.Driver.Npgsql.Tests.dll" />
+      <Entry configuration="Release" build="True" name="CsDO.Driver.OleDb.Tests.dll" />
+      <Entry configuration="Debug" build="True" name="CsDO.Driver.SqlServer.dll" />
+      <Entry configuration="Debug" build="True" name="CsDO.Driver.SqlServer.Tests.dll" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="CsDO.Driver.OleDb.dll" single="True">
+    <Execute type="None" entry="CsDO.Driver.OleDb.dll" />
+    <Execute type="None" entry="CsDO.Driver.Npgsql.dll" />
+    <Execute type="None" entry="CsDO.dll" />
+    <Execute type="None" entry="CsDO.Tests.dll" />
+    <Execute type="None" entry="CsDO.Driver.Npgsql.Tests.dll" />
+    <Execute type="None" entry="CsDO.Driver.OleDb.Tests.dll" />
+    <Execute type="None" entry="CsDO.Driver.SqlServer.dll" />
+    <Execute type="None" entry="CsDO.Driver.SqlServer.Tests.dll" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./src/Drivers/CsDO.Driver.OleDb.mdp" />
+    <Entry filename="./src/Drivers/CsDO.Driver.Npgsql.mdp" />
+    <Entry filename="./src/Lib/Lib.mdp" />
+    <Entry filename="./tests/src/Lib/Lib.mdp" />
+    <Entry filename="./tests/src/Drivers/CsDO.Driver.Npgsql.Tests.mdp" />
+    <Entry filename="./tests/src/Drivers/CsDO.Driver.OleDb.Tests.mdp" />
+    <Entry filename="./src/Drivers/CsDO.Driver.SqlServer.mdp" />
+    <Entry filename="./tests/src/Drivers/CsDO.Driver.SqlServer.Tests.dll.mdp" />
+  </Entries>
+</Combine>

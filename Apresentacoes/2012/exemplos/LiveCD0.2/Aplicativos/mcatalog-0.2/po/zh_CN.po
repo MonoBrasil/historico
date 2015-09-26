@@ -1,0 +1,342 @@
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the mcatalog package.
+# Funda Wang <fundawang@linux.net.cn>, 2005.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mcatalog\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-03-21 20:01+0100\n"
+"PO-Revision-Date: 2005-03-22 04:57+0800\n"
+"Last-Translator: Funda Wang <fundawang@linux.net.cn>\n"
+"Language-Team: zh_CN <i18n-translation@lists.linux.net.cn>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: mcatalog.desktop.in.h:1
+msgid "Multimedia cataloguer"
+msgstr "多媒体编目"
+
+#: mcatalog.desktop.in.h:2
+msgid "mCatalog"
+msgstr "mCatalog"
+
+#: mcatalog.schemas.in.h:1
+msgid "Default catalog"
+msgstr "默认编目"
+
+#: mcatalog.schemas.in.h:2
+msgid "Height of borrowers list"
+msgstr "借阅者列表高度"
+
+#: mcatalog.schemas.in.h:3
+msgid "Height of main window"
+msgstr "主窗口高度"
+
+#: mcatalog.schemas.in.h:4
+msgid "Save preview images in a cache"
+msgstr "在缓存中保存预览图像"
+
+#: mcatalog.schemas.in.h:5
+msgid "Save preview images in a cache (faster rendering)"
+msgstr "在缓存中保存预览图像(渲染更快)"
+
+#: mcatalog.schemas.in.h:6
+msgid "The active theme."
+msgstr "当前主题。"
+
+#: mcatalog.schemas.in.h:7
+msgid "The default actived catalog."
+msgstr "默认激活的编目。"
+
+#: mcatalog.schemas.in.h:8
+msgid "The height of the borrowers list."
+msgstr "借阅者列表的高度。"
+
+#: mcatalog.schemas.in.h:9
+msgid "The height of the main window."
+msgstr "主窗口的高度。"
+
+#: mcatalog.schemas.in.h:10
+msgid "The width of the catalog list."
+msgstr "编目列表的宽度。"
+
+#: mcatalog.schemas.in.h:11
+msgid "The width of the item list."
+msgstr "项目列表的宽度。"
+
+#: mcatalog.schemas.in.h:12
+msgid "The width of the main window."
+msgstr "主窗口的宽度。"
+
+#: mcatalog.schemas.in.h:13 src/dialogs/PreferencesDialog.cs:30
+#: src/dialogs/PreferencesDialog.cs:46
+msgid "Theme"
+msgstr "主题"
+
+#: mcatalog.schemas.in.h:14
+msgid "Width of catalog list"
+msgstr "编目列表宽度"
+
+#: mcatalog.schemas.in.h:15
+msgid "Width of item list"
+msgstr "项目列表宽度"
+
+#: mcatalog.schemas.in.h:16
+msgid "Width of the main window"
+msgstr "主窗口高度"
+
+#: resources/dialogaddalbum.glade.h:1 resources/dialogaddbook.glade.h:1
+#: resources/dialogaddfilm.glade.h:1
+msgid "<b>Comments: </b>"
+msgstr "<b>评论：</b>"
+
+#: resources/dialogaddalbum.glade.h:2
+msgid "ASIN: "
+msgstr "ASIN："
+
+#: resources/dialogaddalbum.glade.h:3
+msgid "Add a new album"
+msgstr "添加新专辑"
+
+#: resources/dialogaddalbum.glade.h:4
+msgid "Artists: "
+msgstr "艺人："
+
+#: resources/dialogaddalbum.glade.h:5 resources/dialogaddbook.glade.h:5
+#: resources/dialogaddfilm.glade.h:4
+msgid "Date: "
+msgstr "日期："
+
+#: resources/dialogaddalbum.glade.h:6
+msgid "Label: "
+msgstr "标签："
+
+#: resources/dialogaddalbum.glade.h:7 resources/dialogaddfilm.glade.h:9
+msgid "Medium: "
+msgstr "介质："
+
+#: resources/dialogaddalbum.glade.h:8 resources/dialogaddbook.glade.h:12
+#: resources/dialogaddfilm.glade.h:11
+msgid "Rating: "
+msgstr "评分："
+
+#: resources/dialogaddalbum.glade.h:9 resources/dialogaddfilm.glade.h:12
+msgid "Runtime: "
+msgstr "运行时间："
+
+#: resources/dialogaddalbum.glade.h:10 resources/dialogaddbook.glade.h:13
+#: resources/dialogaddfilm.glade.h:13
+msgid "Search Amazon"
+msgstr "搜索 Amazon"
+
+#: resources/dialogaddalbum.glade.h:11
+msgid "Style: "
+msgstr "样式："
+
+#: resources/dialogaddalbum.glade.h:12 resources/dialogaddbook.glade.h:14
+#: resources/dialogaddfilm.glade.h:15
+msgid "Title: "
+msgstr "标题："
+
+#: resources/dialogaddalbum.glade.h:13
+msgid "Tracks: "
+msgstr "音轨数："
+
+#: resources/dialogaddbook.glade.h:2 src/dialogs/AddBookDialog.cs:65
+msgid "Add a new book"
+msgstr "添加新书"
+
+#: resources/dialogaddbook.glade.h:3
+msgid "Author: "
+msgstr "作者："
+
+#: resources/dialogaddbook.glade.h:4 resources/dialogaddfilm.glade.h:3
+msgid "Country: "
+msgstr "国家："
+
+#: resources/dialogaddbook.glade.h:6 resources/dialogaddfilm.glade.h:7
+msgid "Genre: "
+msgstr "流派："
+
+#: resources/dialogaddbook.glade.h:7
+msgid "ISBN: "
+msgstr "ISBN："
+
+#: resources/dialogaddbook.glade.h:8 resources/dialogaddfilm.glade.h:8
+msgid "Language: "
+msgstr "语言："
+
+#: resources/dialogaddbook.glade.h:9 resources/dialogaddfilm.glade.h:10
+msgid "Original title: "
+msgstr "原标题："
+
+#: resources/dialogaddbook.glade.h:10
+msgid "Pages: "
+msgstr "页数："
+
+#: resources/dialogaddbook.glade.h:11
+msgid "Publisher: "
+msgstr "出版者："
+
+#: resources/dialogaddfilm.glade.h:2 src/dialogs/AddFilmDialog.cs:67
+msgid "Add a new film"
+msgstr "添加新电影"
+
+#: resources/dialogaddfilm.glade.h:5
+msgid "Director: "
+msgstr "导演："
+
+#: resources/dialogaddfilm.glade.h:6
+msgid "Distributor: "
+msgstr "发行商："
+
+#: resources/dialogaddfilm.glade.h:14
+msgid "Starring: "
+msgstr "星级："
+
+#: resources/mainwindow.glade.h:1
+msgid "<b>Borrowers</b>"
+msgstr "<b>借阅者</b>"
+
+#: resources/mainwindow.glade.h:2
+msgid "<b>Collections</b>"
+msgstr "<b>收藏</b>"
+
+#: resources/mainwindow.glade.h:3
+msgid "Actual view"
+msgstr "实际视图"
+
+#: resources/mainwindow.glade.h:4
+msgid "Add item"
+msgstr "添加项目"
+
+#: resources/mainwindow.glade.h:5
+msgid "List"
+msgstr "列表"
+
+#: resources/mainwindow.glade.h:6
+msgid "Normal Size"
+msgstr "普通大小"
+
+#: resources/mainwindow.glade.h:7
+msgid "Remove item"
+msgstr "删除项目"
+
+#: resources/mainwindow.glade.h:8
+msgid "Search: "
+msgstr "搜索："
+
+#: resources/mainwindow.glade.h:9
+msgid "Shelf"
+msgstr "书架"
+
+#: resources/mainwindow.glade.h:10
+msgid "Zoom"
+msgstr "缩放"
+
+#: resources/mainwindow.glade.h:11
+msgid "Zoom In"
+msgstr "放大"
+
+#: resources/mainwindow.glade.h:12
+msgid "Zoom Out"
+msgstr "缩小"
+
+#: resources/title.glade.h:1
+msgid ","
+msgstr "，"
+
+#: resources/title.glade.h:2 src/TitleWidget.cs:51
+msgid "by"
+msgstr "由"
+
+#: src/AmazonQuery.cs:51
+msgid "No matches for your query"
+msgstr "您的查询无匹配项"
+
+#: src/Catalog.cs:276
+#, csharp-format
+msgid "Return {0}?"
+msgstr "返回 {0} 吗？"
+
+#: src/ItemList.cs:246 src/ItemShelf.cs:322 src/dialogs/AddAlbumDialog.cs:112
+#: src/dialogs/AddFilmDialog.cs:104
+msgid "Edit"
+msgstr "编辑"
+
+#: src/ItemList.cs:252 src/ItemShelf.cs:326
+msgid "Return"
+msgstr "归还"
+
+#: src/ItemList.cs:256 src/ItemShelf.cs:330 src/dialogs/LendItemDialog.cs:22
+msgid "Lend"
+msgstr "租借"
+
+#: src/Main.cs:327
+msgid "Remove the selected items?"
+msgstr "删除选中项吗？"
+
+#: src/Main.cs:415
+msgid "translator-credits"
+msgstr "开源软件国际化之简体中文组\nhttp://i18n.linux.net.cn"
+
+#: src/Main.cs:420
+msgid "Media cataloger"
+msgstr "介质编目程序"
+
+#: src/dialogs/AddAlbumDialog.cs:68
+msgid "Add a new Album"
+msgstr "添加新专辑"
+
+#: src/dialogs/AddBookDialog.cs:103
+msgid "Editing"
+msgstr "编辑"
+
+#: src/dialogs/AmazonSelectDialog.cs:48
+msgid "Select your choice"
+msgstr "请进行选择"
+
+#: src/dialogs/AmazonSelectDialog.cs:62
+msgid "Title"
+msgstr "标题"
+
+#: src/dialogs/AmazonSelectDialog.cs:65
+msgid "Director"
+msgstr "导演"
+
+#: src/dialogs/AmazonSelectDialog.cs:68
+msgid "Author"
+msgstr "作者"
+
+#: src/dialogs/AmazonSelectDialog.cs:71
+msgid "Artists"
+msgstr "艺人"
+
+#: src/dialogs/CatalogPropertiesDialog.cs:36
+#, csharp-format
+msgid "{0} properties"
+msgstr "{0} 属性"
+
+#: src/dialogs/CatalogPropertiesDialog.cs:46
+msgid "Columns to show"
+msgstr "要显示的列"
+
+#: src/dialogs/LendItemDialog.cs:43
+msgid "Borrower:"
+msgstr "借阅者："
+
+#: src/dialogs/PreferencesDialog.cs:16
+msgid "Preferences"
+msgstr "首选项"
+
+#: src/dialogs/ProgressDialog.cs:34
+msgid "Wait, please"
+msgstr "请稍候"
+
+#: src/dialogs/ProgressDialog.cs:40
+msgid "Searching Amazon...."
+msgstr "正在搜索 Amazon..."
+

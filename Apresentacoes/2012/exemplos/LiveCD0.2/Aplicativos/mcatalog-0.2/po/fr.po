@@ -1,0 +1,487 @@
+# French translations for mCatalog.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same licence as the mcatalog package.
+#
+# Christophe Sauthier <christophe.sauthier@gmail.com>, 2005.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mcatalog 0.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-06-12 16:41+0200\n"
+"PO-Revision-Date: 2005-06-12 16:20+0200\n"
+"Last-Translator: Christophe Sauthier <christophe.sauthier@gmail.com>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+
+#: mcatalog.schemas.in.h:1
+msgid "Default catalog"
+msgstr "Catalogue par défaut"
+
+#: mcatalog.schemas.in.h:2
+msgid "Height of borrowers list"
+msgstr "Hauteur de la liste des emprunteurs"
+
+#: mcatalog.schemas.in.h:3
+msgid "Height of main window"
+msgstr "Hauteur de la fenêtre principale"
+
+#: mcatalog.schemas.in.h:4
+msgid "Save preview images in a cache"
+msgstr "Enregistrer les images d'aperçu dans un cache"
+
+#: mcatalog.schemas.in.h:5
+msgid "Save preview images in a cache (faster rendering)"
+msgstr "Enregistrer les images d'aperçu dans un cache (rendu plus rapide)"
+
+#: mcatalog.schemas.in.h:6
+msgid "The active theme."
+msgstr "Le thème courant."
+
+#: mcatalog.schemas.in.h:7
+msgid "The default actived catalog."
+msgstr "Le catalogue courant par défaut."
+
+#: mcatalog.schemas.in.h:8
+msgid "The height of the borrowers list."
+msgstr "La hauteur de la liste des emprunteurs."
+
+#: mcatalog.schemas.in.h:9
+msgid "The height of the main window."
+msgstr "La hauteur de la fenêtre principale."
+
+#: mcatalog.schemas.in.h:10
+msgid "The width of the catalog list."
+msgstr "La largeur de la liste du catalogue."
+
+#: mcatalog.schemas.in.h:11
+msgid "The width of the item list."
+msgstr "La largeur de la liste des éléments."
+
+#: mcatalog.schemas.in.h:12
+msgid "The width of the main window."
+msgstr "La largeur de la fenêtre principale."
+
+#: mcatalog.schemas.in.h:13 src/dialogs/PreferencesDialog.cs:32
+#: src/dialogs/PreferencesDialog.cs:48
+msgid "Theme"
+msgstr "Thème"
+
+#: mcatalog.schemas.in.h:14
+msgid "Width of catalog list"
+msgstr "Largeur de la liste du catalogue"
+
+#: mcatalog.schemas.in.h:15
+msgid "Width of item list"
+msgstr "Largeur de la liste des éléments"
+
+#: mcatalog.schemas.in.h:16
+msgid "Width of the main window"
+msgstr "Largeur de la fenêtre principale"
+
+#: resources/dialogaddalbum.glade.h:1 resources/dialogaddbook.glade.h:1
+#: resources/dialogaddfilm.glade.h:1
+msgid "<b>Comments: </b>"
+msgstr "<b>Commentaires : </b>"
+
+#: resources/dialogaddalbum.glade.h:2
+msgid "ASIN: "
+msgstr "ASIN : "
+
+#: resources/dialogaddalbum.glade.h:3
+msgid "Add a new album"
+msgstr "Ajouter un nouvel album"
+
+#: resources/dialogaddalbum.glade.h:4
+msgid "Artists: "
+msgstr "Artistes : "
+
+#: resources/dialogaddalbum.glade.h:5 resources/dialogaddbook.glade.h:5
+#: resources/dialogaddfilm.glade.h:4
+msgid "Date: "
+msgstr "Date : "
+
+#: resources/dialogaddalbum.glade.h:6
+msgid "Label: "
+msgstr "Libellé : "
+
+#: resources/dialogaddalbum.glade.h:7 resources/dialogaddfilm.glade.h:9
+msgid "Medium: "
+msgstr "Médium : "
+
+#: resources/dialogaddalbum.glade.h:8 resources/dialogaddbook.glade.h:12
+#: resources/dialogaddfilm.glade.h:11
+msgid "Rating: "
+msgstr "Évaluation : "
+
+#: resources/dialogaddalbum.glade.h:9 resources/dialogaddfilm.glade.h:12
+msgid "Runtime: "
+msgstr "Durée d'exécution : "
+
+#: resources/dialogaddalbum.glade.h:10 resources/dialogaddbook.glade.h:13
+#: resources/dialogaddfilm.glade.h:13
+msgid "Search Amazon"
+msgstr "Rechercher sur Amazon"
+
+#: resources/dialogaddalbum.glade.h:11
+msgid "Style: "
+msgstr "Style : "
+
+#: resources/dialogaddalbum.glade.h:12 resources/dialogaddbook.glade.h:14
+#: resources/dialogaddfilm.glade.h:15
+msgid "Title: "
+msgstr "Titre : "
+
+#: resources/dialogaddalbum.glade.h:13
+msgid "Tracks: "
+msgstr "Pistes : "
+
+#: resources/dialogaddbook.glade.h:2 src/dialogs/AddBookDialog.cs:50
+msgid "Add a new book"
+msgstr "Ajouter un nouveau livre"
+
+#: resources/dialogaddbook.glade.h:3
+msgid "Author: "
+msgstr "Auteur : "
+
+#: resources/dialogaddbook.glade.h:4 resources/dialogaddfilm.glade.h:3
+msgid "Country: "
+msgstr "Pays : "
+
+#: resources/dialogaddbook.glade.h:6 resources/dialogaddfilm.glade.h:7
+msgid "Genre: "
+msgstr "Genre : "
+
+#: resources/dialogaddbook.glade.h:7
+msgid "ISBN: "
+msgstr "ISBN : "
+
+#: resources/dialogaddbook.glade.h:8 resources/dialogaddfilm.glade.h:8
+msgid "Language: "
+msgstr "Langue : "
+
+#: resources/dialogaddbook.glade.h:9 resources/dialogaddfilm.glade.h:10
+msgid "Original title: "
+msgstr "Titre original : "
+
+#: resources/dialogaddbook.glade.h:10
+msgid "Pages: "
+msgstr "Pages : "
+
+#: resources/dialogaddbook.glade.h:11
+msgid "Publisher: "
+msgstr "Éditeur : "
+
+#: resources/dialogaddfilm.glade.h:2 src/dialogs/AddFilmDialog.cs:51
+msgid "Add a new film"
+msgstr "Ajouter un nouveau film"
+
+#: resources/dialogaddfilm.glade.h:5
+msgid "Director: "
+msgstr "Réalisateur : "
+
+#: resources/dialogaddfilm.glade.h:6
+msgid "Distributor: "
+msgstr "Distributeur : "
+
+#: resources/dialogaddfilm.glade.h:14
+msgid "Starring: "
+msgstr "A l'affiche : "
+
+#: resources/dialogexport.glade.h:1
+msgid "<b>Catalog</b>"
+msgstr "<b>Catalog</b>"
+
+#: resources/dialogexport.glade.h:2
+msgid "<b>Output</b>"
+msgstr "<b>Sortie</b>"
+
+#: resources/dialogexport.glade.h:3
+msgid "<b>Preview</b>"
+msgstr "<b>Aperçu</b>"
+
+#: resources/dialogexport.glade.h:4
+msgid "<b>Template</b>"
+msgstr "<b>Modèle</b>"
+
+#: resources/dialogexport.glade.h:5
+msgid "Choose a template"
+msgstr "Choisissez un modèle"
+
+#: resources/dialogexport.glade.h:6
+msgid "Choose the output file"
+msgstr "Choisissez le fichier de sortie"
+
+#: resources/dialogexport.glade.h:7
+msgid "Export Catalog"
+msgstr "Exporter le catalog"
+
+#: resources/dialogexport.glade.h:8
+msgid "Open preview in browser"
+msgstr "Ouvrir l'aperçu dans un navigateur"
+
+#: resources/dialogexport.glade.h:9
+msgid "The active catalog"
+msgstr "Le catalogue courant"
+
+#: resources/dialogexport.glade.h:10
+msgid "The current search view"
+msgstr "La vue de la recherche en cours"
+
+#: resources/dialogexport.glade.h:11
+msgid "What do you want to export?"
+msgstr "Que voulez-vous exporter ?"
+
+#: resources/mainwindow.glade.h:1
+msgid "<b>Borrowers</b>"
+msgstr "<b>Emprunteurs</b>"
+
+#: resources/mainwindow.glade.h:2
+msgid "<b>Collections</b>"
+msgstr "<b>Collections</b>"
+
+#: resources/mainwindow.glade.h:3
+msgid "Actual view"
+msgstr "Vue courante"
+
+#: resources/mainwindow.glade.h:4
+msgid "Add item"
+msgstr "Ajouter un élément"
+
+#: resources/mainwindow.glade.h:5 src/ItemList.cs:253 src/ItemShelf.cs:358
+#: src/dialogs/AddAlbumDialog.cs:56 src/dialogs/AddFilmDialog.cs:58
+msgid "Edit"
+msgstr "Editer"
+
+#: resources/mainwindow.glade.h:6 src/dialogs/ExportDialog.cs:47
+msgid "Export"
+msgstr "Exporter"
+
+#: resources/mainwindow.glade.h:7 src/ItemList.cs:263 src/ItemShelf.cs:366
+#: src/Main.cs:342 src/dialogs/LendItemDialog.cs:26
+msgid "Lend"
+msgstr "Préter"
+
+#: resources/mainwindow.glade.h:8
+msgid "List"
+msgstr "Liste"
+
+#: resources/mainwindow.glade.h:9
+msgid "Normal Size"
+msgstr "Taille normale"
+
+#: resources/mainwindow.glade.h:10
+msgid "Remove item"
+msgstr "Enlever un élément"
+
+#: resources/mainwindow.glade.h:11
+msgid "Search: "
+msgstr "Rechercher : "
+
+#: resources/mainwindow.glade.h:12
+msgid "Shelf"
+msgstr "Étagère"
+
+#: resources/mainwindow.glade.h:13
+msgid "Zoom"
+msgstr "Zoom"
+
+#: resources/mainwindow.glade.h:14
+msgid "Zoom In"
+msgstr "Zoom avant"
+
+#: resources/mainwindow.glade.h:15
+msgid "Zoom Out"
+msgstr "Zoom arrière"
+
+#: resources/title.glade.h:1
+msgid ","
+msgstr ", "
+
+#: resources/title.glade.h:2 src/TitleWidget.cs:57
+msgid "by"
+msgstr "par"
+
+#: src/AmazonQuery.cs:52
+msgid "No matches for your query"
+msgstr "Aucun résultat pour votre recherche"
+
+#: src/Catalog.cs:277
+#, csharp-format
+msgid "Return {0}?"
+msgstr "Retourne {0} ?"
+
+#: src/Database.cs:714 src/Database.cs:733 src/Database.cs:751
+msgid "Id"
+msgstr "Id"
+
+#: src/Database.cs:715 src/Database.cs:734 src/Database.cs:752
+msgid "Image"
+msgstr "Image"
+
+#: src/Database.cs:716 src/Database.cs:735 src/Database.cs:753
+msgid "Rating"
+msgstr "Évaluation"
+
+#: src/Database.cs:717 src/Database.cs:736 src/Database.cs:754
+#: src/dialogs/AmazonSelectDialog.cs:65
+msgid "Title"
+msgstr "Titre"
+
+#: src/Database.cs:718 src/Database.cs:737
+msgid "Original Title"
+msgstr "Titre original"
+
+#: src/Database.cs:719 src/dialogs/AmazonSelectDialog.cs:68
+msgid "Director"
+msgstr "Réalisateur"
+
+#: src/Database.cs:720
+msgid "Starring"
+msgstr "A l'affiche"
+
+#: src/Database.cs:721 src/Database.cs:739 src/Database.cs:757
+msgid "Date"
+msgstr "Date"
+
+#: src/Database.cs:722 src/Database.cs:740
+msgid "Genre"
+msgstr "Genre"
+
+#: src/Database.cs:723 src/Database.cs:762
+msgid "Runtime"
+msgstr "Durée d'exécution"
+
+#: src/Database.cs:724 src/Database.cs:744
+msgid "Country"
+msgstr "Pays"
+
+#: src/Database.cs:725 src/Database.cs:745
+msgid "Language"
+msgstr "Langue"
+
+#: src/Database.cs:726
+msgid "Distributor"
+msgstr "Distributeur"
+
+#: src/Database.cs:727 src/Database.cs:761
+msgid "Medium"
+msgstr "Médium"
+
+#: src/Database.cs:728 src/Database.cs:746 src/Database.cs:763
+msgid "Comments"
+msgstr "Commentaires"
+
+#: src/Database.cs:738 src/Database.cs:755
+#: src/dialogs/AmazonSelectDialog.cs:71
+msgid "Author"
+msgstr "Auteur"
+
+#: src/Database.cs:741
+msgid "Pages"
+msgstr "Pages"
+
+#: src/Database.cs:742
+msgid "Publisher"
+msgstr "Éditeur"
+
+#: src/Database.cs:743
+msgid "ISBN"
+msgstr "ISBN"
+
+#: src/Database.cs:756
+msgid "Label"
+msgstr "Libellé"
+
+#: src/Database.cs:758
+msgid "Style"
+msgstr "Style"
+
+#: src/Database.cs:759
+msgid "ASIN"
+msgstr "ASIN"
+
+#: src/Database.cs:760
+msgid "Tracks"
+msgstr "Pistes"
+
+#: src/ItemList.cs:92
+msgid "Cover"
+msgstr "Couverture"
+
+#: src/ItemList.cs:259 src/ItemShelf.cs:362 src/Main.cs:339
+msgid "Return"
+msgstr "Retourne"
+
+#: src/Main.cs:420
+msgid "Remove the selected items?"
+msgstr "Enlever les éléments sélectionnés ?"
+
+#: src/Main.cs:518
+msgid "translator-credits"
+msgstr "Christophe Sauthier <christophe.sauthier@gmail.com>"
+
+#: src/Main.cs:523
+msgid "Media cataloger"
+msgstr "Gestionnaire de média"
+
+#: src/dialogs/AddAlbumDialog.cs:49
+msgid "Add a new Album"
+msgstr "Ajouter un nouvel album"
+
+#: src/dialogs/AddBookDialog.cs:57
+msgid "Editing"
+msgstr "Édition"
+
+#: src/dialogs/AmazonSelectDialog.cs:51
+msgid "Select your choice"
+msgstr "Faites votre choix"
+
+#: src/dialogs/AmazonSelectDialog.cs:74
+msgid "Artists"
+msgstr "Artistes"
+
+#: src/dialogs/CatalogPropertiesDialog.cs:39
+#, csharp-format
+msgid "{0} properties"
+msgstr "{0} propriétés"
+
+#: src/dialogs/CatalogPropertiesDialog.cs:49
+msgid "Columns to show"
+msgstr "Colonnes à afficher"
+
+#: src/dialogs/ExportDialog.cs:70
+#, csharp-format
+msgid "Export the whole {0} catalog"
+msgstr "Exportation du catalogue entier {0}"
+
+#: src/dialogs/ExportDialog.cs:143
+msgid "Catalog succesfully exported"
+msgstr "Catalogue exporté avec succès"
+
+#: src/dialogs/ExportDialog.cs:153
+msgid "Some error while exporting the catalog"
+msgstr "Quelques erreurs lors de l'exportation du catalogue"
+
+#: src/dialogs/LendItemDialog.cs:47
+msgid "Borrower:"
+msgstr "Emprunteur :"
+
+#: src/dialogs/LendItemDialog.cs:121
+msgid "You must write the borrower name"
+msgstr "Vous devez écrire le nom de l'emprunteur"
+
+#: src/dialogs/PreferencesDialog.cs:18
+msgid "Preferences"
+msgstr "Préférences"
+
+#: src/dialogs/ProgressDialog.cs:38
+msgid "Wait, please"
+msgstr "Veuillez patienter"
+
+#: src/dialogs/ProgressDialog.cs:44
+msgid "Searching Amazon...."
+msgstr "Recherche sur Amazon..."

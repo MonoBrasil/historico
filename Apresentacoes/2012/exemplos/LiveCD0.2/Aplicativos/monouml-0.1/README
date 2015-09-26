@@ -1,0 +1,29 @@
+MonoUML. CASE tool
+
+Current team:
+- Mario Carrión
+- Rodolfo Campero
+- Manuel Cerón
+- Miguel Huerta
+
+Any help would be very appreciated.
+
+First
+$ ./configure
+Then
+$ make
+Running:
+$ make run
+Installing:
+# make install
+
+REMEMBER
+The following libraries are needed:
+- GTK# >= 1.9.2
+- mono >= 1.1.4
+- ExpertCoder = latest version from CVS. More information: http://expertcoder.sourceforge.net/en/index.html
+
+Any comments? Use the mailing list: http://forge.novell.com/modules/xfmod/maillist/?group_id=1688
+
+Website: http://www.monouml.org
+Developers blog: http://planet.monouml.org

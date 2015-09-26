@@ -1,0 +1,488 @@
+Computação Soberana
+por Klaus Wuestefeld
+------------------------------------------------------------------------------
+
+Neide tem 14 anos.
+
+Depois da escola, antes de ir trabalhar com a irmã, ela passa no telecentro da 
+Vila Tiradentes e vê que 11 pessoas já acessaram os serviços soberanos que ela 
+tinha colocado no ar, no dia anterior.
+
+Ela não tem micro em casa, muito menos internet rápida e nem dinheiro para 
+alugar hospedagem de site. Por isso, ela antes usava um hospedeiro gratuito de 
+sites estáticos chamado GeoCities, que faturava colocando propaganda no site dela.
+
+Ela tem um colega de classe, porém, o Pedro, cujo pai tem micro e internet rápida 
+na lojinha da qual é dono.
+
+Juntando o Pedro e mais 4 amigos, que ela conheceu através da rede, ela conseguiu, 
+ao todo, uns 7MHz de processamento e uns 20MB de espaço em HD.
+
+Na verdade, ela conseguiu o dobro disso, mas cedeu a outra metade ao Gladson, ao 
+Maicon e à Carla, outros três pequenos freqüentadores do telecentro. São mais 
+novos que a Neide e ela está ensinando a eles os primeiros passos na informática.
+
+A história da Neide está só começando.
+
+
+Antes
+=====
+
+Antes de alcançarem soberania de computação, as pessoas chegavam a receber centenas 
+de mensagens indesejadas por dia, contendo vírus, correntes, propaganda e outras 
+tranqueiras. Era o famigerado "spam".
+
+Havia, também, na maioria das páginas da Web, animações de propaganda perturbando 
+os internautas, que, naquela época, tinham que se conformar com aquilo.
+
+As pessoas eram obrigadas a fazer cópias freqüentes de todos seus arquivos pessoais 
+em mídias removíveis, como disquetes ou CDs. Isso era chamado de "backup". Por excesso 
+de confiança em suas HDs, muitos perderam toda uma vida de fotos digitais, trabalhos, 
+mensagens, contatos e músicas.
+
+Para poder "acessar" a internet, as pessoas tinham que pagar um "provedor" e obter 
+um tal de "endereço IP", arbitrariamente distribuído por um órgão controlador.
+
+Para manterem-se em contato, as pessoas viviam mandando e recebendo eMails pentelhos 
+de "Anotem aí meu novo celular" ou "Anotem aí meu novo endereço de eMail".
+
+EMails, por sinal, eram mensagens que as pessoas mandavam, sem estarem codificadas, 
+por incrível que pareça, através de intermediários chamados de "provedores", ou seja, 
+sem a menor garantia de privacidade. E pagavam por isso.
+
+Muitos ainda deixavam seus eMails particulares hospedados em servidores de "WebMail", 
+correndo o risco de ter sua privacidade invadida pela patota de operadores do sistema 
+ou de ter seus eMails perdidos por eles, de uma hora para a outra.
+
+Quando faziam buscas na internet, em vez de receberem primeiro as páginas mais relevantes 
+para elas, as pessoas recebiam primeiro as páginas que o site de buscas, por exemplo 
+um tal de "Google", considerava ser as mais relevantes.
+
+As pessoas que compartilhavam músicas, filmes e outros arquivos, através de sisteminhas 
+"peer-to-peer", chegavam a esperar dias para baixar um filme e ainda tinham que ficar 
+garimpando numa torrente de arquivos bichados, falsos e incompletos.
+
+Com capacidade de expressão limitada a insípidos "blogs", a maioria das pessoas era 
+mera consumidora de informação produzida por terceiros e enlatada pelos auto-denominados 
+"provedores de conteúdo".
+
+Aqueles que só usavam um determinado sistema de mensagens instantâneas eram incapazes 
+de comunicar-se com aqueles que usavam qualquer outro sistema. "ICQ" e "MSN" eram alguns 
+dos que existiam na época. Muitas pessoas trabalhavam com vários desses sistemas, abertos 
+ao mesmo tempo, para poder conversar com todos seus amigos.
+
+Alguns participavam de redes de relacionamento rudimentares, como o "Orkut" e o "1Grau". 
+Eram limitadas, não se comunicavam entre si e, por serem baseadas em sites centralizados, 
+ofereciam os mesmos riscos de confiabilidade e violação de privacidade que os servidores
+de WebMail.
+
+Se, em vez de usar servidores alheios, alguém quisesse colocar seu próprio servidor na 
+internet, com um nome de "domínio" próprio, era obrigado a pagar, todo ano, mais uma 
+taxa arbitrária. Caso seu nome de domínio já tivesse sido escolhido, esse alguém tinha 
+que se conformar e escolher outro.
+
+Para colocar no ar um site seguro, as pessoas eram obrigadas a comprar "certificados digitais" 
+de alguma dentre meia-dúzia de empresas, como a "Verisign" ou a "Certisign". Todo mundo, através 
+dos cadeadinhos em seus browsers, confiava cegamente nessas empresas, as donas da verdade.
+
+A maioria das pessoas se refugiava na ignorância. Algumas, inseridas naquele contexto 
+deprimente, chegaram a criar para si uma ilusão de liberdade, uma liberdade paleativa 
+chamada "Software Livre".
+
+Usuários de Software Livre ou não, portanto, todos não passavam de súditos. Subjugados 
+por um punhado de "autoridades" da internet, conformavam-se às leis arbitrárias, 
+ditadas por elas.
+
+
+A Virada
+========
+
+
+Aí, as pessoas cansaram dessa palhaçada.
+
+Decidiram que seriam livres para compartilhar informação e recursos de hardware com
+seus amigos, da forma como bem entendessem.
+
+Essa liberdade ficou conhecida como soberania de computação.
+
+
+Depois
+======
+
+Além de simplesmente eliminar todas as mazelas acima, a computação soberana abriu, 
+ainda, uma série de possibilidades com as quais as pessoas sequer sonhavam.
+
+Organizações, famílias e grupos de afinidade em geral abandonaram as patéticas 
+"listas de discussão" baseadas em eMail e passaram a compartilhar bases de informação 
+extremamente ricas, intricadas e amigáveis.
+
+Não era mais necessário ficar manualmente atribuindo e revogando direitos de acesso 
+para cada usuário de sistemas restritos. Os administradores de sistemas foram liberados 
+para fazer coisas mais úteis.
+
+Tornou-se trivial trabalhar em conjunto com outras pessoas, compartilhando projetos on-line, 
+sem ter que ficar mandando eMails pra lá e pra cá, duplicando versões e mais versões de 
+"documentos" anexos.
+
+As pessoas passaram a usar a internet, não apenas como ferramenta de comunicação com 
+seus contatos, mas também como forma de expressão.
+
+Extrapolando os limites dos "blogs", todas as pessoas passaram a ter voz influente, 
+ouvida por suas comunidades na internet, sem depender de provedores ou hospedeiros.
+
+Quando alcançaram soberania de computação, portanto, as pessoas tomaram para si o 
+direito de livre publicação.
+
+Completou-se, assim, o ciclo iniciado por Gutenberg, quinhentos anos antes, quando 
+deu às pessoas o livre acesso à informação.
+
+Depois dos devidos ajustes legislativos em seus países, as pessoas passaram a fazer 
+compras e estabelecer crédito usando moedas eletrônicas que elas próprias emitiam. 
+Cada pessoa passou a ser sua própria casa da moeda, superando a liquidez do sistema 
+monetário e ainda recuperando a autonomia do escambo, perdida há milhares de anos.
+
+Qualquer pessoa passou a ser capaz de, com um único clique de mouse, hospedar qualquer 
+serviço em sua máquina, para ser acessado por ela e por seus amigos; e esses serviços 
+permaneciam no ar, mesmo quando essa pessoa desligava sua máquina.
+
+
+Como?
+=====
+
+O acima é a história que vamos contar para nossos filhos e netos. Então, serão comuns 
+histórias como a da Neide que, por enquanto, é somente um flash do futuro.
+
+Vou mostrar que, retomando algumas liberdades simples, que temos no mundo real mas 
+perdemos no mundo virtual, viver essa nova realidade é apenas uma questão de tempo.
+
+Por ser uma experiência extremamente gostosa, não é de muito tempo que estamos falando.
+
+"Estamos falando de um novo software? Uma nova tecnologia?"
+
+Sim, mas não só isso. É muito mais simples e muito mais abrangente que isso. É de uma 
+nova atitude que estamos falando. É o querer:
+
+    Ser livre para compartilhar informação e recursos de hardware com os amigos.
+
+
+Quando alcançarmos essa liberdade, teremos alcançado soberania de computação.
+
+"Tá, e daí? Como vamos alcançar essa liberdade?"
+
+Aos poucos.
+===========
+
+    * Primeira Liberdade: Nome Próprio
+    ----------------------------------
+
+      Você deve ser livre para escolher para si um nome, qualquer nome.
+
+      Não precisa ser um nome esquisito do tipo "jose sem acento underscore da underscore 
+      silva arroba iarrú ponto com ponto bê erre". Pode ser "José da Silva", com direito 
+      a acento, espaços, letras maiúsculas e tudo.
+
+      E não precisa ser um nome novo, exclusivo, inédito. Se você mudasse seu nome,
+      só porque alguém dissesse que já existe um José da Silva cadastrado no sistema
+      dele, você não seria soberano. Você seria um merda!!
+
+      E também não precisa ser um nome definitivo. Sendo soberano, você pode mudar
+      quantas vezes quiser, claro.
+
+      Eu, por exemplo, atualmente me chamo "Klaus Wuestefeld".
+
+
+    * Segunda Liberdade: Apelidos
+    -----------------------------
+
+      Você deve ser livre para chamar seus amigos do que bem entender.
+
+      Se você tiver um dentista chamado "Fernando dos Santos" e um primo com o mesmo 
+      nome, você pode dar a um o apelido de "Dentista", por exemplo, e ao outro o 
+      apelido de "Nando".
+
+      Perceba que, para você, o Nando agora se chama "Nando" e não "fernando dos 
+      santos tudo junto arroba rótimeiou ponto com".
+
+      A secretária do seu dentista, para você, passa a ser simplesmente 
+      "Dentista -> Secretária", e não mais "ana ponto claudia 2004 arroba terra 
+      ponto com ponto bê erre".
+
+      Dessa forma, conseguimos libertar-nos da ilusão de que precisa haver um 
+      único esquema absoluto de endereçamento.
+
+      Quando caímos nessa falácia, estamos, na verdade, adotando e nos subordinando
+      a um esquema que alguém inventou e, com isso, abdicando de nossa soberania. 
+      Os endereços IP como "200.181.15.26" e nomes de domínio como "prevayler.org" 
+      são exemplos disso.
+
+      Você sabe quem manda na distribuição desses endereços? Se não sabe, talvez 
+      de forma sutil, mas está deixando alguém que nem conhece ter domínio sobre você.
+
+      O mesmo se aplica a um país inteiro que, vergonhosamente, se subordina a 
+      um esquema gringo desses.
+
+      "É proibido, então, usar endereços IP ou nomes de domínio?"
+
+      Claro que não. Sendo soberanos, podemos usar o que quisermos.
+
+      Se, além de "Mãe -> Site", você quiser continuar chamando o site da sua 
+      mãe também de "agá tê tê pê dois pontos barra barra dáblio dáblio dáblio ponto 
+      provedor ponto com ponto bê erre barra til fulanadetal", tudo bem. Você só 
+      deixará de ser soberano, se for incapaz de usar o seu próprio esquema de 
+      endereçamento, quando bem entender.
+
+      Para ser soberano, portanto, você vai usar um esquema RELATIVO de endereçamento,
+      tendo a si próprio como ponto de origem. "Você -> Dentista -> Secretária", 
+      é um exemplo de caminho RELATIVO, partindo de você. "A cunhada do meu tio" 
+      é outro exemplo.
+
+      [Eu usei setinhas (->) para indicar o caminho, mas você pode usar o que 
+      quiser, claro. Se não pudesse, não seria soberano.]
+
+      Einstein mostrou que, até no mundo físico, absolutismo e objetividade são 
+      meras ilusões. Estamos simplesmente nos dando conta de que o mesmo se 
+      aplica ao mundo virtual.
+
+
+    * Terceira Liberdade: Confiança
+    -------------------------------
+
+      Voce deve ser livre para confiar em quem você quiser.
+
+      Qualquer um consegue ser soberano sozinho, isolado numa ilha, mas isso não 
+      tem a menor graça. A coisa começa a pegar e, ao mesmo tempo, começa a ficar 
+      interessante, quando você interage com outras pessoas.
+
+      O que determina a intensidade de suas interações com outras pessoas é o 
+      grau da confiança que você tem em cada uma delas.
+
+      Qual é o endereço do site do seu banco?
+
+      Esse endereço vai apontar para o que seu provedor de internet quiser. 
+      Seu provedor de internet pode te enganar, fazendo-se passar por qualquer 
+      site não seguro da internet.
+
+      Em conchavo com alguma da empresas "donas da verdade" como a Verisign ou 
+      a Certisign, qualquer provedor de internet do mundo poderia fazer-se passar 
+      por qualquer site, de qualquer organização, incluindo sites seguros 
+      (com cadeadinho), como o site do seu banco.
+
+      Tá, mas por que os provedores de internet não fazem isso? Por que a Verisign 
+      não faz isso? Por que devo confiar neles?
+
+      "Ora, porque a maioria das pessoas confia."
+
+      A maioria do povo alemão confiou em Hitler e o resto da história já 
+      conhecemos. E o povo alemão ainda conhecia o sujeito. Dos internautas que 
+      sabem o que significa o tal "cadeadinho", apenas uma fração sequer ouviu 
+      falar em Verisign, Certisign e curriola.
+
+      Para ser soberano, portanto, você pode simplesmente parar de confiar em quem 
+      não conhece. Você pode simplesmente mandar seu provedor de internet e as 
+      "donas da verdade" catar coquinho.
+
+      Agora, se você confia no seu irmão e ele disser que confia no cunhado dele, 
+      sua tendência, por causa da indicação, é passar a confiar um pouco no tal 
+      cunhado, não é?
+
+      Podemos representar confiabilidade como uma porcentagem, onde 0% seria 
+      confiabilidade nenhuma e 100% seria confiabilidade total.
+
+      Se você disser que confia 70% em seu irmão e ele disser que confia 50% no 
+      cunhado dele, por exemplo, você pode considerar uma confiabilidade de 35%
+      (70% x 50%) para o cunhado do seu irmão.
+
+      Perceba que, dessa forma, a confiança que você tem em alguém vai sempre 
+      diminuindo à medida que as relações vão se distanciando, exatamente como 
+      na vida real.
+
+      E, também como na vida real, você pode confiar mais ou menos em determinada
+      pessoa, dependendo do assunto. Você pode confiar 70% no seu irmão, quando o 
+      assunto é futebol. No quesito "Música", por outro lado, a confiabilidade do 
+      seu irmão, para você, pode ser só de 1%, devido ao deplorável gosto musical 
+      dele.
+
+      "Quais são os quesitos que posso usar?"
+
+      Você não está entendendo. Sendo soberano, você é livre para usar os quesitos 
+      que quiser e, se não quiser quesito nenhum, tudo bem também.
+
+      "Para que serve saber que o cunhado do meu irmão tem uma confiabilidade de 
+      35% e que o tio da namorada do vizinho do papagaio do dentista do meu avô
+      tem, para mim, confiabilidade de 0,06%?"
+
+      Serve para assegurar nossa quarta liberdade.
+
+
+    * Quarta Liberdade: Privacidade
+    -------------------------------
+
+      Privacidade tem dois aspectos:
+
+      Você deve ser livre para ver somente aquilo que quer ver e;
+      Você deve ser livre para manter informações escondidas de pessoas em quem 
+      você não confia.
+
+      Esse segundo aspecto do sigilo é óbvio. Seguem, então, alguns exemplos do 
+      primeiro aspecto.
+
+      Sempre que fizer uma busca por uma página, música, filme ou qualquer recurso 
+      que seja, você pode ordenar os resultados por ordem de confiabilidade, deixando 
+      as tranqueiras lá pro final.
+
+      Sendo soberano, você pode decidir que quer ser interrompido por mensagens urgentes 
+      de quem tiver mais de 60% de confiabilidade, mas que todas as mensagens de 
+      remetentes com menos de 1% de confiabilidade vão direto pro lixo.
+
+      Sendo soberano, você pode dizer adeus aos spammers.
+
+
+    * Quinta Liberdade - Expressão
+    ------------------------------
+
+      Você deve ser livre para se expressar.
+
+      Depender de um hospedeiro de sites ou de blogs não é ser livre. Estar limitado a 
+      esse tipo ridículo de veículo também está longe de ser livre.
+
+      Além disso, deve ser extremamente fácil para seus amigos, para as pessoas que 
+      confiam em você, ouvir sua voz, saber da sua opinião a respeito dos assuntos que 
+      lhes interessam.
+
+      Gosto musical é um exemplo bem prosaico disso.
+
+      Quais são as dez melhores músicas de todos os tempos?
+      Quais são as dez piores músicas?
+      Quais são as dez melhores músicas de fossa?
+      Quais são as dez músicas que mais teimam em sair da cabeça?
+      Quais são as dez melhores músicas para se cantar no chuveiro?
+
+      Tenho certeza que você estaria interessado na opinião de seus amigos, assim como 
+      muitos estariam interessados na sua opinião, neste tipo de assunto.
+
+      Imagine que você dê notas para aquelas que são, na sua opinião, as dez melhores 
+      músicas para se ouvir transando.
+
+      Enquanto a média das suas notas é oito, por exemplo, você percebe que as notas 
+      de uma amiga sua, muito mais exigente que você, é quatro. Para efeito de comparação, 
+      você resolve multiplicar por dois as notas dela, para que fiquem na mesma escala 
+      que as suas.
+
+      Você percebe, ainda, que outro amigo seu mantém duas listas: as dez melhores para 
+      se ouvir transando em casa e as dez melhores para se ouvir transando no carro. Isso 
+      é frescura demais pra você, então você simplesmente junta as duas listas numa só 
+      e pega as dez primeiras músicas.
+
+      Você, agora, pode publicar uma síntese das suas melhores músicas junto com as de
+      seus amigos, na mesma classificação e na mesma escala.
+
+      Perceba que SÍNTESE, portanto, também é uma forma de expressão.
+
+      Ela é justamente a força que equilibra o caos criado por milhões de partes soberanas, 
+      publicando uma infinidade de informações da forma como bem entendem. Você tem acesso 
+      a essas informações não diretamente, se não quiser, mas através de sínteses; e sínteses 
+      feitas pelas pessoas nas quais você mais confia para cada assunto.
+
+
+    * Sexta Liberdade - Hardware
+    ----------------------------
+
+      Você deve ser livre para compartilhar seus recursos de hardware como bem entender.
+
+      Pela primeira vez na vida, a capacidade da minha HD superou minha capacidade de 
+      instalar programas e armazenar arquivos lá dentro. Pela primeira vez, tenho espaço 
+      sobrando e são algumas dezenas de Gigas.
+
+      Mesmo assim, sou obrigado a ficar fazendo backup de meus arquivos pessoais, incluindo
+      minhas fotos digitais, para não correr o risco de perdê-los. A minha mãe se encontra 
+      exatamente na mesma situação.
+
+      Depois de procurar durante horas, não encontrei solução alguma que me permitisse criar, 
+      através da internet, de forma completamente transparente, no espaço vago da minha HD, 
+      uma réplica dos arquivos da minha mãe e vice-versa.
+
+      Talvez até exista tal solução, mas certamente não é de uso comum.
+
+      Para sermos verdadeiramente soberanos, devemos ser capazes de nos associar livremente 
+      e compartilhar o espaço de nossas HDs. O mesmo se aplica à nossa memória RAM, nossos 
+      processadores e nossos links de internet.
+
+      Com isso, podemos dizer adeus aos hospedeiros de internet, tais quais os conhecemos hoje.
+
+      Se você, minha mãe e eu formarmos um cluster de 3 máquinas, teremos presenças na 
+      internet mais robustas e com maior disponibilidade que 99% dos sites comerciais de hoje,
+      mesmo sem fazer backup.
+
+      E não precisa parar por aí. Quantos amigos você tem que possuem máquinas em casa com 
+      internet rápida?
+
+      Federando-se a seus amigos soberanos, você pode estabelecer uma presença praticamente 
+      invulnerável na internet.
+
+      Mesmo que sua máquina seja desligada, sua presença virtual continuará viva e
+      perfeitamente bem, hospedada nas máquinas das pessoas em quem você confia.
+
+
+    * Sétima Liberdade - Software
+    -----------------------------
+
+      Você deve ser livre para compartilhar todo software que usa com quem bem entender.
+
+      Para isso, usar Software Livre é indispensável, claro, mas não é suficiente. 
+      O software tem que ser extremamente fácil, trivial de instalar e de usar.
+
+      Recentemente, os produtos de Software Livre têm melhorado muito nisso, mas 
+      é um ponto que as principais definições de "Software Livre" ainda deixam de fora.
+
+      Quanto mais amigável de instalar e de usar for determinado software, maior o 
+      número de pessoas com as quais você será livre para compartilhá-lo.
+
+
+
+Conclusão
+=========
+
+Mesmo recorrendo a todo o arsenal de Software Livre à minha disposição, sem antes 
+passar meses programando, nem eu, que cresci em meio a computadores, sou capaz 
+de compartilhar informação e recursos de hardware com meus amigos de forma 
+completamente livre.
+
+Isso é ridículo.
+
+Alguns amigos e eu estamos desenvolvendo aplicativos que, além de serem livres,
+tornam trivial a qualquer pessoa alcançar soberania de computação.
+
+"Por que vocês estão fazendo isso?"
+
+Porque podemos.
+
+Somos programadores. É praticamente nosso dever terminar de vez com a palhaçada
+que é, hoje, usar a internet.
+
+Além disso, um mundo de pessoas independentes e soberanas vai ser muito mais 
+interessante que hordas e hordas de internautas passivos e embotados.
+
+"Mas é necessário ser programador para ajudar?"
+
+Não. De nada adianta um software, se ninguém souber dele e se ninguém usá-lo. 
+Para usar o que estamos desenvolvendo, basta querer ser livre, verdadeiramente livre.
+
+
+Final da História
+=================
+
+Neide está feliz porque, tirando o site dela do GeoCities, além de poder usar 
+conteúdo dinâmico, ela vai finalmente conseguir sumir com aquela maldita propaganda 
+que aparecia em seu site.
+
+Ela vai poder usar programação de verdade, que começou a aprender no ano passado, 
+e criar seu próprio serviço soberano. Outras pessoas, quem sabe, podem até vir 
+a copiá-lo e instalá-lo em suas próprias máquinas.
+
+Ela sai do telecentro, rumo ao trabalho da irmã, de cabeça erguida, sorrindo. 
+Ela saltita.
+
+Pode ser que ela não seja ninguém no mundo real, mas ela sabe que, pelo menos
+no mundo virtual, ela tem futuro.
+
+Ela é alguém.

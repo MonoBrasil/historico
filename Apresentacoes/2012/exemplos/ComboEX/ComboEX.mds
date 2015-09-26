@@ -1,0 +1,16 @@
+<Combine name="ComboEX" fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="ComboEX" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="ComboEX" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="ComboEX" single="True">
+    <Execute type="None" entry="ComboEX" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./ComboEX.mdp" />
+  </Entries>
+</Combine>

@@ -1,0 +1,2590 @@
+2005-05-28  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/GUI/MonoUML.cs (LoadFromReverseEngineering): ShowAllWidgets must
+	  be called before _hub.OpenProject; if we don't do this, all the
+	  widgets in the UMLPropertiesTab are shown - which is a bad thing.
+
+2005-05-28  Mario Carrión  <mario.carrion@gmail.com>
+
+	* README: Updated
+
+2005-05-28  Mario Carrión  <mario.carrion@gmail.com>
+
+	* There's a bug within the Tree class while drawing, it must be
+	fixed sooner.
+	* src/GUI/MonoUML.cs: Updated
+	* src/ReverseEngineering/Wizard.cs: Updated
+	* src/Widgets/Hub.cs: Updated
+
+2005-05-28  Mario Carrión  <mario.carrion@gmail.com>
+
+	* README-svn: Added.
+	* README: Updated.
+	* src/GUI/MonoUML.cs: Changed version to 0.1
+	* configure.in: Changed version to 0.1
+	* pt_BR.po: Updated, Missing strings to translate.
+	* po/es.po: Updated.
+
+2005-05-26  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/Preferences/Makefile.am: Fixed *-am targets.
+
+2005-05-26  Mario Carrión  <mario.carrion@gmail.com>
+
+	* config.rpath: Missing file, needed for making dist.
+	* configure.in: New assembly added: MonoUML.Preferences.dll.
+	* src/Preferences/AssemblyInfo.cs: New file.
+	* src/Preferences/Makefile.am: New file.
+	* src/Preferences/Core.cs: New file.
+	* src/GUI/MonoUML.cs: 
+	* src/GUI/Glade/gui.glade: New preferences dialog added.
+	* src/ReverseEngineering/Wizard.cs: New ALL FILES filter added.
+	* src/Widgets/UML2/UMLCanvas.cs: Support DnD for Classes.
+	* src/Widgets/Toolbar/ToolbarClass.cs: Support DnD for Classes.
+	* src/Makefile.am: Added Preferences folder.
+	* samples/twoClasses.muml.xmi: Updated.
+	* po/pt_BR.po: Updated.
+	* po/es.po: Updated.
+
+2005-05-25  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/Widgets/UML2/UMLClass.cs (AddContextMenuOptions): New method.
+	  (CreateNew): Sets the container of the newly created GraphNode.
+	  (GetContextMenuOptions): Deleted. Replaced by AddContextMenuOptions.
+	* src/Widgets/UML2/UMLActor.cs (AddContextMenuOptions): New method.
+	  (CreateNew): Sets the container of the newly created GraphNode.
+	  (GetContextMenuOptions): Deleted. Replaced by AddContextMenuOptions.
+	  (DEFAULT_HEIGHT): Shortened.
+	* src/Widgets/UML2/UMLCanvas.cs (Clear): New method. Clears all the
+	  graphical elements in the canvas, destroying them.
+	* src/Widgets/UML2/UMLAssociation.cs (CreateNew): The relationships
+	  between all the DI elements are created carefully, because they are
+	  needed by the algorithm that deletes elements.
+	* src/Widgets/UML2/UMLClassifier.cs (AddContextMenuOptions): New
+	  method.
+	  (GetContextMenuOptions): Deleted. Replaced by AddContextMenuOptions.
+	* src/Widgets/UML2/UMLUseCase.cs (AddContextMenuOptions): New method.
+	  (CreateNew): Sets the container of the newly created GraphNode.
+	  (GetContextMenuOptions): Deleted. Replaced by AddContextMenuOptions.
+	* src/Widgets/UML2/UMLElement.cs (OwnerDiagram): New property get.
+	  (AddContextMenuOptions): New virtual method. This method can be
+	  overrided by derived classes in order to add options to the context
+	  menu.
+	  (GetContextMenuOptions): No longer virtual.
+	  (Destroy): New method. Hides and deletes the element and all its
+	  subordinated widgets (like uml entries).
+	* src/Widgets/UML2/UMLDiagram.cs (ctor): Now uses the new method
+	  Refresh in order to draw the elements.
+	  (Refresh): New method. Deletes all the graphical elements, and draws
+	  them again from the DI spec.
+	* src/Widgets/UML2/UMLInstanceSpecification.cs:
+	  (AddContextMenuOptions): New method.
+	  (GetContextMenuOptions): Deleted. Replaced by AddContextMenuOptions.
+	* src/Widgets/UML2/CreateActorAction.cs (Name): I18n.
+	* src/Widgets/UML2/DeleteRepresentationAction.cs: New file. Is the
+	  "Delete from diagram" action.
+	* src/Widgets/UML2/UMLSelector.cs (Clear): New method. Clear the list
+	  of referenced elements, in order to avoid a runtime exception while
+	  refreshing a diagram.
+	* src/Widgets/UML2/UMLStereotypedEdge.cs (CreateNewAndAdd): The 
+	  relationships between all the DI elements are created carefully, 
+	  because they are needed by the algorithm that deletes elements.
+	* src/Widgets/Hub.cs (DeleteElement): New overload for deleting DI
+	  element representations.
+	* src/Widgets/NoteBook.cs (IView.UpdateElement): If the modified
+	  element is a DI diagram, refreshes its corresponding canvas.
+	* src/Widgets/ElementChooserDialog.cs (SelectedObject): Make sure that
+	  the Accept button gets activated if the selected object is
+	  compatible with the given Type.
+	* src/Widgets/Makefile.am: Added new file DeleteRepresentationAction.cs.
+	* src/DI/GraphElement.cs (DeleteRepresentations): Added a new
+	  overload, which allows to get the containers that were affected by
+	  the operation. Instead of just deleting a representation, also
+	  deletes the representation of all the edges that ends in said
+	  element.
+	  (Delete): New method. Deletes a DI element representation and all
+	  the edges that aims at it.
+	* src/DI/GraphEdge.cs (Delete): Override method.
+	* src/DI/Serialization/Serializer.cs (GraphEdgeAttribute): Mantains
+	  the association between GraphConnector and GraphEdge.
+	* MonoUML.mdp: Added file
+	  src/Widgets/UML2/DeleteRepresentationAction.cs.
+
+2005-05-23  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/Widgets/Hub.cs (SaveAs): Fixed (?) bug #10. Some improvements
+	  were made, in order to make it behave more polished, like asking
+	  before replacing an existing file.
+
+2005-05-22  Rodolfo Campero  <rodolfo.campero@gmail.com>
+	
+	In this commit, I'm fixing bug #9. I had a long way to go, because
+	events in gtk-sharp (or gtk+) are "weird" (i.e. not like I'm used to).
+	The case that was bothering us is this: when the user picks a
+	different element in the tree, but there are pending modifications in
+	an entry, the event in the tree is fired before the entry lost focus.
+	This made really difficult to fix this bug (I don't discard the
+	existence of a simpler way, I'm just saying it was difficult to me).
+	The most important change is the Hub no longer implements
+	IBroadcaster, but instead it has an IBroadcaster that you can use.
+
+	* src/Widgets/UML2/UMLInterfaceRealization.cs: Accesses the global
+	  broadcaster though the new property Broadcaster in the hub.
+	* src/Widgets/UML2/UMLAssociation.cs: idem; instead of calling the
+	  method BroadcastElementNameChange now uses BroadcastElementChange.
+	* src/Widgets/UML2/CreateIncludeAction.cs: idem.
+	* src/Widgets/UML2/CreateExtendAction.cs: idem.
+	* src/Widgets/UML2/UMLDiagram.cs: idem.
+	* src/Widgets/UML2/UMLGeneralization.cs: idem.
+	* src/Widgets/NoteBook.cs: idem.
+	* src/Widgets/SingleStringViewer.cs: idem.
+	* src/Widgets/ElementChooserDialog.cs: idem.
+	* src/Widgets/Tree.cs: idem.
+	* src/Widgets/UMLPropertiesTab.cs: idem.
+	* src/Widgets/MultiplicityElementViewer.cs: idem.
+	* src/Widgets/ExtensionLocationViewer.cs: idem.
+	* src/Widgets/IBroadcaster.cs: The method BroadcastElementNameChange
+	  was removed.
+	* src/Widgets/EventQueue.cs: This is an event queue. From the outside,
+	  it looks like an IBroadcaster, so it can be used instead of the old
+	  Hub - now the hub has one instance of this class.
+	* src/Widgets/Hub.cs: The hub is no longer a broadcaster. It has a
+	  broadcaster, which is publicly available though the new property
+	  Broadcaster.
+	* src/Widgets/Makefile.am: Added file EventQueue.
+	* MonoUML.mdp: Added file EventQueue.
+
+2005-05-21  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/Widgets/MultiChooserDialog.cs (OnResponse): Bug fix. Do not
+	  clear the store, because it must be accessed afterwards.
+
+2005-05-20  Mario Carrión  <mario.carrion@gmail.com>
+
+	* svn add src/Generators/SqlGeneration/Makefile.am
+	* svn add src/Generators/Makefile.am: Aded
+
+2005-05-20  Mario Carrión  <mario.carrion@gmail.com>
+
+	* configure.in: Added new dll variables
+	* src/Makefile.am: Added path
+	* src/Generators/SqlGeneration/Makefile: Deleted, not needed
+
+2005-05-20  Mario Carrión  <mario.carrion@gmail.com>
+
+	* The following not needed files were removed:
+	* src/Generators/SqlGeneration/CVS/Repository
+	* src/Generators/SqlGeneration/CVS/Root
+	* src/Generators/SqlGeneration/CVS/Entries
+	* src/Generators/SqlGeneration/CVS
+	* src/Generators/SqlGeneration/SqlGeneration.pidb
+	* src/Generators/SqlGeneration/SQLGeneration.mdp
+	* src/Generators/SqlGeneration/SQLGeneration.mds
+	* MonoUML.Generators.SqlGeneration.dll
+	* MonoUML.Generators.SqlGeneration.dll.mdb
+
+2005-05-20  Miguel Huerta  <hgmiguel@gmail.com>
+
+	* Initial simple generator UML to SQL, the following files were added:
+	* src/Generators
+	* src/Generators/SqlGeneration
+	* src/Generators/SqlGeneration/NavigateClassRule.cs
+	* src/Generators/SqlGeneration/MonoUML.Generators.SqlGeneration.dll
+	* src/Generators/SqlGeneration/MonoUML.Generators.SqlGeneration.dll.mdb
+	* src/Generators/SqlGeneration/SqlGeneration.pidb
+	* src/Generators/SqlGeneration/SQLGeneration.mdp
+	* src/Generators/SqlGeneration/TemplateTree
+	* src/Generators/SqlGeneration/TemplateTree/PrimaryKey.cs
+	* src/Generators/SqlGeneration/TemplateTree/Column.cs
+	* src/Generators/SqlGeneration/TemplateTree/Table.cs
+	* src/Generators/SqlGeneration/TemplateTree/Templates
+	* src/Generators/SqlGeneration/TemplateTree/Templates/Table.txt
+	* src/Generators/SqlGeneration/TemplateTree/Templates/PrimaryKey.txt
+	* src/Generators/SqlGeneration/TemplateTree/Templates/Column.txt
+	* src/Generators/SqlGeneration/CVS
+	* src/Generators/SqlGeneration/CVS/Repository
+	* src/Generators/SqlGeneration/CVS/Root
+	* src/Generators/SqlGeneration/CVS/Entries
+	* src/Generators/SqlGeneration/ProcessDeserializedElementsRule.cs
+	* src/Generators/SqlGeneration/SQLGeneration.mds
+	* src/Generators/SqlGeneration/ProcessAttributeRule.cs
+	* src/Generators/SqlGeneration/AssemblyInfo.cs
+	* src/Generators/SqlGeneration/ProcessClassRule.cs
+	* src/Generators/SqlGeneration/NavigatePackageRule.cs
+	* src/Generators/SqlGeneration/SerializeClassRule.cs
+	* src/Generators/SqlGeneration/Expert.cs
+	* src/Generators/SqlGeneration/Makefile
+
+2005-05-18  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* configure.in: Uses mcs parameter "-debug" instead of "-g".
+	* src/Widgets/Hub.cs (DeleteElement): When a model element is deleted,
+	  all the Diagram Interchange elements that reference it are also
+	  deleted.
+	* src/Widgets/Tree.cs (Draw, DrawUmlElement, RefreshElement): When
+	  refreshing one element, make sure the nested diagrams are also
+	  refreshed.
+	* src/DI/GraphElement.cs (DeleteRepresentations): New method. Deletes
+	  all the representations of a given model element.
+	* src/DI/ISemanticBridge.cs: New interface.
+	* src/DI/Uml2Bridge/Uml2SemanticModelBridge.cs: Now implements
+	  ISemanticBridge.
+	* src/DI/Makefile.am: Includes the new file src/DI/ISemanticBridge.cs.
+	* MonoUML.mdp: Ditto.
+
+2005-05-18  Mario Carrión  <mario.carrion@gmail.com>
+	
+	* po/es.po: Spelling fixed
+
+2005-05-18  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/GUI/Glade/gui.glade: Edit menu removed. Removed tool item from
+	main menu.
+
+2005-05-14  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/ReverseEngineering/AssemblyDataStructure.cs (GetInterfaces):
+	  Avoids adding an interface realization to an interface that is also
+	  a base type of another implemented interface.
+	* src/ReverseEngineering/AssemblyInterface.cs (Begin): Get the base
+	  interfaces anyway, even if the current mode is not full import.
+	  (GetInterfaces): Same as in AssemblyDataStructure.cs.
+
+2005-05-14  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/ReverseEngineering/Main.cs (Main): Process all the arguments,
+	  not just the first one.
+	* src/ReverseEngineering/AssemblyDataStructure.cs (Begin): Always get
+	  the implemented interfaces, even when the class doesn't belong to
+	  the list of assemblies being processed.
+	  (GetInterfaces): Get only the interfaces that are not implemented by
+	  the base class. This avoids redundancies in the generated model.
+	  When an exception is ignored, the user is notified.
+	* src/ReverseEngineering/AssemblyClass.cs (BeginNotNested): When an 
+	  exception is ignored, the user is notified.
+	  (Loop): The generalization hierarchy is built even if we're not
+	  doing a full import.
+
+2005-05-11  Manuel Cerón  <ceronman@gmail.com>
+
+	* src/Widgets/UML2/UMLCanvas.cs: Grid Color changed
+	* src/Widgets/UML2/UMLControlPoint.cs: ControlPoint Color Changed
+	
+2005-05-07  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/GUI/MonoUML.cs: Fixed the translation-contributors string
+	* src/Widgets/Hub.cs: The DiagramTypeDialog validation had changed,
+	so does the RootLevelDialog. Added a try-catch for catching the
+	exception when trying to import from Umbrello.
+
+2005-05-07  Mario Carrión  <mario.carrion@gmail.com>
+
+	* m4/Makefile.in: Updated, now when make install also copies the Code
+	Generation libraries.
+	* configure.in: Updated, now when make install also copies the Code
+	Generation libraries.
+	* src/Makefile.am: Updated, now when make install also copies the
+	Code Generation libraries.
+
+2005-05-06  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/I18n/Makefile.am: Added DESTDIR
+	* src/XmiImporter/Makefile.am: Added DESTDIR
+	* src/ReverseEngineering/Makefile.am: Added DESTDIR
+	* src/Widgets/Makefile.am: Added DESTDIR
+	* src/Makefile.am: Added DESTDIR
+	* src/DI/Uml2Bridge/Makefile.am: Added DESTDIR
+	* src/DI/Makefile.am: Added DESTDIR
+	* src/IconLibrary/Makefile.am: Added DESTDIR
+	* Makefile.am: Updated
+	* po/pt_BR.po: Updated
+
+2005-05-04  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/CodeGeneration/Wizard.cs: Replaced some messages in dialogs.
+	* po/es.po: Fixed some translations and filled some missing ones.
+	
+2005-05-03  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/Widgets/UMLPropertiesTab.cs (EnableAssociationProperties): Now
+	  fixes bug #2; the previous attempt was to hide the widget after it
+	  was shown, and obviously that's pointless. Now the code behaves
+	  properly.
+
+2005-05-02  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/Widgets/UML2/UMLClass.cs: New file.
+	* src/Widgets/UML2/CreateInstanceSpecificationAction.cs: New file.
+	* src/Widgets/UML2/UMLBox.cs: New file.
+	* src/Widgets/UML2/UMLInstanceSpecification.cs: New file.
+	* src/Widgets/UML2/CreateClassAction.cs: New file.
+	* src/Widgets/UML2/UMLObjectDiagram.cs: New file. All these files are
+	  work in progress, but as I'll be very busy this week and out for the
+	  weekend, I'm commiting them in order to reduce conflicts.
+	* src/Widgets/UML2/UMLClassifier.cs: Some code was refactored out to
+	  UMLBox.cs. UMLBox is now the base class of UMLClassifier.
+	* src/Widgets/UML2/UMLDiagram.cs: Added "object diagram". Of course it
+	  doesn't work right now... but it will soon.
+	  (AddNewElement): Added.
+	* src/Widgets/UML2/UMLClassDiagram.cs (GetDerivedContextMenuOptions):
+	  Added an action to create classes.
+	* src/Widgets/Hub.cs: Looks for the value Accept instead of Cancel
+	  when calling dialogs.
+	* src/Widgets/UMLPropertiesTab.cs: The viewer of Association.OwnedEnd
+	  is hidden when an Extension is being shown. This should fix bug #2,
+	  but I wasn't able to check it.
+	* src/Widgets/Makefile.am: Added new files, removed old Clock and
+	  Pelota.
+	* MonoUML.mdp: Same as above.
+
+2005-05-01  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/CodeGeneration/Wizard.cs: Updated
+	* src/ReverseEngineering/Wizard.cs: Updated
+	* src/Widgets/UML2/UMLCanvas.cs: Accepts Drag and Drop
+	* src/Widgets/UML2/UMLDiagram.cs:
+	* src/Widgets/Hub.cs: (DraggedElement) New property, used for saving
+	the dragged element from the tree.
+	* src/Widgets/RootLevelElementChooserDialog.cs: Updated, now its
+	base class is ChooserDialog.
+	* src/Widgets/Tree.cs: (Data_Get) New method used for drag and drop
+	* src/Widgets/DiagramTypeChooserDialog.cs: Updated, now its base class
+	is ChooserDialog
+	* src/Widgets/TypeKindChooserDialog.cs: Updated, now its base class
+	is ChooserDialog
+	* src/Widgets/Makefile.am: Updated
+	* po/pt_BR.po: Updated
+	* po/es.po: Updated
+	* src/ChooserDialog.cs: New file added
+
+2005-05-01  Mario Carrión  <mario.carrion@gmail.com>
+
+	* m4/Makefile.in: New variable added gnome_prefix
+	* configure.in: Updated for using $gnome_prefix
+	* src/I18n/Makefile.am: Added make install
+	* src/XmiImporter/Makefile.am: Added make install/uninstall
+	* src/GUI/MonoUML.cs: Added make install/uninstall
+	* src/ReverseEngineering/Makefile.am: Added make install/uninstall
+	* src/Widgets/Makefile.am: Added make install/uninstall
+	* src/Makefile.am: Added make install/uninstall
+	* src/DI/Uml2Bridge/Makefile.am: Added make install/uninstall
+	* src/DI/Makefile.am: Added make install/uninstall
+	* src/IconLibrary/Makefile.am: Added make install/uninstall
+	* Makefile.am: Added make install/uninstall
+	* po/es.po: Updated
+	* po/pt_BR.po: Updated
+	* po/Makefile.in.in: Updated
+	* po/README: Updated
+
+2005-04-30  Mario Carrión  <mario.carrion@gmail.com>
+
+	* mkinstalldirs: Added 
+
+
+2005-04-30  Mario Carrión <mario.carrion@gmail.com>
+
+	* ABOUT-NLS: Added
+	* po/Makefile.in.in: Added
+
+2005-04-30  Mario Carrión <mario.carrion@gmail.com>
+
+	* m4/Makefile.in: New file
+	* configure.in: Updated for i18n
+	* src/I18n/Makefile.am: Updated for i18n
+	* src/XmiImporter/Makefile.am: Updated for i18n
+	* src/GUI/MonoUML.cs: Updated for i18n
+	* src/ReverseEngineering/Makefile.am: Updated for i18n
+	* src/Widgets/Makefile.am: Updated for i18n
+	* src/Makefile.am: Updated for i18n
+	* src/DI/Uml2Bridge/Makefile.am: Updated for i18n
+	* src/DI/Makefile.am: Updated for i18n
+	* src/IconLibrary/Makefile.am: Updated for i18n
+	* samples/simpleUseCase.xmi: Updated
+	* Makefile.am: Updated for i18n
+	* po/LINGUAS: New file
+	* po/pt_BR: New file
+	* po/POTFILES.in: Updated
+	* po/README: Updated
+
+2005-04-30  Mario Carrión  <mario.carrion@gmail.com>
+
+	* samples/simpleUseCase.xmi: Added
+
+
+2005-04-30  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/GUI/MonoUML.cs. Message when running CVS version has been changed,
+	added Enzo to translators.
+	* src/GUI/SelectProjectDialog.cs: Added new behavior for handling the key press
+	event for return key.
+	* src/Widgets/Hub.cs: (DiagramNameChanged) New method, calls the notebook
+	to change the diagram name.
+	* src/Widgets/NoteBookLabel.cs: (Label) New property for changing the diagram 
+	name
+	* src/Widgets/NoteBook.cs: (UpdateDiagramName) New method for updating the
+	diagram name, (RemoveAll) updated
+	* src/Widgets/Tree.cs: (DiagramNameChanged) New delegate. (Drag_Begin) Tries
+	to draw the correct icon. (DiagramNameChanged) New event, triggered when
+	changing the diagram name.
+	* src/IconLibrary/Pixmaps/actor_dnd.png: Updated
+	* src/IconLibrary/Pixmaps/no_dnd.png: Added
+	* src/IconLibrary/Pixmaps/usecase_dnd.png: Updated
+	* src/IconLibrary/PixbufLoader.cs: (GetIconDnD) New method, uses a diffent
+	unknow icon. (GetIcon (string, string)) New overloaded method
+	* src/IconLibrary/Makefile.am: Added both no_dnd.png
+	 
+
+2005-04-27  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/Widgets/DiagramTypeChooserDialog.cs: Fixed i18n bug
+	* src/IconLibrary/Makefile.am: Added pixmaps for DnD
+
+2005-04-27  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/GUI/Glade/gui.glade: Updated
+	* src/Widgets/Tree.cs: Updated
+	* src/IconLibrary/Pixmaps/actor_dnd.png: Added
+	* src/IconLibrary/Pixmaps/unknown_dnd.png: Added
+	* src/IconLibrary/Pixmaps/usecase_dnd.png: Added
+	* src/IconLibrary/Pixmaps/grid_tbar.png: Updated
+	* src/IconLibrary/PixbufLoader.cs: Updated
+	* src/IconLibrary/PixbufLoader.cs: Updated
+
+2005-04-27  Rodolfo Campero  <rodolfo.campero@gmail.com>
+	* src/GUI/MonoUML.cs (BuildSelectProjectDialog): Avoids showing all
+	  the widgets inside UMLPropertiesTab when MonoUML starts.
+
+2005-04-27  Mario Carrión  <mario.carrion@gmail.com>
+
+	* po/es.po: Spanish translation
+
+2005-04-27  Mario Carrión  <mario.carrion@gmail.com>
+
+	* I18n/Makefile.am: Added
+	* I18n/AssemblyInfo.cs: Added
+	* I18n/GettextCatalog.cs: Added
+	* po/POTFILES.in: Added
+	* po/README: Added
+	* The following files were added for i18n:	
+	* src/GUI/MonoUML.cs:
+	* src/GUI/SelectProjectDialog.cs:
+	* src/GUI/Glade/gui.glade:
+	* src/CodeGeneration/Wizard.cs:
+	* src/ReverseEngineering/Wizard.cs:
+	* src/ReverseEngineering/Makefile.am:
+	* src/Widgets/UML2/UMLCanvas.cs:
+	* src/Widgets/Hub.cs:
+	* src/Widgets/AggregationKindViewer.cs:
+	* src/Widgets/NoteBookLabel.cs:
+	* src/Widgets/RootLevelElementChooserDialog.cs:
+	* src/Widgets/ElementChooserDialog.cs:
+	* src/Widgets/MultiChooserDialog.cs:
+	* src/Widgets/Toolbar/ToolbarUseCase.cs:
+	* src/Widgets/Toolbar/ToolbarBase.cs:
+	* src/Widgets/Toolbar/ToolbarClass.cs:
+	* src/Widgets/OwnedTypeViewer.cs:
+	* src/Widgets/UMLPropertiesTab.cs:
+	* src/Widgets/OwnedOperationsViewer.cs:
+	* src/Widgets/IncludeViewer.cs:
+	* src/Widgets/DiagramTypeChooserDialog.cs:
+	* src/Widgets/ExtendViewer.cs:
+	* src/Widgets/ExtendedCaseViewer.cs:
+	* src/Widgets/Helper.cs:
+	* src/Widgets/ExtendConditionViewer.cs
+	* src/Widgets/GeneralizationsViewer.cs:
+	* src/Widgets/InterfaceRealizationContractViewer.cs:
+	* src/Widgets/TypedElementTypeViewer.cs:
+	* src/Widgets/MixedElementsViewer.cs:
+	* src/Widgets/ExtensionLocationViewer.cs:
+	* src/Widgets/NamedElementVisibilityViewer.cs:
+	* src/Widgets/TypeKindChooserDialog.cs:
+	* src/Widgets/GeneralizationGeneralViewer.cs:
+	* src/Widgets/OwnedAttributesViewer.cs:
+	* src/Widgets/Makefile.am:
+	* src/Widgets/CommentsViewer.cs:
+	* src/Widgets/ParameterDirectionKindViewer.cs:
+	* src/Makefile.am:
+
+2005-04-25  Mario Carrión  <mario.carrion@gmail.com>
+
+	*  src/GUI/MonoUML.cs: Fixed nowidgetsshowing bug.
+	*  src/Widgets/UML2/UMLCanvas.cs: Added property QueueAction: queues the
+	request action from the toolbar. Size and color of the grid line has changed. Fixed
+	bug when moving any element and the grid is enabled.
+	* src/Widgets/UML2/UMLUseCaseDiagram.cs:
+	* src/Widgets/NoteBook.cs: 
+	CreateToolbar (DI.Diagram diagram): Updated method for creating the toolbar
+	SetCurrentCanvas (DI.Diagram diagram, Uml2.UMLCanvas canvas): New method
+	for setting the Toolbar.
+	* src/Widgets/Toolbar/ToolbarUseCase.cs: Changed constructor. Added all the events
+	for handling the click events in the ToolButtons.
+	* src/Widgets/Toolbar/ToolbarBase.cs: (CreateToolButton) New method.
+	* src/Widgets/Toolbar/ToolbarClass.cs: Changed constructor.
+
+2005-04-23  Mario Carrión  <mario.carrion@gmail.com>
+
+	* configure.in: New Makefile added, for the library MonoUML.IconLibrary.
+	* src/GUI/MonoUML.cs: Uses the new library for icons
+	* src/GUI/SelectProjectDialog.cs: "From XMI" renamed to "From other format"
+	* src/GUI/Glade/gui.glade: Added tooltip to Reverse Engineering menu item
+	* src/ReverseEngineering/Wizard.cs: Added icon
+	* src/ReverseEngineering/Makefile.am: Added new dependency to new
+	IconLibrary
+	* src/Widgets/NoteBookLabel.cs: Added new dependency to new IconLibrary
+	* src/Widgets/NoteBook.cs: Handles the events for switching page and
+	removing page, handles the creation of new toolbars and its removing.
+	* src/Widgets/Toolbar/Pixmaps/grid_tbar.png: Moved
+	* src/Widgets/Toolbar/ToolbarBase.cs: Abstract class for canvas' toolbars
+	* src/Widgets/Tree.cs: Implementing Drag and Dropp, not yet finished.
+	* src/Widgets/CanvasArea.cs: Removed the handlers for OnGrid and OnSnap2Grid
+	those were moved to Notebook.
+	* ALL the pixmaps (PNG) were move to src/IconLibrary/Pixmaps/ where a new
+	library will handle them. This really increases the performance.
+	* src/Widgets/Makefile.am: Removed pixmaps dependencies.
+	* src/Makefile.am: Added target for making IconLibrary
+	* src/IconLibrary/AssemblyInfo.cs: New file
+	* src/IconLibrary/PixbufLoader.cs: New file
+	* src/IconLibrary/Makefile.am: New file
+	* samples/twoClasses.muml.xmi: New file
+
+2005-04-22  Rodolfo Campero  <rodolfo.campero@gmail.com>
+	* src/Widgets/Pixmaps/usecasediagram_tree.png: Now is blue.
+	* src/Widgets/Pixmaps/classdiagram_tree.png: Now is blue.
+	* src/Widgets/Makefile.am: The build now also depends on the
+	  resources.
+
+2005-04-21  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/ReverseEngineering/Wizard.cs: Added another page for setting the
+	import level access to methods and fields.
+	* src/ReverseEngineering/AssemblyInterface.cs: If the flag for importing
+	methods if set to false the interface won't include its methods.
+	* src/ReverseEngineering/AssemblyClass.cs: 
+	* src/Widgets/Toolbar/Pixmaps/grid_tbar.png: New file
+	* src/Widgets/Toolbar/Pixmaps/_grid_tbar.png: New file
+	* src/Widgets/Toolbar/ToolbarBase.cs: New file. Will be the base class
+	for drawing the toolbars.
+	* src/Widgets/CanvasArea.cs: Changed to allowing the use of
+	ToolbarBase
+	* src/Widgets/Makefile.am: Added the new pixmap used for the Grid
+
+2005-04-21  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/ReverseEngineering/Main.cs: The output filename is composed with
+	  the input filename if there's only one input assembly.
+	  Changed some defaults.
+	* src/Widgets/UML2/UMLDiagram.cs: Now is abstract.
+	  (ctor): Made protected.
+	  (CreateFor): New method. It determines the concrete diagram class
+	  based on the DI diagram typeinfo.
+	  (DrawElement): Now is protected and overridable.
+	  (GetContextMenuOptions): Calls GetDerivedContextMenuOptions.
+	  (GetDerivedContextMenuOptions): New method. Must be implemented by
+	  inheritors.
+	  (_canvas): Now is protected.
+	* src/Widgets/UML2/UMLClassDiagram.cs: New class, with functionality
+	  previously present in UMLCanvas.cs.
+	* src/Widgets/UML2/UMLUseCaseDiagram.cs: New class, with functionality
+	  previously present in UMLCanvas.cs.
+	* src/Widgets/NoteBook.cs: Uses UML2.UMLDiagram.CreateFor to show
+	  diagrams.
+	* src/Widgets/UMLPropertiesTab.cs: Uses a specific viewer for
+	  Generalizations.
+	* src/Widgets/GeneralizationsViewer.cs: New viewer, specific for
+	  the collection Classifier.Generalization.
+	* src/Widgets/Makefile.am: Added new files.
+	* MonoUML.mdp: Added new files.
+
+2005-04-20  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/ReverseEngineering/AssemblyDataStructure.cs: 
+	(GetFields): Added level-access algorithm used for importing only selected levels.
+	(GetMethods): Added level-access algorithm used for importing only selected levels.
+	(Begin): Added the conditional for only importing interfaces when true.
+	* src/ReverseEngineering/AssemblyImporter.cs: The following variables were added:
+	_importPublicFields, _importPublicMethods, _importPrivateFields,
+	_importPrivateMethods, _importProtectedFields, _importProtectedMethods and
+	their accesors.
+	* src/ReverseEngineering/AssemblyClass.cs: 
+	(GetConstructors): Added level-access algorithm used for importing only selected
+	levels.
+
+2005-04-16  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/GUI/MonoUML.cs: Modified values used by the 'Select Project' dialog.
+	(ReverseEngineering) Added for calling the Reverse Engineering wizard
+	(ImportXmi) Added for calling the Import Xmi file chooser dialog.
+	* src/GUI/SelectProjectDialog.cs:  ProjectDialogAction, new enumeration literals
+	added.
+	* src/CodeGeneration/Wizard.cs: 
+	* src/ReverseEngineering/AssemblyStruct.cs: Fixed bug when some struct has
+	nested types from other assembly.
+	* src/ReverseEngineering/AssemblyDataStructure.cs: Fixed casting bug.
+	* src/ReverseEngineering/Wizard.cs: Importing values work from now on.
+	Removed bool _import* variables.
+	* src/ReverseEngineering/AssemblyImporter.cs: The following properties were
+	added: ImportClassess, ImportDelegates, ImportEnumerations, ImportEvents
+	ImportInterfaces, ImportStructs
+	* src/ReverseEngineering/AssemblyClass.cs: Fixed bug when some class has
+	nested types from other assembly.
+	* src/Widgets/Hub.cs: 
+	OpenProject(ArrayList arrayList), for loading after reverse engineering.
+
+2005-04-16  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/Widgets/UML2/UMLAssociation.cs: Accesses Helper (in 
+	  Widgets) through its qualified name.
+	  (GetHoverClassifier): Moved out, to the new Helper class.
+	* src/Widgets/UML2/CreateIncludeAction.cs:
+	* src/Widgets/UML2/CreateExtendAction.cs:
+	* src/Widgets/UML2/CreateActorAction.cs:
+	* src/Widgets/UML2/UMLStereotypedEdge.cs:
+	* src/Widgets/UML2/UMLActor.cs: Accesses Helper (in Widgets) through
+	  its qualified name.
+	* src/Widgets/UML2/UMLDiagram.cs: Added special treatement for
+	  interface realizations.
+	* src/Widgets/UML2/UMLGeneralization.cs: Completed validation and
+	  implementation for placing the ends in other classifiers. Some
+	  members that passed through in the original version (a copy of
+	  UMLAssociation) were deleted.
+	* src/Widgets/UML2/Helper.cs: New file. Will contain shared
+	  functionality.
+	* src/Widgets/UML2/UMLInterfaceRealization.cs: New file. Represents an
+	  interface realization edge.
+	* src/Widgets/UML2/CreateUseCaseAction.cs:
+	* src/Widgets/Makefile.am: Added new files Helper.cs and
+	  UMLInterfaceRealization.cs.
+	* MonoUML.mdp: Added new files Helper.cs and UMLInterfaceRealization.cs.
+
+2005-04-16  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/XmiImporter/fromXMI1_2.xslt: Had to change the way
+	  generalizations and interface realizations where converted, due to
+	  some bug with the fuction current() (maybe ours, maybe mono's...)
+	* src/Widgets/UML2/UMLAssociation.cs: DiamondKind now is called
+	  FillKind.
+	* src/Widgets/UML2/UMLTriangularEnd.cs: Added. Implements a triagle
+	  shaped end.
+	* src/Widgets/UML2/UMLDiagram.cs: Special handling for
+	  Generalizations.
+	* src/Widgets/UML2/UMLGeneralization.cs: Added. Implements and edge
+	  that represents a generalization relationship.
+	* src/Widgets/UML2/UMLDiamond.cs: DiamondKind is now FillKind.
+	* src/Widgets/Makefile.am:
+	* MonoUML.mdp: Added the two new files: UMLTriangularEnd.cs and
+	  UMLGeneralization.cs.
+
+2005-04-16  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/Widgets/UML2/UMLDiagram.cs (AddNewClassifier): When adding the
+	  classifier to the model, sets its owner.
+	* src/Widgets/Hub.cs:
+	  (IBroadcaster.BroadcastElementNameChange): Deleted WriteLines.
+	  (DeleteElement, _currentDeletionIndex): Added. These methods allow
+	  to permanently delete a model element, setting to null all the
+	  references to said element.
+	  TODO: Work remain to be done, both in the underlying EC UML library
+	  and in MonoUML; the later is because when a model element is deleted,
+	  we have to delete all the corresponding DI elements and also the
+	  canvas elements.
+	* src/Widgets/ModelElementTypeViewer.cs (ctor): Added a "Delete"
+	  button.
+	  (OnDeleteButtonClicked): Added. Calls DeleteElement on the Hub.
+
+2005-04-16  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/ReverseEngineering/Main.cs: Used for command-line testing, run
+	'make main' for creating the 'bin/reveng.exe' file.
+	* src/ReverseEngineering/Makefile.am: Added new target 'main'
+	* src/ReverseEngineering/Wizard.cs: Added
+
+2005-04-16  Mario Carrión  <mario.carrion@gmail.com>
+
+	* configure.in: Added new assembly 'MonoUML.ReverseEngineering.dll'
+	* src/GUI/MonoUML.cs: Added new calling to Reverse Engineering's
+	 Wizard.
+	 * src/GUI/Glade/gui.glade: Added new MenuItem 'Reverse Engineering'
+	 * src/CodeGeneration/Wizard.cs: Added Modal value
+	 * src/ReverseEngineering/AssemblyImporter.cs: Added properties for
+	 using with Threads
+	 * src/ReverseEngineering/Makefile.am: Modified for being compiled
+	 as assembly.
+	 * MonoUML.mdp: Updated
+	 * src/ReverseEngineering/Main.cs: 
+	 
+
+
+2005-04-14  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/ReverseEngineering/Main.cs:
+	* src/ReverseEngineering/AssemblyDataStructure.cs: Fixed bug when FullImport
+	is enabled but the library doesn't care about it.
+	* src/ReverseEngineering/AssemblyInterface.cs: Fixed bug when FullImport
+	is enabled but the library doesn't care about it.
+	* src/ReverseEngineering/AssemblyClass.cs: Fixed bug when the imported
+	class is System.Object (this class doesn't have BaseType) LOL!
+
+2005-04-13  Manuel Cerón  <ceronman@gmail.com>
+
+	* src/Widgets/uml-canvas-sharp-2.0/ControlShape.cs some ControlShape
+	methods moved to Shape class
+	* src/Widgets/uml-canvas-sharp-2.0/TestShapeHandler.cs renamed to
+	BaseShapeHandler.cs
+	* src/Widgets/uml-canvas-sharp-2.0/ControlShapeHandler.cs
+	ControlShapeHandler now inherits from BaseShapeHandler
+	* src/Widgets/uml-canvas-sharp-2.0/FrameHandler.cs FrameHandler now
+	inherits from BaseShapeHandler
+	* src/Widgets/uml-canvas-sharp-2.0/ControlRectGroup.cs Movement at
+	resizing bug fixed.
+	* src/Widgets/uml-canvas-sharp-2.0/ControlCircle.cs Added.
+	* src/Widgets/uml-canvas-sharp-2.0/ControlCircleGroup.cs Added.
+	* src/Widgets/uml-canvas-sharp-2.0/Test.cs Added a button for testing
+	rounded node.
+	
+2005-04-13  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/GUI/MonoUML.cs: Updated for using the new Wizard.
+
+2005-04-13  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/GUI/Glade/gui.glade: Druid removed.
+	* src/CodeGeneration/Wizard.cs: Rewritten, all the validations work! 
+
+2005-04-12  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/ReverseEngineering/AssemblyClass.cs: Fixed bug when nested types 
+	are within another nested type
+	* src/ReverseEngineering/AssemblyConstructor.cs: Set the IsStatic
+	property
+	* src/ReverseEngineering/AssemblyDataType.cs: DataType changed to
+	PrimitiveType
+	* src/ReverseEngineering/AssemblyHelper.cs: Method GetNestedClass ()
+	improved.
+	* src/ReverseEngineering/AssemblyStruct.cs: Fixed bug when nested types 
+	are within another nested type 
+
+2005-04-12  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/ReverseEngineering/AssemblyClass.cs: Method renamed:
+	LoopForConstructors() to  Loop(), this adds the generalization.
+	* src/ReverseEngineering/AssemblyEnumeration.cs: TODO: Add BaseType
+	for enumerations
+	* src/ReverseEngineering/AssemblyHelper.cs: Now if the struct-type only has one
+	member we added to the model as DataType, if not is added as Struct
+	* src/ReverseEngineering/AssemblyImporter.cs: Same changes as AssemblyHelper
+	* src/ReverseEngineering/AssemblyInterface.cs: Added Genelization, but it
+	 doesn't work... FIXME
+	* src/ReverseEngineering/AssemblyStruct.cs: Works as Uml2.Class
+	* src/ReverseEngineering/Main.cs:
+	* src/ReverseEngineering/Makefile.am: Added AssemblyStruct.cs to the 
+	compilable sources
+
+2005-04-11  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/Widgets/uml-canvas-sharp-2.0/test.exe: Removed. I think the compiled
+	files shouldn't live in the CVS, due to all the team uses different versions
+	of the libraries.
+
+2005-04-11  Mario Carrión  <mario.carrion@gmail.com>
+
+	* Bugs fixed and improvements added, hold on I'll finish it sooner :)
+	* src/ReverseEngineering/AssemblyDataStructure.cs:
+	* src/ReverseEngineering/AssemblyHelper.cs:
+	* src/ReverseEngineering/AssemblyEnumeration.cs: Added literals
+	* src/ReverseEngineering/AssemblyImporter.cs:
+	* src/ReverseEngineering/AssemblyInterface.cs: Added GetMethods (). Using
+	the new EC-library hangs if Uml2.Create.Operation() is used... :(
+	* src/ReverseEngineering/AssemblyMethod.cs:
+	* src/ReverseEngineering/AssemblyStruct.cs:
+
+2005-04-10  Mario Carrión  <mario.carrion@gmail.com>
+
+	* Allmost all finished :)
+	* src/ReverseEngineering/AssemblyClass.cs
+	* src/ReverseEngineering/AssemblyDataStructure.cs:
+	* src/ReverseEngineering/AssemblyEnumeration.cs: FIXME: How to add literals?
+	* src/ReverseEngineering/AssemblyHelper.cs: 
+	* src/ReverseEngineering/AssemblyImporter.cs: Added a new Property for
+	setting the importing-level
+	* src/ReverseEngineering/Main.cs: Some old-calling replaced
+
+2005-04-09  Mario Carrión  <mario.carrion@gmail.com>
+
+	* ReverseEngineering was re-written, some things are missing, I'll finish
+	it sooner :)
+	* src/ReverseEngineering/AssemblyClass.cs
+	* src/ReverseEngineering/AssemblyConstructor.cs
+	* src/ReverseEngineering/AssemblyEnumeration.cs
+	* src/ReverseEngineering/AssemblyHelper.cs
+	* src/ReverseEngineering/AssemblyImporter.cs
+	* src/ReverseEngineering/AssemblyInfo.cs
+	* src/ReverseEngineering/AssemblyInterface.cs
+	* src/ReverseEngineering/AssemblyMethod.cs
+	* src/ReverseEngineering/AssemblyOperation.cs
+	* src/ReverseEngineering/AssemblyPackage.cs
+	* src/ReverseEngineering/AssemblyStruct.cs
+	* src/ReverseEngineering/AssemblyType.cs
+
+2005-04-07  Mario Carrión  <mario.carrion@gmail.com>
+
+	* The integration between MU and ReverseEngineering is closer, the following
+	files were modified. Nested structs and classes are allowed from now on.
+	* src/ReverseEngineering/AssemblyClass.cs
+	* src/ReverseEngineering/AssemblyHelper.cs
+	* src/ReverseEngineering/AssemblyImporter.cs
+	* src/ReverseEngineering/AssemblyPackage.cs
+	* src/ReverseEngineering/AssemblyStruct.cs
+	* src/ReverseEngineering/AssemblyType.cs
+	* src/ReverseEngineering/Main.cs
+
+2005-04-01  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/GUI/MonoUML.cs: 
+	* src/GUI/SelectProjectDialog.cs: The crash doesn't happend anymore but 
+	is not fixed yet. That might be a mono bug.
+	* src/Glade/gui.glade: Removed the SelectProjectDialog
+
+2005-04-01  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/ReverseEngineering/Makefile.am: Added new source AssemblyStruct.
+
+2005-04-01  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML.mdp: Addedat the project source files two new
+	files: DiagramTypeChooser.cs and AssemblyStruct.cs
+	* src/ReverseEngineering/AssemblyClass.cs: (ctor) Now allowing classes
+	as nested types 
+	(Begin) Added some stuff for only reading assembly while
+	the class is not already readed.
+	(GetNestedTypes) New method for reading nested types
+	* src/ReverseEngineering/AssemblyHelper.cs: (SearchWithinAssemblies)
+	for searching all over all the assemblies in the AssemblyImporter
+	* src/ReverseEngineering/AssemblyImporter.cs: (Add) Now allows
+	multiple files and its access changed to public. 
+	(Reload) Method removed
+	(DoType) Gets some System.Type and does something accorting to it.
+	* src/ReverseEngineering/AssemblyInterface.cs: (ctor) Allowing
+	nested types.
+	* src/ReverseEngineering/AssemblyStruct: New class. FIXME: This
+	class is using UML2.Class, MUST USE ITS UML CLASS.
+	* src/Widgets/UML/UMLCanvas: First attempt to do the drag&drop... 
+	does not work, yet.
+	* src/Widgets/Tree.cs: Trying to release some memory. In every TreeIter
+	the method Free was used, but does not work. 
+
+2005-03-31  Mario Carrión  <mario.carrion@gmail.com>
+
+	* uploadSnapshot: Uploads the current snapshot to sf website. Please only
+	create Snapshots when the sources are not broken and check the tar.gz
+	before uploading. Thanks :)
+
+2005-03-31  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/ReverseEngineering/Makefile.am: Added the sources to EXTRA_DIST
+	* src/Widgets/Makefile.am: Fixed some bug in the make dist
+
+2005-03-31  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/Widgets/Hub.cs: Now remembers the last selected element. This is
+	  used when the user wants to create a new diagram: if the element
+	  type is UML.Namespace, it becames the default option for the new
+	  diagram's namespace.
+
+2005-03-30  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/Widgets/Tree.cs: Some changes to make the diagrams appear under
+	  their corresponding namespace (the UML.Namespace model element).
+
+2005-03-30  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/GUI/Glade/gui.glade: Added menu item
+	  monouml_menuitem_newumldiagram. This allows to create new diagrams.
+	* src/GUI/MonoUML.cs (OnNewUmlDiagram): This new event handler was
+	  implemented.
+	* src/Makefile.am: Added dependency to $(MONOUML_RESOURCES).
+	* src/Widgets/DiagramTypeChooserDialog.cs: New dialog for letting the
+	  user pick a diagram type.
+	* src/Widgets/ElementChooserDialog.cs (ctor): Now can receive a
+	  caption, that is displayed in the window title.
+	* src/Widgets/Hub.cs (ClearElementsList): Implemented. The ctor calls
+	  this method.
+	  (CreateNewProject, OpenProject): Uses ClearElementsList.
+	  (NewUMLDiagram): Asks for a diagram type, the asks for a namespace
+	  and creates a new diagram.
+	* src/Widgets/Makefile.am: Added DiagramTypeChooserDialog.cs.
+	* src/Widgets/NoteBook.cs:
+	  (CurrentDiagram): Checks for nullity.
+	  (IView.UpdateElement): Checks for nullity.
+	* src/Widgets/UML2/CreateActorAction.cs (Execute): Uses
+	  AddNewClassifier from UMLDiagram.
+	* src/Widgets/UML2/CreateUseCaseAction.cs (Execute): Same as above.
+	* src/Widgets/UML2/UMLAssociation.cs: Lots of bug fixes.
+	* src/Widgets/UML2/UMLDiagram.cs (AddNewClassifier): This method sets
+	  the owning relationship between the diagram's namespace and the
+	  classifier, broadcasts the element changes, and adds the widget to
+	  the canvas.
+
+2005-03-30  Mario Carrión  <mario.carrion@gmail.com>
+
+	* README. Added make run
+	* AUTHORS. Added enzo's mail
+	* MonoUML.mds: ADDED. Monodevelop's project
+	* MonoUML.mdp: ADDED. Monodevelop's project	
+
+2005-03-29  Mario Carrión  <mario.carrion@gmail.com>
+
+	* Makefile.am: New target added: run
+	* src/Makefile.am: New target added: clean-am
+	* src/DI/Makefile.am: New target added: clean-am
+	* src/DI/Uml2Bridge/Makefile.am: New target added: clean
+	* src/ReverseEngineering/Makefile.am: New target added: clean
+	* src/Widgets/Makefile.am: New target added: clean-am
+	* src/XmiImporter/Makefile.am: New target added: clean
+
+2005-03-28  Mario Carrión  <mario.carrion@gmail.com>
+
+	* configure.in: Added new target for compiling MonoUML.Widgets.dll
+	* src/Makefile.am: Now uses MonoUML.Widgets.dll rather than 
+	compiling from sources
+	* src/Widgets/Makefile.am: ADDED. Used for compiling
+	MonoUML.Widgets.dll 
+	* src/Widgets/CanvasArea.cs: ADDED. Handles both Canvas' area and
+	Canvas' toolbar.
+	public, due to the namespace MononoUML.Widgets is a library, the
+	'internal' level won't work.
+	* src/Widgets/NoteBook.cs: 
+	(GetDiagramType) Method removed.
+	* src/Widgets/UML2/UMLDiagram.cs:
+	(GetDiagramType) Added, new public static method
+	* GUI/MonoUML.cs: The Canvas' Toolbar is now in another file and
+	the Canvas also is in another file, onlye references are used. With
+	this is possible to handle the Toolbar's events in the CanvasArea not
+	in the Main Window.
+	* GUI/SelectProjectDialog.cs: Cleaning the code. Adding a  new
+	Cancel button.
+	* GUI/Glade/gui.glade: Some widget names had changed, adding
+	an unserscore to some.
+	* src/Widgets/Hub.cs: Property ElementsList access level changed to 
+
+2005-03-28  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/Widgets/UML2/UMLEdge.cs (CalculateDimensions): Now is the
+	  responsible for calling OnFromMoved and OnToMoved. This fixes a bug,
+	  and now the texts at the association ends are moved when the
+	  corresponding control point changes its position.
+
+2005-03-28  Mario Carrión  <mario.carrion@gmail.com>
+
+	* docs/proposed_architecture.dia: Fixed some UML details
+
+2005-03-28  Mario Carrión  <mario.carrion@gmail.com>
+
+	* docs/uml-sharp.dia: REMOVED. Dia# not longer used.
+	* docs/MonoUML.dia: REMOVED. Dia# not longer used.
+	* docs/proposed_architecture.dia: ADDED. Our new architecture?
+
+2005-03-26  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/Makefile.am: Removed reference to src/GUI/IconEvents.
+
+2005-03-26  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/GUI/IconEvents: REMOVED. Class not longer needed.
+	* src/GUI/MonoUML.cs: Removed the piece of code who used to use 
+	IconEvents.
+	* src/GUI/Glade/gui.glade: Modified. 
+
+2005-03-26  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/Makefile.am: Added files UMLDiamond and AggregationKindViewer.
+	* src/Widgets/MixedElementsViewer.cs: Fixed documentation.
+	  (Add): Bug fixes. If the operations fails, shows a message instead
+	  of dumping a stack trace and die.
+	* src/Widgets/MultiplicityElementViewer.cs: When the value of Lower
+	  or Upper change, broadcasts the modification.
+	* src/Widgets/NamedElementVisibilityViewer.cs: The distance between
+	  the radio buttons now is fixed, because it looks better.
+	* src/Widgets/NoteBook.cs:
+	  (GetDiagramType): Use SemanticModel instead of Namespace to get the
+	  diagram type.
+	  (IView.UpdateElement): Implemented.
+	  (IView.SetModel): Cleans the view.
+	* src/Widgets/NoteBookLabel.cs (ctor): Uses SemanticModel instead of
+	  Namespace to get the diagram type.
+	* src/Widgets/ParameterDirectionKindViewer.cs: The distance between
+	  the radio buttons now is fixed.
+	* src/Widgets/Tree.cs: Uses SemanticModel instead of Namespace to get
+	  the diagram type.
+	* src/Widgets/UML2/UMLActor.cs (ApplyModelChanges): Implemented.
+	  Applies the changes present in the model to the view.
+	* src/Widgets/AggregationKindViewer.cs:
+	* src/Widgets/UML2/UMLAssociation.cs: Lots of changes; now shows the
+	  texts at the end of the association, and also the aggregation kind
+	  as diamonds (filled or hollow). When an association end is dragged
+	  and dropped into another classifier, the owner of the corresponding
+	  property is modified accordingly.
+	* src/Widgets/UML2/UMLClassifier.cs (ApplyModelChanges): Implemented.
+	  Applies the changes present in the model to the view.
+	* src/Widgets/AggregationKindViewer.cs:
+	* src/Widgets/UML2/UMLDiagram.cs (UpdateElement): Implemented. Updates
+	  the diagram with the changes made in other views.
+	* src/Widgets/UML2/UMLDiamond.cs: Added. This new class implements the
+	  diamond that represents the aggregation kind of a property, which is
+	  drawn at the end of associations.
+	* src/Widgets/UML2/UMLEdge.cs: Uses Gdk.Color to represent colors,
+	  which should be faster than parsing strings every time.
+	  (BreakSegment): Split into two methods, in order to implement a new
+	  list of parameters.
+	  (ClearEnds): Bug fix - when an end is deleted, it must be erased
+	  from the screen.
+	  (EnsureEdgeVisibility): Implemented. This avoids that the
+	  associations became inaccessible when the source and target elements
+	  are the same one.
+	  (OnFromMoved, OnToMoved): Implemented, used in UMLAssociation to
+	  move the texts at the ends accordingly.
+	  (SetLineHighlighted): Bug fix.
+	* src/Widgets/UML2/UMLEdgeEnd.cs (FillColorGdk): Deleted.
+	  (Clear): Implemented.
+	  (SetHighlighted): Implemented. Used instead of FillColorGdk.
+	* src/Widgets/UML2/UMLElement.cs:
+	  (ApplyModelChanges): Added. Empty method declared as virtual.
+	  (UpdateElement): Added. Empty method declared as virtual.
+	* src/Widgets/UML2/UMLEntry.cs (FontModifier): Implemented.
+	* src/Widgets/UML2/UMLNamedEdge.cs (ApplyModelChanges): Implemented.
+	  Updates the name of the edge in the view.
+	* src/Widgets/UML2/UMLOpenArrow.cs: Implemented changes in UMLEdgeEnd. 
+	  The end is draw a bit away from the last waypoint of the edge, so
+	  its corresponding control point is accessible.
+	* src/Widgets/UML2/UMLUseCase.cs (ApplyModelChanges): Implemented.
+	* src/Widgets/UML2/UMLWidget.cs (_distance_x_to_corner, _dx): The
+	  private field _dx was used to keep the distance of the mouse to the 
+	  upper left corner. This was fixed, introducing a new variable.
+	  (Move): Implemented; mantains the variables _dx and _dy.
+	* src/Widgets/UMLPropertiesTab.cs: Added viewers for AggregationKind
+	  (from Property).
+	* src/XmiImporter/Makefile.am: Added $(MONOUML_DLL_IMPORTER_RESOURCES)
+	  to the dependencies of the binary.
+	* src/XmiImporter/fromXMI1_2.xslt: UML:Diagram.owner is now translated
+	  as <namespace />.
+
+2005-03-25  Mario Carrión  <mario.carrion@gmail.com>
+
+	* README: Added some information.
+	* AUTHORS: Added some information.
+	* COPYING: Added some information.
+	* INSTALL: Added some information.
+	* THANKS: Added some information.
+	* TODO: Added some information.
+	* configure: Removed, use autogen.sh for now on
+
+2005-03-25  Mario Carrión  <mario.carrion@gmail.com>
+
+	* autogen.sh: Added for autogenerating the makefiles. This file must be
+	used for now on.
+	* autom4te.cache/output.0: Removed
+	* autom4te.cache/output.1: Removed
+	* autom4te.cache/requests: Removed
+	* autom4te.cache/traces.0: Removed
+	* autom4te.cache/traces.1: Removed
+	* Makefile.in: Removed	
+	* src/Makefile.in: Removed
+	* src/DI/Makefile.in: Removed
+	* src/DI/Uml2Bridge/Makefile.in: Removed
+	* src/ReverseEngineering/Makefile.in: Removed
+	* src/XmiImporter/Makefile.in: Removed
+	* config.status: Removed
+	* aclocal.m4: Removed
+	* install-sh: Removed
+	* missing: Removed
+
+2005-03-25  Mario Carrión  <mario.carrion@gmail.com>
+
+	* src/GUI/MonoUML.cs: Fixed bug: "1168114 Show grid bug"
+
+2005-03-24  Manuel Cerón  <ceronman@gmail.com>
+	* src/Widgets/uml-canvas-sharp-2.0/FrameHandler.cs: added. Its a handler
+	for a frame in a ControlShapeGroup;
+	* src/Widgets/uml-canvas-sharp-2.0/ControlRectGroup.cs: four corner
+	resizing functionality added
+	* src/Widgets/uml-canvas-sharp-2.0/ControlRectGroup.cs: _frame field is
+	now a ControlShape.
+	* src/Widgets/uml-canvas-sharp-2.0/Shape.cs: Order methods has been
+	written here.
+	* src/Widgets/uml-canvas-sharp-2.0/Makefile: added FrameHandler.cs.
+	* Minor changes in all uml-canvas-2 clases.
+
+2005-03-24  Manuel Cerón  <ceronman@gmail.com>
+	* src/Widgets/uml-canvas-sharp-2.0/ControlShapeGroup.cs: Notification
+	methods added
+	* src/Widgets/uml-canvas-sharp-2.0/ControlShape.cs: Center position
+	properties added
+	* src/Widgets/uml-canvas-sharp-2.0/ControlShapeHandler.cs: Initial
+	resizing functionality implemented.
+	* src/Widgets/uml-canvas-sharp-2.0/ControlRect.cs: Some bugs killed.
+	* src/Widgets/uml-canvas-sharp-2.0/Node.cs: minor changes.
+	* src/Widgets/uml-canvas-sharp-2.0/Test.cs: Removed old Shape and
+	ControlRect tests.
+
+2005-03-24  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/GUI/MonoUML.cs (ctor): First shows all the elements, then open
+	  the project. This fixes a bug, that all the viewers are visible upon
+	  startup.
+	* src/Makefile.am: Added MixedElementsViewer.
+	* src/Makefile.in:
+	* src/Widgets/MixedElementsViewer.cs: Added. This widget can show
+	  collections that have both their own elements and also elements from
+	  subcollections.
+	* src/Widgets/MultiChooserDialog.cs (OnResponse): Clears the store.
+	  This frees memory.
+	* src/Widgets/MultipleObjectViewer.cs: Instead of using the method
+	  Clear to free memory, we provide a new implementation of Hide, so
+	  when the element is hidden the memory is set free.
+	* src/Widgets/MultiplicityElementViewer.cs (Hide): Frees memory.
+	* src/Widgets/NamedElementVisibilityViewer.cs (Hide): Frees memory.
+	* src/Widgets/OwnedAttributesViewer.cs (ctor): New ctor recieves a
+	  label. The associations can own properties.
+	  (Hide): Frees memory.
+	  (ShowOwnedAttributesFor): If the property has no name, show
+	  <<anonymous Property>> or whatever type has the current property.
+	* src/Widgets/OwnedElementsViewer.cs (Hide): Frees memory.
+	* src/Widgets/OwnedTypeViewer.cs (Hide): Frees memory.
+	  (ShowOwnedTypeFor): Show something if the type has no name.
+	* src/Widgets/SingleBooleanViewer.cs (Hide): Frees memory.
+	* src/Widgets/UML2/UMLAssociation.cs: Deleted unused variable.
+	* src/Widgets/UML2/UMLCanvas.cs: Deleted unused variables.
+	* src/Widgets/UML2/UMLEdge.cs: Deleted unused variable.
+	* src/Widgets/UMLPropertiesTab.cs: Added support for owned and
+	  member ends. Instead of calling Clear on nested widgets, Hide will
+	  free the memory.
+
+2005-03-24  Manuel Cerón  <ceronman@gmail.com>
+	* src/Widgets/uml-canvas-sharp-2.0/UMLActor.cs: file added.
+	* src/Widgets/uml-canvas-sharp-2.0/Makefile: UMLActor.cs added to file
+	list.
+	* src/Widgets/uml-canvas-sharp-2.0/ControlShapeGroup.cs: added some
+	default values and corrected some bugs
+	* src/Widgets/uml-canvas-sharp-2.0/ControlShape.cs: added oreder
+	methods.
+	* src/Widgets/uml-canvas-sharp-2.0/ControlRect.cs: implemented position
+	related methods.
+	* src/Widgets/uml-canvas-sharp-2.0/Node.cs: Very initial functionality
+	added.
+	* src/Widgets/uml-canvas-sharp-2.0/Test.cs: Added a Node class test.
+
+2005-03-23  Rodolfo Campero  <rodolfo.campero@gmail.com>
+	* src/Widgets/UML2/UMLAssociation.cs: Initial support for edge ends.
+	* src/Widgets/UML2/UMLClassifier.cs: A generic widget for drawing
+	  classifiers. It's a rectangular box.
+	* src/Widgets/UML2/UMLDiagram.cs (DrawElement): Instead of checking by
+	  type name, uses the "is" operator. Added generic support for all
+	  kinds of classifiers - they are shown as rectangular boxes.
+	* src/Widgets/UML2/UMLEdge.cs (ClearEnds): Implemented. Clears all the
+	  edge ends in the edge.
+	* src/Widgets/UML2/UMLNamedEdge.cs (ctor): Fixed to pass the new
+	  parameter "forceRedraw".
+
+2005-03-23  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* src/DI/Makefile.am:
+	* src/DI/Uml2Bridge/Makefile.am:
+	* src/Makefile.am:
+	* src/ReverseEngineering/Makefile.am:
+	* src/XmiImporter/Makefile.am: In all these files, the dependency
+	  between a binary file and its sources was made explicit, so it won't
+	  compile again if it's not necessary.
+
+2005-03-22  Mario Carrión <mario.carrion@gmail.com>
+
+	* README: Corrected the path. Thanks to Eduardo "Enzo" García for reporting it.
+
+2005-03-22  Mario Carrión <mario.carrion@gmail.com>
+
+	* 'samples/*.xmi' is added to 'make dist'
+	* src/ReverseEngineering/Makefile.am: Added for creating the Makefile
+
+2005-03-21  Mario Carrión <mario.carrion@gmail.com>
+
+	* Finally, you can use ./configure for setting and constructing your
+	MonoUML binary, remember use 'make dist' for creating a distributable tar.gz
+	Happy hacking :). BTW. There are still missing 'make run' and 'make	install'
+	* 'MonoUML' folder has been renamed to 'src'
+	* New sample added: 'UseCaseAsociation.xmi'
+
+2005-03-21  Mario  Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/GUI/Pixmaps/new.png: Removed
+	* MonoUML/GUI/Pixmaps/open.png: Removed
+	* MonoUML/GUI/Pixmaps/wizard.png: Removed
+	* MonoUML/GUI/Pixmaps/source/README: Removed
+	* MonoUML/GUI/Pixmaps/source/open.svg: Removed
+	* MonoUML/GUI/Pixmaps/source/wizard.svg: Removed
+
+2005-03-21  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/Widgets/UML2/UMLAssociation.cs (CreateNew): Creates the name
+	  compartment.
+	* MonoUML/Widgets/UML2/UMLEdge.cs (ctor): Allows avoiding the initial
+	  redraw.
+	  (AddFromEnd): New method. Adds an edge end to the edge, at the
+	  "from" end.
+	  (AddToEnd): New method. Same as AddFromEnd, but adds the end to the
+	  "to" end.
+	  (ForceRedraw): Now is protected.
+	  (GetAngle): Gets the angle that forms the rect that passes through
+	  two points.
+	  (Redraw): Reconfigures and redraws the edge ends.
+	  (SetLineHighlighted): Sets the line ends color.
+	* MonoUML/Widgets/UML2/UMLEdgeEnd.cs: New class. Represents an
+	  adornment placed at the end of an edge. This class is abstract,
+	  other more specific classes derive from this one.
+	* MonoUML/Widgets/UML2/UMLElement.cs (IterateChildrensMoved): Its new
+	  name is IterateChildrenMoved.
+	  (Move): Parameters renamed, in order to make clear that they
+	  represent relative distances, and not absolute positions.
+	* MonoUML/Widgets/UML2/UMLOpenArrow.cs: New class. Represents an open
+	  arrow at the end of and edge.
+	* MonoUML/Widgets/UML2/UMLStereotypedEdge.cs (ctor): Forces redraw in
+	  order to show the edge ends.
+	* MonoUML/XmiImporter/fromXMI1_2.xslt: The value "infinity", that is
+	  represented as "-1" in UML 1.4/XMI 1.2, in UML 2.0/XMI 2.0 is 
+	  represented as "*".
+
+2005-03-20  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/XmiImporter/fromXMI1_2.xslt: Bug fix: a navigable
+	  AssociationEnd is implemented as an owned property of the other
+	  participant.
+
+2005-03-19  Mario Carrión  <mario.carrion@gmail.com>
+
+	* Makefile: Added '-codepage:utf8' to 'monouml.exe rule' for allowing weird
+	  characters.
+	* MonoUML/GUI/MonoUML.cs: Using command line parameters hides 'CVS Warning'
+	* MonoUML/GUI/Pixmaps/about.png: Replaced old image 
+	* MonoUML/ReverseEngineering/AssemblyClass.cs
+	* MonoUML/ReverseEngineering/AssemblyHelper.cs: FIXME. This class must
+	  be improved. Currently allows parameters, return-types and fields.
+	* MonoUML/ReverseEngineering/Main.cs: Changed the test file.
+	* MonoUML/Widgets/Hub.cs:
+	* MonoUML/Widgets/MultipleObjectViewer.cs
+	  (Clear) Used for clearing the stores.
+	* MonoUML/Widgets/OwnedElementsViewer.cs
+	* MonoUML/Widgets/Tree.cs
+	  (GetTreeIcon) Now uses one hastable for handling the Gdk.Pixbuf icons.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Improving perfonmance, missing some
+	  issues.
+	* docs/presentations/may2005.es.sxi: Adding new chapters, changing the
+	  project's logo.
+	* docs/spanish/alc_lim.xml: New information added.
+	* docs/spanish/biblio.xml: New information added.
+	* docs/spanish/edo.xml: New information added.
+	* docs/spanish/index.xml: New information added.
+	* docs/spanish/int.xml: New information added.
+
+2005-03-19  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/DI/Point.cs (GetHalfWayPoint): Implemented.
+	* MonoUML/Widgets/UML2/CreateAssociationAction.cs (Execute):
+	  Implemented, based on the code that was on the canvas.
+	* MonoUML/Widgets/UML2/CreateExtendAction.cs: Added.
+	* MonoUML/Widgets/UML2/CreateIncludeAction.cs: Added.
+	* MonoUML/Widgets/UML2/UMLCanvas.cs:
+	  (StartActionExecution): Remembers the action, in order to be able to
+	  execute it later.
+	  (NodeButtonPressedCb): Sets the parameters for the CreateEdgeAction,
+	  and executes it.
+	* MonoUML/Widgets/UML2/UMLDiagram.cs:
+	  (DrawElement): If the type of the edge is not Association, create a
+	  StereotypedEdge.
+	* MonoUML/Widgets/UML2/UMLEdge.cs (LineEventHandler): Allow event
+	  bubbling, so the selection event gets broadcasted.
+	* MonoUML/Widgets/UML2/UMLStereotypedEdge.cs: Added.
+	* MonoUML/Widgets/UML2/UMLUseCase.cs (GetContextMenuOptions):
+	  Implemented. Current available actions: create include, extend and
+	  asociation.
+
+2005-03-18  Mario Carrión <mario.carrion@gmail.com>
+
+	* Reverse Engineering supports classes' fields, the following files
+	  where modified:
+		* MonoUML/ReverseEngineering/AssemblyClass.cs
+		* MonoUML/ReverseEngineering/AssemblyEnumeration.cs
+		* MonoUML/ReverseEngineering/AssemblyHelper.cs
+		* MonoUML/ReverseEngineering/AssemblyImporter.cs
+		* MonoUML/ReverseEngineering/AssemblyInterface.cs
+		* MonoUML/ReverseEngineering/AssemblyOperation.cs
+		* MonoUML/ReverseEngineering/AssemblyPackage.cs
+		* MonoUML/ReverseEngineering/AssemblyType.cs
+		* MonoUML/ReverseEngineering/Main.cs
+
+
+2005-03-18  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/ReverseEngineering/AssemblyInterface.cs: This class is new, added
+	  for handling the Interfaces
+	* MonoUML/ReverseEngineering/AssemblyClass.cs:
+	* MonoUML/ReverseEngineering/AssemblyEnumeration.cs:
+	* MonoUML/ReverseEngineering/AssemblyHelper.cs:
+	* MonoUML/ReverseEngineering/AssemblyImporter.cs:
+	* MonoUML/ReverseEngineering/AssemblyMethod.cs:
+	* MonoUML/ReverseEngineering/AssemblyOperation.cs:
+	* MonoUML/ReverseEngineering/AssemblyPackage.cs:
+	* MonoUML/ReverseEngineering/AssemblyType.cs:
+	* MonoUML/ReverseEngineering/Main.cs:
+
+2005-03-17  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/DI/GraphConnector.cs (ctor): _position is initialized.
+	* MonoUML/DI/GraphNode.cs (Center): Implemented.
+	* MonoUML/Widgets/UML2/ActionBase.cs (SelectedHandler): Transfer
+	  execution to the canvas, which will perform some preparations before
+	  executing the action.
+	  (SetCanvas): Implemented.
+	* MonoUML/Widgets/UML2/UMLActor.cs (GetContextMenuOptions):
+	  Implemented.
+	* MonoUML/Widgets/UML2/UMLAssociation.cs (CreateNew): Fixes, now
+	  creates associations correctly.
+	* MonoUML/Widgets/UML2/UMLCanvas.cs (StartActionExecution):
+	  Implemented. Some other features finished.
+	* MonoUML/Widgets/UML2/UMLElement.cs (GetContextMenuOptions): Defined.
+
+2005-03-17 Manuel Cerón <ceronman@gmail.com>
+	* MonoUML/Widgets/uml-canvas-sharp-2.0/ControlShapeGroup.cs: 
+	ControlShapeGroup now inherits from Shape class. 
+	* MonoUML/Widgets/uml-canvas-sharp-2.0/ControlRectGroup.cs: added Draw 
+	and Show methods.
+	* MonoUML/Widgets/uml-canvas-sharp-2.0/Shape.cs: some bugs corrected.
+2005-03-15  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/GUI/MonoUML.cs:
+	  (BuildProperties): The hub is now a singleton, and it doesn't know
+	  about particular views, just IView.
+	  (OnImportXMI): Closes the stream after using it.
+	  (UseCaseClicked): Uses the new CreateUseCaseAction class to create
+	  an Use Case.
+	  (ActorClicked): Uses the new CreateActorAction class to create an
+	  Actor.
+	* MonoUML/Widgets/Hub.cs: The hub is concerned about IViews only, and
+	  not particular classes.
+	* MonoUML/Widgets/IView.cs:
+	  (SetModel): Added this new method, which is used only in the Tree to
+	  redraw it when the model changes.
+	* MonoUML/Widgets/NoteBook.cs: The whole ADD_UML_ELEMENTS_METHODS
+	  region was deleted. Now the notebook is more independent.
+	  (CurrentDiagram): Gets the diagram that is currently selected.
+	  (IView.SetModel): Implemented dummy method.
+	* MonoUML/Widgets/Tree.cs:
+	  (IView.SetModel): Implemented method, which calls Draw().
+	* MonoUML/Widgets/UML2/ActionBase.cs: Represents an action that is
+	  performed within the canvas.
+	* MonoUML/Widgets/UML2/CreateActorAction.cs: The action of creating a
+	  new Actor element.
+	* MonoUML/Widgets/UML2/CreateNodeAction.cs: The action of creating a
+	  new node.
+	* MonoUML/Widgets/UML2/CreateUseCaseAction.cs: The action of creating a
+	  new Use Case element.
+	* MonoUML/Widgets/UML2/UMLAssociation.cs (CreateNew): Initial version.
+	* MonoUML/Widgets/UML2/UMLCanvas.cs:
+	  (Association): Deleted.
+	  (MakeMenu): Creates the menu dynamically. The idea is that every
+	  element knows which are the possible actions.
+	  (ButtonPressEventCb): Now sets and uses the member variables
+	  _pointer_x and _pointer_y. The right button calls MakeMenu.
+	* MonoUML/Widgets/UML2/UMLDiagram.cs: Removed commented code.
+	  (GetContextMenuOptions): Implemented. Returns a list of ActionBase
+	  with the options that can be performed on the diagram.
+	* MonoUML/Widgets/UML2/UMLEdge.cs:
+	  (ctor): The code of Init was broght here.
+	  (Init): Deleted.
+	* MonoUML/Widgets/UML2/UMLElement.cs (Move): Calls OnMove.
+	* MonoUML/Widgets/UMLPropertiesTab.cs:
+	  (IView.SetModel): Implemented dummy method.
+
+2005-03-13  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/DI/Serialization/Serializer.cs: DiagramLink.Viewport,
+	  Ellipse.Center, GraphConnector.Position now are serialized without
+	  ID, which makes generated XMIs more human readible.
+	* MonoUML/Widgets/UML2/UMLDiagram.cs (DrawElements): We must draw
+	  first the nodes and then the edges.
+	* MonoUML/Widgets/UML2/UMLEdge.cs:
+	  (ReplaceFromElement, ReplaceToElement): Handles correctly the
+	  anchorage.
+
+2005-03-13  Mario Carrión  <mario.carrion@gmail.com>
+
+	* Applied Rodolfo's patch to:
+		* MonoUML/ReverseEngineering/AssemblyPackage.cs
+		* MonoUML/ReverseEngineering/Main.cs
+		* MonoUML/ReverseEngineering/Makefile
+
+2005-03-13  Mario Carrión  <mario.carrion@gmail.com>
+
+	* The reverse engineering-preview has been added.
+		* MonoUML/ReverseEngineering/AssemblyClass.cs:
+		* MonoUML/ReverseEngineering/AssemblyHelper.cs:
+		* MonoUML/ReverseEngineering/AssemblyMethod.cs:
+		* MonoUML/ReverseEngineering/AssemblyType.cs:
+		* MonoUML/ReverseEngineering/Makefile:
+		* MonoUML/ReverseEngineering/AssemblyConstructor.cs:
+		* MonoUML/ReverseEngineering/AssemblyImporter.cs:
+		* MonoUML/ReverseEngineering/AssemblyOperation.cs:
+		* MonoUML/ReverseEngineering/AssemblyEnumeration.cs:
+		* MonoUML/ReverseEngineering/AssemblyInfo.cs:
+		* MonoUML/ReverseEngineering/AssemblyPackage.cs:
+		* MonoUML/ReverseEngineering/Main.cs:
+
+2005-03-12  Rodolfo Campero  <rodolfo.campero@gmail.com>
+	* MonoUML/Widgets/UML2/UMLAssociation.cs: Now allows to change the
+	  association ends.
+	  (ChangeOwner): Changes the owner of a property.
+	  (GetHoverClassifier): Gets the classifier that is under the cursor
+	  pointer, or null if there's no classifier under the pointer.
+	  (GetPropertyAtEnd): Returns the UML property (from EC) that is at
+	  the end indicated in the argument.
+	  (ReplaceModelElement): Replaces the model element at the given end
+	  index with the element that is currently under the cursor pointer.
+	  (ReplaceFromModelElement): Replaces the model element that is at the
+	  first end of the association.
+	  (ReplaceToModelElement): Replaces the model element that is at the
+	  last end of the association.
+	* MonoUML/Widgets/UML2/UMLCanvas.cs:
+	  (GetHoverElement): Gets the UMLElement that is currently under the
+	  cursor pointer.
+	  (_pointer_x, _pointer_y): Added to support GetHoverElement.
+	  (MotionNotifyEventCb): Set _pointer_x and _pointer_y.
+	* MonoUML/Widgets/UML2/UMLEdge.cs:
+	  (_dragged_dp): Removed. Wasn't used.
+	  (_graphEdge): Now is protected instead of private.
+	  (_ownerDiagram): Was moved to the base class.
+	  (CPButtonPressed): Deleted. This method did nothing.
+	  (CPButtonReleased): If the released control point is the first or
+	  the last, check if an associated element is replaced.
+	  (CPMoved): Bug fix. If there's a single line, don't try to
+	  recalculate the waypoints.
+	  (ForceRedraw): Implemented. Like Redraw but forces the redrawing.
+	  (Init): Commented out code was deleted.
+	  (SelarchOverElement): Deleted.
+	  (ReplaceFromElement, ReplaceFromModelElement, ReplaceToElement,
+	  ReplaceToModelElement): Implemented.
+	* MonoUML/Widgets/UML2/UMLElement.cs (_ownerDiagram): Added; imported
+	  from UMLEdge.
+
+2005-03-11  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/DI/Point.cs: Now implements ICloneable.
+	  (ICloneable.Clone): Implemented.
+	  (Clone): Implemented.
+	  (CopyTo): Implemented.
+	  (ToString): Always show the decimal numbers with dots.
+	* MonoUML/Widgets/UML2/Point.cs: Deleted.
+	* MonoUML/Widgets/UML2/UMLActor.cs (CreateNew): Sets the container of
+	  the name graph node.
+	* MonoUML/Widgets/UML2/UMLCanvas.cs: Several changes in order to allow
+	  simulating events on newly created control points.
+	  (EnableControlPointMotion): Implemented.
+	  (_cp_motioned, _umledge): These fields were added.
+	  (MakeMenu): The code that was commented out was deleted. It was
+	  related to Pelota and Clock.
+	  (MotionNotifyEventCb): Handles motion over a new control point.
+	* MonoUML/Widgets/UML2/UMLControlPoint.cs:
+	  (X, Y): Bug fix.
+	  (CanvasEventCb): Some code was moved out to new member functions in
+	  order to allow calling it from somewhere else.
+	  (ForceMove, ForceRelease, SetHover, SetPressed): New functions.
+	* MonoUML/Widgets/UML2/UMLDiagram.cs (EnableControlPointMotion): New
+	  function that allows to simulate events on newly created control
+	  points.
+	* MonoUML/Widgets/UML2/UMLEdge.cs: Severely refactored. Not yet
+	  finished though.
+	* MonoUML/Widgets/UML2/UMLUseCase.cs (CreateNew): Sets the container 
+	  of the name graph node.
+
+2005-03-06  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/CodeGeneration/Wizard.cs: If there is no dlls won't display
+	  th wizard.
+	* MonoUML/docs/presentations/may2005.es.sxi: Updated.
+
+2005-03-06  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/CodeGeneration/Wizard.cs (LookForCodeGenerators): Fixed null
+	  pointer bug.
+
+2005-03-06  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/CodeGeneration/Wizard.cs (LookForCodeGenerators): Uses the
+	  information available through ExpertSystemInformationAttribute in
+	  order to show only those expert systems ment to be used by final
+	  users, and also to show the name and purpose of the expert system.
+
+2005-03-06  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/docs/presentations/may2005.es.sxi: OO.org Presentation.
+	* MonoUML/docs/spanish/MAINTAINER
+	* MonoUML/docs/spanish/biblio.xml
+	* MonoUML/docs/spanish/edo.xml
+	* MonoUML/docs/spanish/index.xml
+	* MonoUML/docs/spanish/resumen.xml
+
+2005-03-05  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/DI/GraphElement.cs (GlobalPosition): Added. This property
+	  gets the global position of the element; Position gives the position
+	  relative to the container.
+	* MonoUML/DI/Point.cs (ctor): Added 2 ctors; one empty and the other
+	  receives X and Y.
+	  (operator +): Overloaded. Now its possible to add two points.
+	* MonoUML/Widgets/UML2/UMLActor.cs (ctor): Some font-handling logic was
+	  moved to UMLEntry.
+	* MonoUML/Widgets/UML2/UMLCanvas.cs (ctor): Some graphical properties
+	  now are get form the diagramming information instead of using
+	  default values.
+	  (MotionNotifyEventCb): The creation of associations is temporaly
+	  disabled.
+	* MonoUML/Widgets/UML2/UMLDiagram.cs (DrawElement): Now its able to
+	  draw Associations and also any kind of binary relationship, for
+	  which it uses a generic UMLEdge element.
+	* MonoUML/Widgets/UML2/UMLEdge.cs (DisplayEdge): Both overloads were
+	  commented out, and will be replaced with some other mechanism.
+	* MonoUML/Widgets/UML2/UMLEntry.cs: Added a ctor, the font handling is
+	  now more independent, uses the GlobalPosition property for movable
+	  elements.
+	* MonoUML/Widgets/UML2/UMLNamedEdge.cs:
+	  (SearchAndDrawName): Implemented. Displays the edge name.
+	* MonoUML/Widgets/UML2/UMLUseCase.cs (ctor): Some font-handling logic
+	  was moved to UMLEntry.
+	* MonoUML/XmiImporter/fromXMI1_2.xslt: Now handles the property
+	  UML:GraphConnector.graphEdge.
+
+2005-03-04  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* samples/package.xmi: Fixed sample (now uses xmi:idref).
+
+2005-03-03  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/Widgets/UML2/UMLCanvas.cs:
+	* MonoUML/Widgets/UML2/UMLDiagram.cs:
+	* MonoUML/Widgets/UML2/UMLSelector.cs: Some changes in order to avoid
+	  some runtime exceptions related to Associations.
+	* MonoUML/XmiImporter/fromXMI1_2.xslt: Import and Extend elements now
+	  have xmi.id.
+
+2005-03-03  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/DI/Serialization/Serializer.cs: Now handles correctly the
+	  deserialization of the "anchor" property in GraphEdge.
+	  (Set_GraphEdgeAttribute) Added.
+	* MonoUML/Widgets/NoteBook.cs: 
+	* MonoUML/Widgets/UML2/Clock.cs: The whole content was commented out.
+	* MonoUML/Widgets/UML2/Pelota.cs: The whole content was commented out.
+	* MonoUML/Widgets/UML2/UMLActor.cs: Lots of changes; now derives from
+	  UMLNode, some code was moved up to UMLNode and UMLElement, other was
+	  moved to UMLEntry, etc.
+	  (EntryMovedEvent): Deleted.
+	  (Redraw): The code that updated the DI properties corresponding to
+	  the Name entry was moved to UMLEntry.
+	* MonoUML/Widgets/UML2/UMLAssociation.cs: New entry, doesn't work yet.
+	* MonoUML/Widgets/UML2/UMLCanvas.cs: Now has an associated UMLDiagram
+	  instead of a DI.Diagram. All the code related to Clock and Pelota
+	  was commented out, and IMO should be deleted.
+	  (AssociationActivatedCb): Commented out.
+	* MonoUML/Widgets/UML2/UMLDiagram.cs:
+	  (AddMapping, GetUmlcanvasElement): These methods allow to keep a
+	  mapping from DI elements to Widgets.UML2 elements. This will be used
+	  in the Association code.
+	* MonoUML/Widgets/UML2/UMLEdge.cs: Now derived from UMLElement, and
+	  has an associated DI.GraphEdge.
+	  (ctor): The code was moved to the new method Init.
+	* MonoUML/Widgets/UML2/UMLEditableField.cs: Now derives from
+	  UMLWidget. 
+	* MonoUML/Widgets/UML2/UMLElement.cs: Now derives from UMLWidget. Most
+	  of the code was moved out.
+	* MonoUML/Widgets/UML2/UMLEntry.cs: Now has an associated
+	  DI.GraphNode, and updates its properties.
+	* MonoUML/Widgets/UML2/UMLNamedEdge.cs: Several changes.
+	* MonoUML/Widgets/UML2/UMLNode.cs: Several changes.
+	* MonoUML/Widgets/UML2/UMLNodeEntry.cs: Removed.
+	* MonoUML/Widgets/UML2/UMLNodeEntryContained.cs: Removed.
+	* MonoUML/Widgets/UML2/UMLSelector.cs: Deleted code related to
+	  UMLNodeEntry.
+	* MonoUML/Widgets/UML2/UMLUseCase.cs: Now derives from UMLNode. Lots
+	  of changes...
+	* MonoUML/Widgets/UML2/UMLWidget.cs: Added.
+	* MonoUML/XmiImporter/fromXMI1_2.xslt: Added features to handle
+	  Associations.
+
+2005-03-01  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML is now using Gtk#'s (1.9.2) widgets. Replacements done. Now
+	  Gtk# 1.9.2 is a core dependence.
+	* Fixed the twice-callback-bug in the Save and SaveAs ToolbarButtons.
+	* The following files where modified:
+		* MonoUML/GUI/IconEvents.cs
+		* MonoUML/GUI/MonoUML.cs
+		* MonoUML/GUI/Glade/gui.glade
+		* MonoUML/Widgets/Hub.cs
+
+2005-02-28  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/DI/Serialization/Serializer.cs (Deserialize_GraphEdge): Now
+	  deserializes the compositions defined in GraphElement.
+	* MonoUML/XmiImporter/fromXMI1_2.xslt: Initial support for
+	  Associations.
+
+2005-02-26  Manuel Cerón  <ceronman@gmail.com>
+	* UMLCanvas# 2.0 files added
+		MonoUML/Widgets/uml-canvas-sharp-2.0
+		MonoUML/Widgets/uml-canvas-sharp-2.0/IUMLShapeHandler.cs
+		MonoUML/Widgets/uml-canvas-sharp-2.0/Makefile
+		MonoUML/Widgets/uml-canvas-sharp-2.0/Test.cs
+		MonoUML/Widgets/uml-canvas-sharp-2.0/TestUMLShapeHandler.cs
+		MonoUML/Widgets/uml-canvas-sharp-2.0/UMLActorShape.cs
+		MonoUML/Widgets/uml-canvas-sharp-2.0/UMLControShape.cs
+		MonoUML/Widgets/uml-canvas-sharp-2.0/UMLShape.cs
+
+	* IMPORTANT: These files are experimental. They are not definitive
+	version for UMLCanvas# 2.0, They are going to experience changes due to
+	cycles of implementation-design-implementation.
+
+2005-02-26  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/Widgets/UML2/UMLActor.cs: Some private fields were renamed
+	  in order to make their intent more clear. The position of the widget
+	  Name should be relative to the position of the Actor, according to
+	  the UML 2.0 Diagram Interchange Specification (ptc/03-09-01),
+	  paragraph 8.7 (page 13).
+
+2005-02-26  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/Widgets/UML2/UMLActor.cs (ctor): The correct typeInfo
+	  is "Name", not "name". Make sure you fix your sample diagrams.
+	* MonoUML/Widgets/UML2/UMLDiagram.cs (ctor): The diagram zoom factor
+	  must be intepreted as it is, not divided by 100. Make sure you fix
+	  your sample diagrams.
+	* MonoUML/XmiImporter/fromXMI1_2.xslt: Added initial support to
+	  diagrams.
+	* samples/useCaseDiagram.xmi: Fixed zoom factor and Actor's name
+	  typeInfo.
+
+2005-02-26  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* Makefile: Now also calls MonoUML/XmiImporter/Makefile.
+	* MonoUML/GUI/Glade/gui.glade: Added menu item for "Import" - 
+	  monouml_menuitem_importxmi.
+	* MonoUML/GUI/MonoUML.cs (OnImportXMI): Handles the event generated by
+	  the "Import" menu item, opening a file chooser and converting the 
+	  selected file to the native XMI format.
+	* MonoUML/Widgets/Hub.cs (OpenProject): Added overload for files
+	  serialized as streams. This is used by the importer.
+	* MonoUML/XmiImporter/AssemblyInfo.cs:
+	* MonoUML/XmiImporter/Importer.cs:
+	* MonoUML/XmiImporter/Makefile:
+	* MonoUML/XmiImporter/fromXMI1_0.xslt:
+	* MonoUML/XmiImporter/fromXMI1_2.xslt: Newly added files.
+	* importer/poseidon/AssemblyInfo.cs: Updated.
+	* importer/poseidon/Main.cs: Instead of doing the work, now is just a
+	  front end to MonoUML.XmiImporter.dll.
+	* importer/poseidon/Makefile: The exe now depends on
+	  MonoUML.XmiImporter.dll.
+	* importer/poseidon/fromXMI1_0.xslt: Removed.
+	* importer/poseidon/fromXMI1_2.xslt: Removed. Both files were moved to
+	  MonoUML/XmiImporter.
+
+2005-02-25  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/GUI/MonoUML.cs: Code-generation now uses a druid window, for
+	  wizard-like experience.
+	* MonoUML/GUI/Glade/gui.glade: Window used for wizard added.
+	* MonoUML/CodeGeneration/Wizard.cs: New class which handles the code
+	  generation wizard.
+	* MonoUML/CodeGeneration/GeneratorChooser.cs: Removed, replaced with 
+	  Wizard.cs
+	* MonoUML/CodeGeneration/GeneratorRunnger.cs: Removed, replaced with 
+	  Wizard.cs
+
+2005-02-24  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/Widgets/UML2/UMLCanvas.cs (ActorActivatedCb): Now uses the
+	  functionality implemented in NoteBook to create a new Actor.
+
+2005-02-24  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/GUI/MonoUML.cs (CreateToolbarIconsUseCase):
+	  The "new Use Case" icon is a Use Case, not a use case diagram.
+	* MonoUML/Widgets/Hub.cs 
+	  (AddNewUMLElement): New method.
+	  (NewUMLElement): Now uses AddNewUMLElement.
+	* MonoUML/Widgets/NoteBook.cs:
+	  (AddActor, AddUseCase): Reimplemented.
+	* MonoUML/Widgets/UML2/UMLActor.cs:
+	  (ctor): Only one ctor was left. Now passes the appropriate parameters
+	  to the base class. Deleted dead code (was commented out).
+	  (CreateNew): New method. Creates an UMLActor given its UML model 
+	  element (an ExpertCoder.Uml2.Actor).
+	  (Redraw): Uses base.SetDIProperties in order to set the position in the
+	  DI model.
+	  (DEFAULT_HEIGHT, DEFAULT_WIDTH): Added these private consts.
+	* MonoUML/Widgets/UML2/UMLCanvas.cs:
+	  (ActorActivatedCb): Disabled for now.
+	  (PelotaActivatedCb): Instead of doing 
+	  gnode.GraphNode.SemanticModel.GraphElement now does
+	  gnode.GraphElement.
+	* MonoUML/Widgets/UML2/UMLEditableField.cs (GraphElement): Added dummy
+	  property.
+	* MonoUML/Widgets/UML2/UMLElement.cs:
+	  (ctor): Don't set Height and Width.
+	  (GraphElement): Added as abstract property get.
+	  (GraphNode): Deleted. Replaced by GraphElement.
+	  (NotifyMove): Calls OnMoved.
+	  (OnMoved): Empty virtual method. This is used to set the DI properties
+	  for positioning.
+	  (DEFAULT_HEIGHT, DEFAULT_WIDTH): Deleted.
+	  (_graph_node): Deleted.
+	* MonoUML/Widgets/UML2/UMLNode.cs:
+	  (ctor): Added new ctor, refactored from UMLActor.
+	  (GraphElement): Implemented.
+	  (GraphNode): Added.
+	  (OnMoved): Implemented. Sets the DI properties X and Y.
+	  (SetDIProperties): Sets the DI properties Width and Height.
+	  (_graph_node): Added.
+	* MonoUML/Widgets/UML2/UMLNodeEntry.cs (ctor): Added ctors.
+	* MonoUML/Widgets/UML2/UMLNodeEntryContained.cs:
+	  (ctor): Added new ctor.
+	  (GraphElement): Implemented dummy property.
+	* MonoUML/Widgets/UML2/UMLUseCase.cs:
+	  (ctor): Refactored. Only 1 ctor left.
+	  (CreateNew): Added. Creates a new UseCase from its model element.
+	  (DEFAULT_HEIGHT, DEFAULT_WIDTH): Added.
+
+2005-02-22  Mario Carrión  <mario.carrion@gmail.com>
+
+	* Adding new content:
+		* docs/spanish/fund.xml:
+		* docs/spanish/just.xml:
+		* docs/spanish/obj.xml:
+		* docs/spanish/plant.xml:
+		* docs/spanish/resumen.xml:
+
+2005-02-21  Mario Carrión  <mario.carrion@gmail.com>
+
+	* Spelling corrections:
+		* docs/spanish/alc_lim.xml:
+		* docs/spanish/just.xml:
+		* docs/spanish/plant.xml:
+
+2005-02-19	Mario Carrión  <mario.carrion@gmail.com>
+	
+	* The following files were added:
+		* docs/spanish/alc_lim.xml:
+		* docs/spanish/autores.xml:
+		* docs/spanish/biblio.xml:
+		* docs/spanish/conc.xml:
+		* docs/spanish/edo.xml:
+		* docs/spanish/fund.xml:
+		* docs/spanish/hipotesis.xml:
+		* docs/spanish/impacto.xml:
+		* docs/spanish/index.xml:
+		* docs/spanish/int.xml:
+		* docs/spanish/just.xml:
+		* docs/spanish/autores.xml:
+		* docs/spanish/obj.xml:
+		* docs/spanish/plant.xml:
+		* docs/spanish/prueba.xml:
+		* docs/spanish/resumen.xml:
+		* docs/spanish/MAINTAINER:
+		* docs/spanish/html:
+		* docs/spanish/Makefile:
+
+2005-02-13  Mario Carrión  <mario.carrion@gmail.com>
+
+	*  docs/uml-canvas-sharp-2.0/uml-canvas-sharp.dia Updated
+
+2005-02-03  Manuel Cerón  <ceronman@gmail.com>
+
+	* docs/uml-canvas-sharp-2.0/uml-canvas-sharp.zuml Added
+
+2005-01-31  Manuel Cerón  <ceronman@gmail.com>
+
+	* docs/uml-canvas-sharp-2.0 Folder Added
+	* docs/uml-canvas-sharp-2.0/uml-canvas-sharp.dia Added
+	* docs/uml-canvas-sharp-2.0/uml-canvas-sharp.png Added
+
+2005-01-26  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/Widgets/UML2/UMLActor.cs: Now you are able to save and load the
+	  modifications.
+
+2005-01-26  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/DI/Serialization/Serializer.cs
+	  (SerializeCompositionsIn_GraphElement): Bug fix. Now serializes the
+	  "position" elements when the position is not (0,0).
+
+2005-01-25  Mario Carrión  <mario.carrion@gmail.com>
+
+	* Some changes trying to integrate EC.UML and MonoUML.UML2, but there some
+	  weird issues, most of them happens when saving (for example, if you move
+	  an Actor this element does not keep its graphical values and your 
+	  changes are not saved) I really need to debug this.   
+	* MonoUML/Widgets/UML2/UMLEntry.cs: New event added, this event is called
+	  when the entry.Text is changed.
+	* MonoUML/Widgets/UML2/delegates.cs: New delegate added, used like handler 
+	  when some text is changed.
+	* MonoUML/Widgets/UML2/UMLActor.cs: If you change the Actor's name now the 
+	  Tree and the UMLProperties are refreshed, this is the first attempt to 
+	  integrate MonoUML.UML2 and EC.UML, I will try again :). 
+
+2005-01-24  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* Makefile:
+	* MonoUML/DI/Makefile:
+	* MonoUML/DI/Uml2Bridge/Makefile:
+	* MonoUML/Makefile: the directory "resources" was renamed to "bin".
+
+2005-01-24  Rodolfo Campero  <rodolfo.campero@gmail.com>
+
+	* MonoUML/GUI/Glade/gui.glade: Deleted button
+	  monouml_button_projects_cancel.
+	* MonoUML/GUI/MonoUML.cs (BuildSelectProjectDialog): Now the default
+	  option is "New" (project). Changed my email to my new addres @gmail.
+	* MonoUML/GUI/SelectProjectDialog.cs (ProjectDialogAction, ctor,
+	  OnButtonSelectProjectCancel): Deleted option "Cancel". Fixed bug
+	  that made all widgets visible at startup.
+	* MonoUML/Widgets/UML2/UMLActor.cs:
+	* MonoUML/Widgets/UML2/UMLDiagram.cs: Fixed my email.
+	* MonoUML/Widgets/Hub.cs (OpenProject): Now returns a Gtk.ResponseType.
+
+2005-01-23  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/Helper.cs (CloseNewElementNameModal,
+	  CreateUmlElement): When asked to create a NamedElement, asks the user
+	  for the new element name.
+	* MonoUML/Widgets/MultipleObjectViewer.cs (EnableButtons): Fixed bug
+	  that habilited the "navigate" and "remove" buttons even when there
+	  were no elements in the list.
+
+2005-01-22  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* Makefile: Fixed - now it builds monouml.exe only if there are changes
+	  in the sources. Some dependencies not required were deleted.
+	* MonoUML/CodeGeneration/GeneratorChooser.cs: Added. This dialog
+	  allows the user to choose between the installed generators.
+	* MonoUML/CodeGeneration/GeneratorRunner.cs: Added. This dialog allows
+	  the user to set the parameters expected by a code generator, and to
+	  run it.
+	* MonoUML/GUI/Glade/gui.glade: The clicked event handler is called
+	  OnSaveProject.
+	* MonoUML/GUI/MonoUML.cs (OnCodeGeneration): Implemented. Uses
+	  GeneratorChooser and GeneratorRunner.
+	* MonoUML/Widgets/Hub.cs (ElementsList): Implemented. This property
+	  get exposes (internally) the list of elements that conform the
+	  project.
+	* MonoUML/Widgets/NoteBook.cs:
+	* MonoUML/Widgets/UML2/UMLEdge.cs:
+	* MonoUML/Widgets/UML2/UMLElement.cs: Deleted unused function variables.
+
+2005-01-20  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/GUI/Glade/gui.glade: Added new menu "Tool"
+	* MonoUML/GUI/MonoUML.cs: Added event handler for menu item "Code
+	  Generation"
+
+2005-01-19  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/IView.cs: Added. This new interface must be
+	  implemented by every view in the system.
+	* MonoUML/Widgets/ElementChooserDialog.cs (ctor, SelectedObject):
+	  Handles the tree through the IView interface.
+	* MonoUML/Widgets/Hub.cs (ctor, IBroadcaster.BroadcastElementChange, 
+	  IBroadcaster.BroadcastElementNameChange,
+	  IBroadcaster.BroadcastElementSelection, CreateNewProject,
+	  ClearAllViews, OpenProject): Makes use of the new IView interface;
+	  this simplifies a lot the code - just take a look at the
+	  IBroadcaster implementation.
+	* MonoUML/Widgets/NoteBook.cs: Implements IView. The implementation is
+	  still partial. The implementation of IBroadcaster was completed.
+	* MonoUML/Widgets/OwnedTypeViewer.cs (Add): A compiler warning was
+	  supressed.
+	* MonoUML/Widgets/Tree.cs: Implements IView. A compiler warning
+	  related to the variable elementName in Draw was fixed.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Implements IView. This class is
+	  now more encapsulated.
+
+2005-01-18  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/Widgets/UML2/UMLNodeEntryContained.cs: This new class enables the
+	  UMLElement's motion while moving any contained UMLEntry.
+
+2005-01-18  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/GUI/Pixmaps/about.png: New file. About image.
+	* MonoUML/GUI/Pixmaps/main_icon.png: New file. Icon used by 
+	  the window.
+
+2005-01-18  Mario Carrión  <mario.carrion@gmail.com>
+
+	* Due to several dependencies between the libraries now there 
+	  is one makefile.
+	* MonoUML/Widgets/UML2/delegates.cs: New delegate added. 
+	  UMLElementSelectedHandler.
+	* MonoUML/Widgets/UML2/UMLElement.cs:
+	* MonoUML/Widgets/UML2/UMLDiagram.cs:
+	* MonoUML/Widgets/UML2/UMLCanvas.cs:
+	* MonoUML/Widgets/UML2/Makefile:
+	* MonoUML/Widgets/Tree.cs:
+	* MonoUML/Widgets/NoteBook.cs:
+	* MonoUML/Widgets/Makefile: Removed
+	* MonoUML/Widgets/Hub.cs:
+	* MonoUML/GUI/Makefile: Removed
+
+2005-01-15  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/Tree.cs (GetLabelAndType): Shows correctly the name,
+	  when it's not empty, for UML.InterfaceRealization elements.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Some elements were reorganized
+	  for better visualization. Added viewers for Generalizations and
+	  InterfaceRealizations.
+
+2005-01-07  Miguel Huerta  <hgmiguel@gmail.com>
+
+	* MonoUML/Widgets/UML2/UMLCanvas.cs: Canvas changes size when the element
+	  is moved outside of it.
+    
+2005-01-07  Mario Carrión  <mario.carrion@gmail.com>
+
+	* New monodoc files added:
+		* docs/monodoc/MonoUML-docs.source
+		* docs/monodoc/MonoUML-docs.tree
+		* docs/monodoc/MonoUML-docs.zip
+		* docs/monodoc/README
+
+2005-01-07  Mario Carrión  <mario.carrion@gmail.com>
+
+	* docbook/: All the contents moved to docs/
+
+2005-01-06  Manuel Cerón  <ceronman@gmail.com>
+
+	* MonoUML/Widgets/UML2/UMLEdge.cs:
+	* MonoUML/Widgets/UML2/UMLCanvas.cs:
+	* MonoUML/Widgets/UML2/UMLControlPoint.cs:
+		* Now associations have control points to both ends.
+		* Now associations can change its "to" and "from" associated elements,
+		  This can be done by dragging its controlo points.
+		* Now new associations are added to the canvas by dragging and
+		  droping.
+
+2004-12-29  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/GUI/Makefile: Added pixmap primitivetype_tree.png.
+	* MonoUML/Widgets/Makefile: Added pixmap primitivetype_tree.png.
+	* MonoUML/Widgets/Pixmaps/datatype_tree.png: Now is just DT, without
+	  the guillemets (<< >>).
+	* MonoUML/Widgets/Pixmaps/primitivetype_tree.png: An icon for
+	  PrimitiveType elements.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Added viewers for 
+	  Operation.OwnedParameter, Feature.IsLeaf, Operation.IsQuery,
+	  StructuralFeature.IsReadOnly.
+
+2004-12-29  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/Widgets/UML2/UMLDiagram.cs: Now the UseCase is drawn.
+	* MonoUML/Widgets/UML2/UMLUseCase.cs: Added a new constructor added.
+
+2004-12-29  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/GUI/Makefile: Use $(SOURCES) as dependencies for the DLL.
+	* MonoUML/Widgets/Hub.cs: Avoids to broadcast a notification when
+	  another one is being broadcasted.
+	* MonoUML/Widgets/SingleStringViewer.cs: This new implementation
+	  follows the same pattern as SingleBooleanViewer (is
+	  reflection-based).
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Some properties are grouped in
+	  order to reduce vertical space.
+
+2004-12-29  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* samples/useCaseDiagram.xmi: The root element is now a Model. The
+	  actors in the second diagram have been placed at a different
+	  position. A use case was added (I'm not sure if it's OK, was done
+	  by hand.)
+
+2004-12-28  Mario Carrión  <mario.carrion@gmail.com>
+ 	
+ 	* MonoUML/Widgets/UML2/UMLDiagramType.cs: New file added, represents the 13 UML2
+ 	   diagrams.
+	* MonoUML/GUI/MonoUML.cs: New methods added
+	* MonoUML/GUI/Glade/gui.glade: Now the Toolbar is created dinamically. No more 
+	   static-Toolbar in the *.glade.
+	* MonoUML/Widgets/NoteBook.cs: Added some methods for handling the events from the 
+	   diagram-toolbar.
+	* MonoUML/Widgets/NoteBookLabel.cs: Added tooltip.
+	* MonoUML/Widgets/UML2/UMLActor.cs: 
+	* MonoUML/Widgets/UML2/UMLDiagram.cs: 
+	* MonoUML/Widgets/UML2/UMLUseCase.cs: 
+
+2004-12-28  Manuel Cerón  <ceronman@gmail.com>
+
+	* UMLSelector bug fixed when it moves various connected elements
+		* MonoUML/GUI/UMLSelector.cs
+		* MonoUML/GUI/UMLCanvas.cs
+	* Implemented UMLSelector support for resizing multiple elements at same time
+		* MonoUML/GUI/UMLSelector.cs
+		* MonoUML/GUI/UMLElement.cs
+		* MonoUML/GUI/UMLCanvas.cs
+
+2004-12-28  Mario Fuentes  <mario@gnome.cl>
+
+	* MonoUML/GUI/Makefile: added reference to MonoUML.Widgets.UML2.
+	* MonoUML/GUI/MonoUML.cs: Show/Hide Grid button change status when other
+	  Canvas is selected.
+	* MonoUML/Widgets/UML2/UMLCanvas.cs: (GetSnapedPoint) added for get a
+	  point snaped to the grid point more close to a point.
+
+2004-12-27  Mario Carrión  <mario.carrion@gmail.com>
+
+    * Now when the UMLEntry is selected its UMLNodeEntry is also selected.
+		* MonoUML/Widgets/UML2/UMLActor.cs:
+		* MonoUML/Widgets/UML2/UMLCanvas.cs:
+		* MonoUML/Widgets/UML2/UMLDiagram.cs:
+		* MonoUML/Widgets/UML2/UMLElement.cs:
+		* MonoUML/Widgets/UML2/UMLEntry.cs:
+		* MonoUML/Widgets/UML2/UMLNodeEntry.cs:
+	* MonoUML/Widgets/UML2/UMLUseCase.cs: New class, represents the Use Cases (bugs?) 
+
+2004-12-27  Mario Fuentes  <mario@gnome.cl>
+
+	* MonoUML/GUI/Glade/gui.glade: Added two button for Show/Hide the Grid
+	  and Set/Unset Snap to Grid.
+	* MonoUML/GUI/IconEvents.cs: Added EventType enumeration, for specify
+	  if is a Click o Toggle event.
+	  (SetIconEvents): added a parameter for specify type of event.
+	* MonoUML/GUI/MonoUML.cs: connect new buttons events.
+	* MonoUML/Widgets/NoteBook.cs: Added ShowDiagramGrid and HideDiagramGrid.
+	  The signal "SwitchPage" is connected to OnSwitchPage callback.
+	* MonoUML/Widgets/UML2/UMLCanvas.cs: Added capability of Show/Hide a
+	  Grid.
+
+2004-12-27  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/ClassifierIsAbstractViewer.cs: deleted. Its job can
+	  be done now by SingleBooleanViewer.
+	* MonoUML/Widgets/IsLeafViewer.cs: deleted. Same as above.
+	* MonoUML/Widgets/MultiplicityElementViewer.cs: Uses
+	  SingleBooleanViewer instead of its own classes.
+	* MonoUML/Widgets/SingleBooleanViewer.cs: Now uses reflection, so
+	  there's no need to create a class for each boolean property, just an
+	  instance of this class.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Uses SingleBooleanViewer
+	  instead of the derived classes.
+
+2004-12-27  Manuel Cerón  <ceronman@gmail.com>
+
+	* MonoUML/Widgets/UML2/UMLCanvas.cs: Added a temporal context popoup
+	menu for testing intentions
+	* MonoUML/Widgets/UML2/Pelota.cs: Redraw bug when pelota wasn't created
+	fixed. This class is maintained only for testing.
+	* MonoUML/Widgets/UML2/Pelota.cs: Redraw bug when clock parts wasn't
+	created fixed. This
+
+2004-12-26  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/Widgets/UML2/UMLEditableField: Fixed bug that didn't delete the used TextView. 
+
+2004-12-26  Mario Carrión  <mario.carrion@gmail.com>
+
+	* Now when you resize a UMLEditableField, the UMLSelector's gray-rectangle does not
+	  appear. The following files were modified for creating this effect.
+		* MonoUML/Widgets/UML2/UMLCanvas.cs:
+		* MonoUML/Widgets/UML2/UMLEditableField.cs:
+		* MonoUML/Widgets/UML2/UMLElement.cs:
+		* MonoUML/Widgets/UML2/UMLEntry.cs:
+		* MonoUML/Widgets/UML2/UMLNodeEntry.cs: Now you use AddEntry rather than indexer
+		   style, there is also RemoveEntry and GetEntry for getting/setting the entries.
+	* MonoUML/Widgets/UML2/UMLActor.cs: Changed the way that the UMLEntry is added, now
+	   using AddEntry rathen than this[<index>] = UMLEntry; 
+
+2004-12-26  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/GUI/MonoUML.cs: Added the CVS Message
+
+2004-12-26  Mario Carrión  <mario.carrion@gmail.com>
+
+	* Now when you move a UMLEntry, the UMLSelector's gray-rectangle does not appear. The 
+	   following files were modified for creating this effect.
+	* MonoUML/Widgets/UML2/UMLCanvas.cs: the following was added:
+		* Method DisableSelector. Used for disabling the UMLSelector creation and then stoping 
+		   drawing the rectangle. 
+	* MonoUML/Widgets/UML2/UMLNodeEntry.cs: the following was added:
+		* Event UMLNodeEntryMovedHandler EntryMoved. Indicates that one of all UMLNodeEntry's
+		   UMLEntry was moved.
+	* MonoUML/Widgets/UML2/UMLEntry.cs: New 
+		* Event UMLEntryMovedHandler Moved. The UMLEntry was moved.
+	* MonoUML/Widgets/UML2/delegates.cs: New delegates added:
+		* UMLEntryMovedHandler: The UMLEntry was moved
+		* UMLNodeEntryMovedHandler: One UMLNodeEntry's UMLEntry was moved. Remember 
+		   that UMLNodeEntry may contain one or more UMLEntry/s.
+
+2004-12-25  Mario Carrión  <mario.carrion@gmail.com>
+
+	* Old UMLCanvas# version removed:
+		* MonoUML/Widgets/UML/Clock.cs:
+		* MonoUML/Widgets/UML/ControlPointGroup.cs:
+		* MonoUML/Widgets/UML/delegates.cs:
+		* MonoUML/Widgets/UML/Makefile:
+		* MonoUML/Widgets/UML/Pelota.cs:
+		* MonoUML/Widgets/UML/README:
+		* MonoUML/Widgets/UML/test.cs:
+		* MonoUML/Widgets/UML/AssemblyInfo.cs:
+		* MonoUML/Widgets/UML/ControlPoint.cs:
+		* MonoUML/Widgets/UML/Edge.cs:
+		* MonoUML/Widgets/UML/Node.cs:
+		* MonoUML/Widgets/UML/Point.cs:
+		* MonoUML/Widgets/UML/Selector.cs:
+		* MonoUML/Widgets/UML/UMLCanvas.cs:
+
+2004-12-24  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/GUI/MonoUML.cs: Added Manuel Cerón to the Core Team
+
+2004-12-24  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/Widgets/UML2/Point.cs: Added
+
+2004-12-24  Mario Carrión  <mario.carrion@gmail.com>
+
+	* No more Diacanvas# dependecy. The following files were REMOVED:
+		* MonoUML/Widgets/UML2/Actor.cs
+		* MonoUML/Widgets/UML2/Class.cs
+		* MonoUML/Widgets/UML2/Diagram.cs
+		* MonoUML/Widgets/UML2/Label.cs
+		* MonoUML/Widgets/UML2/Package.cs
+		* MonoUML/Widgets/UML2/UseCase.cs
+		* MonoUML/Widgets/UML2/UseCaseCircle.cs
+		* MonoUML/Widgets/UML2/UseCase.cs
+	* The following files were ADDED:
+		* MonoUML/Widgets/UML2/Clock.cs: Clock example, UMLNode derived
+		* MonoUML/Widgets/UML2/Pelota.cs: Ball example, UMLNode derived
+		* MonoUML/Widgets/UML2/UMLActor.cs: Actor, UMLNodeEntry derived
+		* MonoUML/Widgets/UML2/UMLCanvas.cs: Canvas for drawing the UMLElements
+		* MonoUML/Widgets/UML2/UMLControlPoint.cs: Control point, used for resizing
+		   elements, moving, etc.
+		* MonoUML/Widgets/UML2/UMLControlPointGroup.cs: Frame which contains 4 
+		   UMLControlPoint used for resizing.
+		* MonoUML/Widgets/UML2/UMLDiagram.cs: Used for NoteBook for adding new 
+		  diagrams.
+		* MonoUML/Widgets/UML2/UMLEdge.cs: Used for creating asociations
+		* MonoUML/Widgets/UML2/UMLEditableField.cs: Used for UMLEntry.cs for 
+		  creating in-the-fly editable labels.
+		* MonoUML/Widgets/UML2/UMLEntry.cs: Represents the texts drawn in the 
+		  UMLCanvas.
+		* MonoUML/Widgets/UML2/UMLNode.cs: XMI Node, this element doesn't include
+		  text labels (such as Start Nodes, Message Labels).
+		* MonoUML/Widgets/UML2/UMLNodeEntry.cs: XMI Node, this element include
+		   text labels (such as Actors, Classes, Use Cases).
+		* MonoUML/Widgets/UML2/UMLSelector.cs: For selecting drawn elements.
+		* MonoUML/Widgets/UML2/delegates.cs: Delegates currently used .
+
+2004-12-22  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/Makefile: References the new icon for Interface
+	  Realizations.
+	* MonoUML/Widgets/Pixmaps/implementation_tree.png: Deleted.
+	* MonoUML/Widgets/Pixmaps/interfacerealization_tree.png: Added.
+	  Replaces implementation_tree.png.
+	* importer/poseidon/Main.cs: Now can handle xmi versions 1.0 and 1.2.
+	* importer/poseidon/Makefile: Added new resource, renamed old
+	  stylesheet for poseidon.
+	* importer/poseidon/fromXMI1_0.xslt: Added. New stylesheet for XMI 1.0.
+	* importer/poseidon/fromXMI1_2.xslt: Same as poseidon_monouml.xslt.
+	* importer/poseidon/poseidon_monouml.xslt: Deleted, because it was
+	  renamed.
+
+2004-12-20  Manuel Cerón  <ceronman@gmail.com>
+
+	* MonoUML/Widgets/UML/*.cs: All files have been added again with some
+	   corrections.
+	* MonoUML/Widgets/UML/Selector.cs: Added, implements a selector rectangle for
+	   UMLCanvas# Widgets.
+	* MonoUML/Widgets/UML/Node.cs: Event managment has been separated from
+	   Node class.
+	* MonoUML/Widgets/UML/UMLCanvas.cs: Event managment of Node has been 
+	   implemented in this class.
+
+2004-12-20  Mario Carrión  <mario.carrion@gmail.com>
+
+	* MonoUML/Widgets/UML/*.cs: All files have been removed because sooner will 
+	   be replaced with a new stabler/usefull version.
+
+2004-12-04  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/ImplementationContractViewer.cs: Removed.
+	* MonoUML/Widgets/InterfaceRealizationContractViewer.cs: Added.
+	  Replaces ImplementationContractViewer.cs.
+	* MonoUML/Widgets/Tree.cs: Implementation was renamed to
+	  InterfaceRealization.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Implementation was renamed to
+	  InterfaceRealization. Added preliminary support for Namespace
+	  properties ElementImport and PackageImport.
+
+2004-11-12  Mario Carrión	<marioc@unixmexico.org>
+	* MonoUML/Widgets/UML/Main.cs: added
+	* MonoUML/Widgets/UML/Element.cs: deleted
+	* MonoUML/Widgets/UML/ControlPoints.cs: deleted
+	* MonoUML/Widgets/UML/MyCanvas.cs: deleted
+
+2004-11-12  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/UML/Clock.cs:
+	* MonoUML/Widgets/UML/ControlPoint.cs:
+	* MonoUML/Widgets/UML/ControlPointGroup.cs:
+	* MonoUML/Widgets/UML/Edge.cs:
+	* MonoUML/Widgets/UML/Node.cs:
+	* MonoUML/Widgets/UML/Pelota.cs:
+	* MonoUML/Widgets/UML/Point.cs:
+	* MonoUML/Widgets/UML/UMLCanvas.cs:
+	* MonoUML/Widgets/UML/delegates.cs: Initial version of some,
+	  modifications to others. Still in its infancy.
+
+2004-10-30  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/Helper.cs:
+	* MonoUML/Widgets/IBroadcaster.cs: Fixed missing namespace
+	  declaration.
+	* MonoUML/Widgets/OwnedTypeViewer.cs:
+	* MonoUML/Widgets/OwnedElementsViewer.cs: Now sets the "owner"
+	  property for the new owned elements.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Indicates the name of the
+	  "owner" property to the OwnedElementsViewers and the
+	  OwnedTypeViewer.
+	* MonoUML/Widgets/OwnedAttributesViewer.cs:
+	* MonoUML/Widgets/OwnedOperationsViewer.cs: These viewers were added.
+
+2004-10-23  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/Makefile: Include the two new icons.
+	* MonoUML/Widgets/Pixmaps/package_tree.png: Now is bigger.
+	* MonoUML/Widgets/Pixmaps/model_tree.png:
+	* MonoUML/Widgets/Pixmaps/profile_tree.png: New icons.
+	* MonoUML/Widgets/TypeKindChooserDialog.cs: The default selection now
+	  works.
+	* MonoUML/Widgets/RootLevelElementChooserDialog.cs: A dialog that
+	  allows to choose a new top level UML element.
+
+2004-10-18  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/EnumerationLiteralViewer.cs: Deleted.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: EnumerationLiteralViewer was
+	  replaced by OwnedElementsViewer.
+
+2004-10-18  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/OwnedUseCaseViewer.cs:
+	* MonoUML/Widgets/ExtensionPointViewer.cs: Deleted. Both files were 
+	  replaced by OwnedElementsViewer.
+	* MonoUML/Widgets/OwnedElementsViewer.cs: Initial version. This viewer
+	  is able to show any multivalued property that subsets OwnedElement.
+	  It uses reflection internally.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: The specific viewers for
+	  OwnedUseCase and ExtensionPoint were replaced by the more general
+	  viewer OwnedElementsViewer. Controls were added for the properties
+	  NestedPackage, OwnedAttribute and OwnedOperation.
+
+2004-10-18  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/Tree.cs (GetLabelAndType): Picks a better label for
+	  Generalization and Implementation elements - the qualfied name of
+	  the generalized classifier or the implemented interface.
+
+2004-10-18  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/GUI/Glade/gui.glade: Added menu entries "Insert" and "New
+	  UML element".
+	* MonoUML/GUI/MonoUML.cs (BuildSelectProjectDialog, OnNewUmlElement):
+	  When "New Project" is selected in the "welcome" dialog, show all
+	  widgets. OnNewUmlElement is a handler for the event generated in the
+	  new menu entry.
+	* MonoUML/Widgets/Helper.cs (CreateUmlElement): This method uses
+	  reflection in order to create new model elements.
+	* MonoUML/Widgets/Hub.cs (NewUMLElement): Shows a modal window that
+	  allows the user to choose a root-level model element type, ir order
+	  to create a new model element.
+	* MonoUML/Widgets/OwnedTypeViewer.cs (Add): The code now is simpler;
+	  it uses Helper.CreateUmlElement instead of having a huge switch.
+	* MonoUML/Widgets/UMLPropertiesTab.cs (EnableCommentProperties): if
+	  the comment body is null, show an empty string.
+
+2004-10-16  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/Pixmaps/enumeration_tree.png:
+	* MonoUML/Widgets/Pixmaps/enumerationliteral_tree.png:
+	* MonoUML/Widgets/Pixmaps/generalization_tree.png:
+	* MonoUML/Widgets/Pixmaps/implementation_tree.png:
+	* MonoUML/Widgets/Pixmaps/interface_tree.png:
+	* MonoUML/Widgets/Pixmaps/parameter_tree.png: These icons were added.
+	* MonoUML/Widgets/Makefile: The new icons are built into the DLL.
+	* MonoUML/Widgets/EnumerationLiteralViewer.cs:
+	* MonoUML/Widgets/GeneralizationGeneralViewer.cs:
+	* MonoUML/Widgets/ImplementationContractViewer.cs:
+	* MonoUML/Widgets/OwnedTypeViewer.cs:
+	* MonoUML/Widgets/ParameterDirectionKindViewer.cs: These viewers were
+	  added.
+	* MonoUML/Widgets/TypeKindChooserDialog.cs: This is a viewer that
+	  shows a parameter's direction and allows to change it.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Makes use of the new viewers.
+	* importer/poseidon/poseidon_monouml.xslt: Translates correctly the
+	  parameter direction - its called 'kind' in UML 1.4, and 'direction' 
+	  in UML 2.
+
+2004-10-13  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* importer/poseidon/poseidon_monouml.xslt: Now handles Interfaces,
+	  generalizations and interface implementations.
+
+2004-10-06	Mario Carrión	<marioc@unixmexico.org>
+	* MonoUML/Widgets/UML/Clock.cs:
+	* MonoUML/Widgets/UML/ControlPoints.cs: You are able to resize from
+	  all the four Control Points
+	* MonoUML/Widgets/UML/Element.cs:
+	* MonoUML/Widgets/UML/Makefile:
+	* MonoUML/Widgets/UML/Pelota.cs:
+	* MonoUML/Widgets/UML/test.cs: UML# first sample. Pre-alpha UML# 
+	  version. Have fun :)
+
+2004-10-06  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* importer/poseidon/poseidon_monouml.xslt: Add the return parameters
+	  to the returnResult set instead of formalParameter.
+
+2004-10-03  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* importer/poseidon/AssemblyInfo.cs:
+	* importer/poseidon/Main.cs:
+	* importer/poseidon/Makefile:
+	* importer/poseidon/poseidon_monouml.xslt: All these files are part of
+	  an importer for XMI files made with Poseidon 2.5.
+
+2004-10-03  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/MultiplicityElementViewer.cs: This is a viewer that
+	  takes care of all the properties inherited from MultiplicityElement.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: uses the new viewer.
+
+2004-10-03  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/TypedElementTypeViewer.cs: A viewer for the 
+	  property TypedElement.Type.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Uses the new viewer.
+
+2004-10-02  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/Makefile: Include as resources the two new icons.
+	* MonoUML/Widgets/Pixmaps/association_tree.png:
+	* MonoUML/Widgets/Pixmaps/associationend_tree.png: New icons.
+	* MonoUML/Widgets/Tree.cs: Uses the AssociationEnd icon instead of
+	  the Property icon when appropriate.
+	* MonoUML/Widgets/NamedElementVisibilityViewer.cs: A viewer for the
+	  property NamedElement.Visibility.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Uses the new viewer for the
+	  Visibility property.
+
+2004-10-01  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/DI/Makefile: The "clean" target now deletes
+	  MonoUML.DI.Uml2Bridge.dll. It also builds the libraries with
+	  debuggging information.
+	* MonoUML/DI/Uml2Bridge/Serialization/Serializer.cs:
+	* MonoUML/DI/Serialization/Serializer.cs: Some changes were applied in
+	  order to work with the lastest modifications to ExpertCoder.Xmi2.dll
+	  Now the serializer should be more stable, and should issue warnings
+	  only when unknown elements are found.
+	* MonoUML/DI/Uml2Bridge/Makefile: Builds the libraries with debugging
+	  information.
+
+2004-10-01  Mario Fuentes  <mario@gnome.cl>
+
+	* MonoUML/Widgets/UML/Element.cs: Added. Base class for items,
+	  it's based on GnomeCanvas.  Provide necesary for create new items
+	  and move they with mouse.
+	* MonoUML/Widgets/UML/Clock.cs: Added. A sample item based on Element.
+
+2004-09-19  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/ClassifierIsAbstractViewer.cs:
+	* MonoUML/Widgets/IsLeafViewer.cs:
+	* MonoUML/Widgets/SingleBooleanViewer.cs: Initial version of these
+	  files.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Shows Classifier.IsAbstract and
+	  RedefinableElement.IsLeaf.
+
+2004-09-16  Mario Carrión <marioc@unixmexico.org>
+	* docbook/index.xml: Renamed to docbook/architecture.xml.
+
+2004-09-16  Mario Carrión <marioc@unixmexico.org>
+	* ARCHITECTURE: Removed
+	* docbook/index.xml: This file replaces the old ARCHITECTURE, written
+	  using the DocBook styles.
+
+2004-09-16  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* ARCHITECTURE: Initial version of this document.
+
+2004-09-15  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/ExtensionLocationViewer.cs: Reverted last
+	  changes - in order to avoid compilation issues you need to
+	  checkout and compile the latest version of ExpertCoder from
+	  cvs. Also implemented IsAddSensitive, so the Add button is
+	  not sensitive when there's no Extended Case.
+	* MonoUML/Widgets/Makefile: Reverted last changes.
+	* MonoUML/Widgets/MultipleObjectViewer.cs (IsAddSensitive):
+	  Implemented.
+
+2004-09-14 Mario Carrión  <marioc@unixmexico.org>
+	* MonoUML/Widgets/Makefile: Added to resources: 
+	  ExpertCoder.Mof2.Collections.dll
+	* MonoUML/Widgets/ExtensionLocationViewer.cs: Fixed bug when you
+	   tried to compile MonoUML.
+
+2004-09-14  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/ExtensionLocationViewer.cs (Add): Implemented.
+	  Now uses the new dialog MultiChooserDialog to pick 
+	  ExtensionPoint elements.
+	* MonoUML/Widgets/MultiChooserDialog.cs: Implemented. This is a
+	  dialog that allows picking several elements at once, based on
+	  two lists: a list of options and a list of banned elements.
+
+2004-09-14  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/AdditionViewer.cs: This new viewer allows editing
+	  the property Include.Addition.
+	* MonoUML/Widgets/AnnotatedElementViewer.cs: Now is possible to
+	  pick elements from the tree and add them to the set of Annotated
+	  Elements in a Comment.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: When the current element is
+	  an Include, the AdditionViewer is shown.
+
+2004-09-13  Mario Carrión  <marioc@unixmexico.org>
+	* MonoUML/GUI/Pixmaps/sources/: This folder contains all the 
+	  image sources for the SelectProjectDialog icons. Currently there
+	  are only two icons drawn.
+	* MonoUML/GUI/Pixmaps/*.png: New icon-images drawn, all are based
+	  on the their source-file images (MonoUML/GUI/Pixmaps/sources/*.svg),
+	  used Sodipodi as image editor, there is missing the "Create Wizard"
+	  icon.  Send some feedback by email :).
+	* MonoUML/GUI/SelectProjectDialog.cs: Fixed bug when you select some
+	  icon (for example, Open) and click Cancel, before the Select Project
+	  Dialog appears even you clicked Cancel (in this sample we used Open 
+	  as clicked-icon), we use a new variable called _selectionAux for 
+	  saving the temporary changes, when the users clicks OK the _selection
+	  sets to _selectionAux.
+	  New enum-type added to ProjectDialogAction: Cancel, it is set when
+	  the user clicks Cancel button.
+	* MonoUML/GUI/MonoUML.cs: Commented attach-events removed. 
+	  Fixed  the bug when the user selects a "Non implemented feature", now 
+	  it does not quit, only shows the message. This might be removed future
+	  releases.
+
+2004-09-13  Mario Fuentes  <mario@gnome.cl>
+
+	* MonoUML/Widgets/MultipleObjectViewer.cs: Set scrolled window ShadowType
+	  property to "In" for show a border.
+
+2004-09-11  Mario Carrión  <marioc@unixmexico.org>
+
+	* docs/MonoUML.dia: The UML Comment element now is written in 
+	  English.
+
+2004-09-11  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/ElementChooserDialog.cs: A new dialog that serves
+	  to pick elements.
+	* MonoUML/Widgets/ExtendConditionViewer.cs: New property viewer.
+	* MonoUML/Widgets/ExtendedCaseViewer.cs (Edit): Now works.
+	* MonoUML/Widgets/Hub.csi (OpenProject): Set the element list to the
+	  ElementChooserDialog.
+	* MonoUML/Widgets/Tree.cs: The store is now created at instance level.
+	  It can be set in "readOnly" mode.
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Added property
+	  "Extend.Condition". Now considers the case when a NamedElement's
+	  name is null.
+
+2004-09-11  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/ExtendedCaseViewer.cs:
+	* MonoUML/Widgets/OwnedUseCaseViewer.cs:
+	* MonoUML/Widgets/SingleObjectViewer.cs: New property viewers.
+	* MonoUML/Widgets/ExtensionLocationViewer.cs
+	  (ShowExtensionLocationFor): Replaced Name for QualifiedName.
+	* MonoUML/Widgets/ModelElementTypeViewer.cs: The ability of navigate
+	  to the owner of an element was added.
+	* MonoUML/Widgets/MultipleObjectViewer.cs: The Delete image was
+	  replaced by a Remove image. First attempt to make double-click on
+	  the list work (but not successful :( ).
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Added management for the
+	  properties: Extend.ExtendedCase, Classifier.OwnedUseCase. 
+
+2004-09-10  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/Hub.cs: When an element is selected, the Tree is
+	  notified.
+	* MonoUML/Widgets/Tree.cs (RefreshModifiedElement): was renamed to
+	  LookForMatchingRows. The method Select was implemented, so when an
+	  element is selected in another widget the Tree can highlight it.
+
+2004-09-10  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/ExtensionLocationViewer.cs: 
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Now can show the property
+	  Extend.ExtensionLocation.
+
+2004-09-10  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/UMLPropertiesTab.cs: Now shows the model element
+	  type, and the "Extend" and "Include" properties for Use Cases.
+
+2004-09-09  Mario Carrión  <marioc@unixmexico.org>
+
+	* MonoUML/GUI/Pixmaps/*.xcf: GIMP files removed.
+	* MonoUML/Widgets/PropertiesBook.cs: Removed, this class was never used
+	  and nowadays was replaced by MonoUML/Widgets/UMLPropertiesTab.cs.
+	* MonoUML/GUI/IconEvents.cs: This class connects all the toolbar's icons
+	  events, now the main toolbar works.
+	* MonoUML/GUI/Glade/gui.glade: The name of the monouml_toolbar_main icons
+	  had changed, added OnCloseEvent for closing the current project from
+	  Menubar. 
+
+2004-09-09  Mario Fuentes  <mario@gnome.cl>
+
+	* MonoUML/GUI/MonoUML.cs: Added support to open project from command line,
+	  this feature is nice for testing purpose, for example:
+	  $ mono monouml.exe ../samples/useCaseDiagram.xmi
+	  Load MonoUML with this project.
+	* MonoUML/Widgets/Hub.cs: A new method added for open project,
+	  void OpenProject (string filename).
+
+2004-09-08  Mario Fuentes  <mario@gnome.cl>
+
+	* MonoUML/GUI/Glade/gui.glade: changed HandleBoxs by Paneds.
+	* MonoUML/GUI/MonoUML.cs: Changed code for HandleBoxes to Paneds.
+	  (BuildProperties): In notebook properties, added a ScrolledWindow
+	  to view all properties when window size changed.
+	  (ShowAllWidgets): set Paned Vibility to true.
+	  (OnHandleBoxPropAttached, OnHandleBoxPropDetached): Commented.
+
+2004-09-08  Rodolfo Campero  <rodolfocampero@hotmail.com>
+
+	* MonoUML/Widgets/Hub.cs: Makes a call to Tree.RefreshElement instead
+	  of Tree.Draw.
+	* MonoUML/Widgets/Pixmaps/unknown_tree.png: Now is a question mark.
+	* MonoUML/Widgets/Tree.cs: RefreshElement refreshes both the element
+	  name and its owned elements. The element selected event (a call to 
+	  _hub.BroadcastElementSelection) is generated every time a different row is
+	  selected in the tree (the previous behavior was to generate it on 
+	  double-click.)
+
+2004-09-08  Mario Fuentes  <mario@gnome.cl>
+
+	* ChangeLog: Added ChangeLog file, please register all changes here.

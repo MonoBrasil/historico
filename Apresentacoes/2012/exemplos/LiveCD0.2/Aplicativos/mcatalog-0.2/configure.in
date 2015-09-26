@@ -1,0 +1,104 @@
+AC_INIT(src/Main.cs)
+
+AM_CONFIG_HEADER(config.h)
+
+AM_INIT_AUTOMAKE(mcatalog, 0.2)
+
+AM_MAINTAINER_MODE
+
+AC_PROG_INTLTOOL([0.21])
+
+AC_PROG_CC
+AC_ISC_POSIX
+AC_HEADER_STDC
+AM_PROG_LIBTOOL
+
+GNOME_COMPILE_WARNINGS
+AM_PATH_GLIB_2_0
+
+
+dnl --- Required libraries
+
+LIBGNOME_REQUIRED=2.2
+LIBGNOMEUI_REQUIRED=2.2
+GTKSHARP_REQUIRED=1.9
+GECKOSHARP_REQUIRED=0.7
+EVOLUTIONSHARP_REQUIRED=0.6
+MONO_REQUIRED=1.0
+
+PKG_CHECK_MODULES(MONO,
+                  mono >= $MONO_REQUIRED)
+
+PKG_CHECK_MODULES(GTKSHARP,
+		  gtk-sharp-2.0 >= $GTKSHARP_REQUIRED \
+                  gecko-sharp-2.0 >= $GECKOSHARP_REQUIRED \
+		  gnome-sharp-2.0 >= $GTKSHARP_REQUIRED \
+		  glade-sharp-2.0 >= $GTKSHARP_REQUIRED \
+		  gconf-sharp-2.0 >= $GTKSHARP_REQUIRED)
+
+PKG_CHECK_MODULES(EVOLUTIONSHARP,
+		  evolution-sharp >= $EVOLUTIONSHARP_REQUIRED)
+
+dnl Check for Mono
+AC_PATH_PROG(MCS, mcs)
+AC_PATH_PROG(MONO, mono)
+
+MCS_FLAGS=
+MONO_FLAGS=
+if test $USE_MAINTAINER_MODE = yes; then
+	MCS_FLAGS="-g"
+	MONO_FLAGS="--debug"
+fi
+AC_SUBST(MCS_FLAGS)
+AC_SUBST(MONO_FLAGS)
+		
+
+dnl --- GConf
+
+AC_PATH_PROG(GCONFTOOL, gconftool-2, no)
+AM_GCONF_SOURCE_2
+
+
+dnl --- Sqlite
+
+AC_CHECK_LIB(sqlite, sqlite_last_insert_rowid, [],
+	     [AC_MSG_ERROR([sqlite not found])])
+
+
+dnl --- Set up paths
+
+ICONS_DIRECTORY=${datadir}/${PACKAGE}-${VERSION}
+
+AC_SUBST(ICONS_DIRECTORY)
+
+dnl -- Intl
+
+ALL_LINGUAS="cs de en_CA en_GB es fr hu it nl pt_BR rw sv zh_CN"
+GETTEXT_PACKAGE=mcatalog
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
+AM_GLIB_GNU_GETTEXT
+
+dnl --- Prologue
+
+AC_SUBST(CFLAGS)
+AC_SUBST(CPPFLAGS)
+AC_SUBST(LDFLAGS)
+
+AC_OUTPUT([
+Makefile
+po/Makefile.in
+images/Makefile
+images/default/Makefile
+images/grass/Makefile
+images/leather/Makefile
+images/wood/Makefile
+images/metal/Makefile
+templates/Makefile
+resources/Makefile
+src/Makefile
+])
+
+echo
+echo "Installing in prefix: $prefix"
+echo

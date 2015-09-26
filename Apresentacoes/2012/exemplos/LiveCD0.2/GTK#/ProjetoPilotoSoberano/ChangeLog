@@ -1,0 +1,97 @@
+24/03/2005 - Rafael
+	Adicionado um target 'run' ao Makefile.in. 
+	Ele executa a versão GUI
+
+14/02/2005 - Rafael
+	Adicionado um GTK.Image para conter a foto do usuário
+	Eliminada a propriedade Life.Photo (como System.Drawing.Image) pois não tinha como mostrar no frontend GTK#
+	(Armazenando o path absoluto por ora)
+	
+31/01/2005 - Rafael
+	Usando o FileChooserDialog do GTK# ao invés de um dialog específico para trocar o arquivo da imagem do usuário.
+	Para tanto foram eliminados:
+		LifeLets.Gui/LLChangePicturePath.cs
+		LifeLets.Gui/resources/llchangepicturewindow.glade
+	Os arquivos de compilação foram expurgados dos arquivos acima e a dependência foi atualizada para glade-sharp-2.0/gnome-sharp-2.0
+		LifeLets.Gui/LifeLetsGTK.prjx
+		LifeLets.Gui/Makefile.am
+	LifeLets.Gui/LLMainWindow.cs: novo código que usa o FileChooserDialog
+
+17/12/2004 - Rafael
+	LifeLets.Gui/MainLLGTK.cs
+ 		Refatorado: nomes em portugues
+	LifeLets.Gui/Main.cs
+ 		Refatorado: nomes em portugues
+	LifeLets.Gui/LLMainWindow.cs
+ 		Logica para o About com logotipo
+	LifeLets.Gui/LifeLetsGTK.prjx
+		bitmap adicionado como recurso ao exe para permitir aparecer no About
+	LifeLets.Gui/Makefile.am
+		bitmap adicionado como recurso ao exe para permitir aparecer no About
+		novo target 'run' para executar o programa grafico compilado
+	LifeLets.Gui/resources/gui.glade
+		ajustes para eliminar coisas pouco uteis e amarrar o evento do About
+
+11/12/2004 - GUI : Navegacao de contatos
+           - GUI : Remover contatos
+    - Transferência de arquivos em andamento
+   
+
+09/12/2004 - GUI: Adicionada janela add contact 
+           - GUI: iniciada janela change Name
+    - GUI: iniciada janela change foto
+08/12/2004 - Binhara - Main windows funcional
+
+06/12/2004 - Rafael
+ LifeLets.Gui/Makefile.am && LifeLets.Gui/LifeLetsGTK.prjx : 
+  Acertados para usarem os packages gtk-sharp/glade-sharp
+  ao inves de copias das libs globais em lib
+
+27/11/2004 - Rafael
+ Renomeada a solucao e o projeto
+ Traduzido e renomeado a classe com  os testes unitÃ¡rios
+
+24/11/2004 - Alexandre
+ Incluido arquivo Comunicacao.cs
+ Alterado arquivo Console.cs
+  Adicionado suporte a comunicacao
+
+24/11/2004 - Alexandre
+ Alterado arquivo Vida.cs
+  Adicionado suporte a lista de contatos
+  Adicionado suporte ao teste NUnit
+ Alterado arquivo Console.cs
+  Adicionado menu
+
+24/11/2004 - Jacson
+ Alterado arquivo Vida.cs
+  Adicionado atributo privado foto do tipo Image
+  Adicionado atributo somente leitura foto do tipo foto
+  Adicionado atributo somente escrita CaminhoFoto do tipo string
+ Alterado arquivo Console.cs
+  Adicionado metodo publico VerFoto
+ Adicionado arquivo mono_logo_b.gif
+ Adicionado arquivo msdn_masthead_ltr.gif
+ 
+29/11/2004 
+ Console.cs:                          /// ChangeLog: 29/11/2004 - Jacson - removido funcao VerFoto
+ GUI/TEST/BootSplash/Main.cs:          // project created on 29/11/2004 at 01:48
+ GUI/TEST/MyNameWindow/MyNameGUI.cs:   // created on 29/11/2004 at 00:03
+ LifeLets.Core/Photo.cs:              /// ChangeLog: 29/11/2004 - Jacson - Erro ao salvar o arquivo da foto corrigido
+ LifeLets.Gui/LLMainWindow.cs:        /// created on 29/11/2004 at 22:07
+ LifeLets.Gui/Main.cs:                 //  project created on 29/11/2004 at 21:03
+
+30/11/2004
+ LifeLets.Gui/Main.cs:                /// 30/11/2004 - Bin: MainWindow is prevalent now  
+ LifeLets.Gui/MainLLGTK.cs:            //  created on 30/11/2004 at 23:50
+ LifeLets.Gui/MainLLGTK.cs:           /// 30/11/2004 -bin:  Attention,i copy soverechat.cs in LifeLetsGTKSolution.  
+ LifeLets.Gui/MyNickname.cs:          /// Marcelo: Nick Name Windows created on 30/11/2004 at 22:07
+
+
+12/12/2004
+ LifeLets.Core/PeerNetWork.cs:       /// 12/12/2004 Maverson/Marcelo: Added share files feature.
+ LifeLets.Console/Console.cs:      /// 12/12/2004 Maverson/Marcelo: Added share files feature.
+
+13/12/2004
+ LifeLets.Core/PeerNetWork.cs:        /// 13/12/2004 Maverson: complete the first fileshare feature (console mode).
+ LifeLets.Console/Console.cs:       /// 13/12/2004 Maverson: complete the first fileshare feature (console mode).

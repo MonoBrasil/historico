@@ -1,0 +1,138 @@
+# MonoUML. CASE tool
+# http://www.monouml.org
+dnl Configuring MonoUML
+
+# Boilerplate
+AC_INIT(src/MainWindow.cs)
+
+PACKAGE=monouml
+VERSION=0.1
+AC_DEFINE_UNQUOTED(PACKAGE, "$PACKAGE")
+AC_DEFINE_UNQUOTED(VERSION, "$VERSION")
+AC_SUBST(PACKAGE)
+AC_SUBST(VERSION)
+AM_INIT_AUTOMAKE($PACKAGE, $VERSION)
+AM_MAINTAINER_MODE
+
+# Options, macros
+DLL_DIR=$PWD/bin/
+AC_SUBST(DLL_DIR)
+
+# ExpertCoder's assemblies
+EC_DLL_XMI2=$DLL_DIR/ExpertCoder.Xmi2.dll
+EC_DLL_UML2=$DLL_DIR/ExpertCoder.Uml2.dll
+EC_DLL_MOF2=$DLL_DIR/ExpertCoder.Mof2.Collections.dll
+AC_SUBST(EC_DLL_XMI2)
+AC_SUBST(EC_DLL_UML2)
+AC_SUBST(EC_DLL_MOF2)
+
+# ExpertCoder's assemblies, used for Code Generation
+EC_DLL_ES=$DLL_DIR/ExpertCoder.ExpertSystem.dll
+EC_DLL_PACKAGING=$DLL_DIR/ExpertCoder.Packaging.dll
+EC_DLL_TEMPLATES=$DLL_DIR/ExpertCoder.Templates.dll
+EC_DLL_CSHARPGEN=$DLL_DIR/ExpertCoder.CSharpGeneration.dll
+EC_DLL_UML2CSHARP=$DLL_DIR/ExpertCoder.Generators.Uml2CSharp.dll
+EC_DLL_UMLNAVIG=$DLL_DIR/ExpertCoder.Generators.UmlNavigation.dll
+AC_SUBST(EC_DLL_ES)
+AC_SUBST(EC_DLL_PACKAGING)
+AC_SUBST(EC_DLL_TEMPLATES)
+AC_SUBST(EC_DLL_CSHARPGEN)
+AC_SUBST(EC_DLL_UML2CSHARP)
+AC_SUBST(EC_DLL_UMLNAVIG)
+
+# Current Generators
+MONOUML_DLL_GENERATOR_SQL=$DLL_DIR/MonoUML.Generators.SqlGeneration.dll
+AC_SUBST(MONOUML_DLL_GENERATOR_SQL)
+
+EC_DLL_REFERENCES=($EC_DLL_XMI2\ $EC_DLL_UML2\ $EC_DLL_MOF2\ $EC_DLL_ES)
+AC_SUBST(EC_DLL_REFERENCES)
+
+# MonoUML's assemblies
+MONOUML_DLL_DI=$DLL_DIR/MonoUML.DI.dll
+MONOUML_DLL_BRIDGE=$DLL_DIR/MonoUML.DI.Uml2Bridge.dll
+MONOUML_DLL_IMPORTER=$DLL_DIR/MonoUML.XmiImporter.dll
+MONOUML_DLL_WIDGETS=$DLL_DIR/MonoUML.Widgets.dll
+MONOUML_DLL_REVENG=$DLL_DIR/MonoUML.ReverseEngineering.dll
+MONOUML_DLL_IL=$DLL_DIR/MonoUML.IconLibrary.dll
+MONOUML_DLL_I18N=$DLL_DIR/MonoUML.I18n.dll
+MONOUML_DLL_PREF=$DLL_DIR/MonoUML.Preferences.dll
+AC_SUBST(MONOUML_DLL_DI)
+AC_SUBST(MONOUML_DLL_BRIDGE)
+AC_SUBST(MONOUML_DLL_IMPORTER)
+AC_SUBST(MONOUML_DLL_WIDGETS)
+AC_SUBST(MONOUML_DLL_REVENG)
+AC_SUBST(MONOUML_DLL_IL)
+AC_SUBST(MONOUML_DLL_I18N)
+AC_SUBST(MONOUML_DLL_PREF)
+
+MONOUML_DLL_REFERENCES=($MONOUML_DLL_IL\ $MONOUML_DLL_DI\ $MONOUML_DLL_BRIDGE\ $MONOUML_DLL_IMPORTER\ $MONOUML_DLL_REVENG\ $MONOUML_DLL_I18N\ $MONOUML_DLL_PREF)
+AC_SUBST(MONOUML_DLL_REFERENCES)
+
+# Programs needed
+AC_PATH_PROG(PKG_CONFIG, pkg-config, no)
+if test "x$PKG_CONFIG" = "xno"; then
+	AC_MSG_ERROR([You need to install pkg-config])
+fi
+
+AC_PATH_PROG(MCS, mcs)
+if test "x$MCS" = "x" ; then
+	AC_MSG_ERROR([Can't find "mcs" in your PATH])
+fi
+#MCS=($MCS\ -codepage:utf8\ -debug)
+MCS=($MCS\ -codepage:utf8)
+
+AC_PROG_INSTALL
+
+# Libraries needed
+GTKSHARP_REQUIRED_VERSION=1.9.2
+MONO_REQUIRED_VERSION=1.1.4
+PKG_CHECK_MODULES(GTKSHARP,gtk-sharp-2.0 >= $GTKSHARP_REQUIRED_VERSION gnome-sharp-2.0 >= $GTKSHARP_REQUIRED_VERSION glade-sharp-2.0 >= $GTKSHARP_REQUIRED_VERSION mono >= $MONO_REQUIRED_VERSION)
+	
+PKG_CHECK_MODULES(MONOUML, gtk-sharp-2.0 gnome-sharp-2.0 glade-sharp-2.0)
+AC_SUBST(MONOUML_LIBS)
+
+gnome_prefix="`$PKG_CONFIG --variable=prefix libgnome-2.0`"
+
+if test "x$gnome_prefix" = "x"; then
+	AC_MSG_ERROR([Unable to determine gnome prefix. Please install the package that contains libgnome-2.0.pc and make sure it is in your accessible via pkg-config])
+fi
+
+AC_SUBST(gnome_prefix)
+
+# i18n
+GETTEXT_PACKAGE=$PACKAGE
+AC_SUBST(GETTEXT_PACKAGE)
+AM_GNU_GETTEXT([external])
+
+# Headers needed
+
+# Typedefs and structures needed
+
+# Functions needed
+
+# Output
+AC_OUTPUT([
+Makefile 
+src/Makefile 
+src/DI/Makefile 
+src/DI/Uml2Bridge/Makefile 
+src/XmiImporter/Makefile 
+src/ReverseEngineering/Makefile 
+src/IconLibrary/Makefile 
+src/Widgets/Makefile 
+src/Generators/Makefile 
+src/Generators/SqlGeneration/Makefile
+src/Preferences/Makefile  
+src/I18n/Makefile
+po/Makefile.in
+m4/Makefile
+])
+
+
+echo ""
+echo "Configuration summary"
+echo ""
+echo "   * Installation prefix = $prefix"
+echo "   * Locale dir = $gnome_prefix/share/locale"
+echo "   * C# compiler = $MCS"
+echo ""

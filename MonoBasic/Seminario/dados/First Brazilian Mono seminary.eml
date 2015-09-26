@@ -1,0 +1,56 @@
+X-UIDL: 1096400461.19593.zauf,S=2032
+X-Mozilla-Status: 1011
+X-Mozilla-Status2: 00000000
+Return-Path: <miguel@novell.com>
+Delivered-To: binhara@redexsol.com
+Received: (qmail 4731 invoked by uid 88); 28 Sep 2004 19:41:01 -0000
+Received: from miguel@novell.com by zauf by uid 89 with qmail-scanner-1.22-st-qms 
+ (clamdscan: 0.71. spamassassin: 2.63.  Clear:RC:0(130.57.169.10):SA:0(0.0/7.0):. 
+ Processed in 1.464013 secs); 28 Sep 2004 19:41:01 -0000
+X-Spam-Status: No, hits=0.0 required=7.0
+X-ScannerNaw-Mail-From: miguel@novell.com via zauf
+X-ScannerNaw: 1.22-st-qms (Clear:RC:0(130.57.169.10):SA:0(0.0/7.0):. Processed in 1.464013 secs Process 10871)
+Received: from unknown (HELO peabody.ximian.com) (130.57.169.10)
+  by 0 with SMTP; 28 Sep 2004 19:41:00 -0000
+Received: (qmail 3929 invoked from network); 28 Sep 2004 19:42:16 -0000
+Received: from peabody.ximian.com (HELO localhost.localdomain) (130.57.169.10)
+  by peabody.ximian.com with SMTP; 28 Sep 2004 19:42:16 -0000
+Received: by localhost.localdomain (Postfix, from userid 500)
+	id 65F1543866E; Tue, 28 Sep 2004 15:42:06 -0400 (EDT)
+Subject: Re: First Brazilian Mono seminary
+From: Miguel de Icaza <miguel@novell.com>
+To: Alessandro Binhara <binhara@psl-pr.softwarelivre.org>
+In-Reply-To: <41510FDA.6030909@psl-pr.softwarelivre.org>
+References: <1095807800.19905.576.camel@erandi.boston.ximian.com>
+	 <4150CEB0.2060002@psl-pr.softwarelivre.org>
+	 <1095825460.19905.989.camel@erandi.boston.ximian.com>
+	 <41510FDA.6030909@psl-pr.softwarelivre.org>
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+Organization: Novell, Inc.
+Message-Id: <1096400526.5880.228.camel@erandi.boston.ximian.com>
+Mime-Version: 1.0
+X-Mailer: Ximian Evolution 1.4.6 
+Date: Tue, 28 Sep 2004 15:42:06 -0400
+
+Hello Alessandro,
+
+    Are you going to charge the attendees some token amount?
+
+    Are you promoting this event?
+
+    Are folks able to register, and pay in advance?
+
+    How many folks have confirmed their attendance?
+
+    Where is this being advertised?
+
+    These are important data points for me to present to the marketing
+organization at Novell.  
+
+    I think I can get some money, but we can definitely not cover
+everything.
+
+Miguel
+
+

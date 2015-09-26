@@ -1,0 +1,39 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+[encoding: UTF-8]
+mcatalog.desktop.in
+mcatalog.schemas.in
+resources/dialogaddalbum.glade
+resources/dialogaddbook.glade
+resources/dialogaddfilm.glade
+resources/dialogexport.glade
+resources/mainwindow.glade
+resources/themeselection.glade
+resources/title.glade
+src/AssemblyInfo.cs
+src/Borrower.cs
+src/BorrowerList.cs
+src/Catalog.cs
+src/CatalogList.cs
+src/Conf.cs
+src/Database.cs
+src/ImageSize.cs
+src/Item.cs
+src/ItemCollection.cs
+src/ItemList.cs
+src/ItemShelf.cs
+src/Main.cs
+src/Presentation.cs
+src/RatingWidget.cs
+src/TitleWidget.cs
+src/View.cs
+src/dialogs/AddAlbumDialog.cs
+src/dialogs/AddBookDialog.cs
+src/dialogs/AddDialog.cs
+src/dialogs/AddFilmDialog.cs
+src/dialogs/CatalogPropertiesDialog.cs
+src/dialogs/ExportDialog.cs
+src/dialogs/LendItemDialog.cs
+src/dialogs/PreferencesDialog.cs
+src/dialogs/ProgressDialog.cs
+src/dialogs/SelectDialog.cs

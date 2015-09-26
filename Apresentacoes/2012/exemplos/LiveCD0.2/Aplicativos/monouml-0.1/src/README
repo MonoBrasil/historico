@@ -1,0 +1,12 @@
+The MonoUML package's directory
+
+This directory contains the following:
+- DI.		The Diagram Interchange, based on the UML2.0's DI Specification, the classes use the ExpertCoder library.
+- Widgets.	The UML# widgets for drawing the UML Elements at the Diagram's Canvas.
+- GUI.		The core classes for building the IDE
+
+Links:
+- ExpertCoder
+  http://expertcoder.sf.net
+- UML 2.0 Diagram Interchange final adopted specification.
+  http://www.omg.org/cgi-bin/doc?ptc/2003-09-01

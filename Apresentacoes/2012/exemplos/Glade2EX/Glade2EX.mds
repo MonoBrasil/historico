@@ -1,0 +1,16 @@
+<Combine name="Glade2EX" fileversion="2.0">
+  <Configurations active="Debug">
+    <Configuration name="Debug" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="Glade2EX" />
+    </Configuration>
+    <Configuration name="Release" ctype="CombineConfiguration">
+      <Entry configuration="Debug" build="True" name="Glade2EX" />
+    </Configuration>
+  </Configurations>
+  <StartMode startupentry="Glade2EX" single="True">
+    <Execute type="None" entry="Glade2EX" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./Glade2EX.mdp" />
+  </Entries>
+</Combine>

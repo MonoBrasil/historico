@@ -1,0 +1,27 @@
+LifeLets 
+--------
+
+LifeLets é o primeiro aplicativo soberando escrito para MONO
+
+Instalação
+----------
+
+Requisitos
+   - Mono 1.0.2
+   - Bamboo.prevalence
+   
+
+Instanlando apartir do Fontes
+-----------------------------
+
+	Basta executar
+	./make
+
+
+Executando
+---------
+
+	É necessário informar  onde são encontras a bibliotecas
+	exemplo:
+	export MONO_PATH=/home/kurumin/Projects/ProjetoPilotoSoberano/lib/
+

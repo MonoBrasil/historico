@@ -1,0 +1,273 @@
+2005-07-30  Cesar Garcia Tapia <tapia@mcatalog.net>
+
+	* (several files): Fixed some issues with the borrowers. Now selecting
+	a borrower shows all the borrowed items, from all the catalogs.
+
+2005-07-20  Cesar Garcia Tapia <tapia@mcatalog.net>
+
+	* src/Exporter.cs, new files in templates/: Export dialog fixes and a
+	new export template.
+
+2005-07-17  Cesar Garcia Tapia <tapia@mcatalog.net>
+
+	* src/Main.cs, src/CatalogList.cs, src/Catalog.cs: Some refactoring
+	and code cleaning.
+
+2005-07-13  Cesar Garcia Tapia <tapia@mcatalog.net>
+
+	* src/search_engines/SearchEngineIMDB.cs: New IMDB search engine.
+
+2005-06-30  Cesar Garcia Tapia <tapia@mcatalog.net>
+	
+	* (lot of files): Search Engine work. Now it's possible to make
+	"plugins" for search in other search engines, not only Amazon.
+
+2005-06-27  Cesar Garcia Tapia <tapia@mcatalog.net>
+
+	* src/BorrowerList.cs: Now selecting a borrower shows his borrowed
+	items.
+	* resources/template_items_*: Some cosmetic changes
+2005-06-24  Cesar Garcia Tapia <tapia@mcatalog.net>
+
+	* src/dialogs/ProgressDialog.cs, src/dialogs/AddDialog.cs,
+	src/AmazonQuery.cs: Some bugfixing in the "search in amazon" thread.
+2005-06-12  Christophe Merlet  <redfox@redfoxcenter.org>
+
+	* configure.in: Added fr (French) to ALL_LINGUAS.
+
+2005-06-03  Cesasr Garcia Tapia <tapia@mcatalog.net>
+
+	* src/Exporter.cs, src/dialogs/ExportDialog.cs,
+	resources/dialogexport.glade: First work on the html export feature.
+
+2005-05-24  Cesar Garcia Tapia <tapia@mcatalog.net>
+
+	* src/ItemShelf.cs: Improved the shelf view. Now it's possible to
+	select severals items with ctrl+click.
+
+2005-05-23  Cesar Garcia Tapia <tapia@mcatalog.net>
+
+	* src/dialogs/LendItemDialog.cs: Add the evolution adressbook names to
+	the borrower list
+
+2005-05-22  Cesar Garcia Tapia <tapia@mcatalog.net>
+
+	* src/Main.cs and others: Fixes in the borrower system.
+	* resources/mainwindow.glade: Some cosmetic changes to the main
+	window. Add the "Add borrower/Remove borrower" buttons.
+	
+2005-05-19  Cesar Garcia Tapia <tapia@mcatalog.net>
+
+	* src/ItemShelf.cs: Fixed some extra calls to the Refresh method.
+
+
+2005-05-16  Cesar Garcia Tapia <tapia@mcatalog.net>
+
+	* src/Main.cs, src/CatalogList.cs: Fixed the scrolledwindow issue when
+	changing between List and Shelf views.
+
+2005-05-13  Cesar Garcia Tapia <tapia@mcatalog.net>
+
+	* src/dialogs/AddDialog.cs: All the "add new item" dialogs inherit
+	from AddDialog.
+	
+2005-05-12  Cesar Garcia Tapia <tapia@mcatalog.net>
+
+	* src/CatalogList.cs: Performance improvents. Fixed some duplicated
+	events.
+	* resources/Database.cs: Renamed "languaje" field to "language"
+	
+2005-04-19  Cesar Garcia Tapia <tapia@eitig.com>
+	
+	* src/ItemList.cs: Fixed the list view for fit with the new i18n
+	database system.
+	* src/Presentation.cs: Improved the html presentation.
+	* src/BorrowerList.cs: Fixed some borrowing system bugs.
+
+2005-04-17  Christopher Orr  <chris@orr.me.uk>
+
+	* configure.in: Added en_GB to ALL_LINGUAS.
+
+2005-04-15  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* src/TitleWidget.cs: Fixed an initialization bug.
+	* src/Database.cs: I18ed the database fields.
+	* src/ItemShelf.cs: Fixed a presentation problem. Now the shelf shows
+	a default image when the item don't have a cover.
+
+2005-04-02  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* src/dialogs/AddAlbumDialog.cs
+	* src/dialogs/AddFilmDialog.cs
+	* src/dialogs/AddBookDialog.cs
+		* Fixed an issue with the .glade files
+
+2005-04-01  Steve Murphy  <murf@e-tools.com>
+
+        * configure.in: Added "rw" to ALL_LINGUAS.
+
+2005-03-25  Raphael Higino  <raphaelh@cvs.gnome.org>
+
+	* configure.in: Added pt_BR to ALL_LINGUAS.
+
+2005-03-22  Adam Weinberger  <adamw@gnome.org>
+
+	* configure.in: Added en_CA to ALL_LINGUAS.
+
+2005-03-22  Funda Wang  <fundawang@linux.net.cn>
+
+	* configure.in: Added "zh_CN" to ALL_LINGUAS.
+
+2005-03-21  Christian Rose  <menthos@menthos.com>
+
+	* configure.in: Added "sv" to ALL_LINGUAS.
+
+2005-03-19  Cesar Garcia Tapia <tapia@eitig.com>
+	* src/ItemShelf.cs: More work on the Gecko port.
+
+2005-02-11  Cesar Garcia Tapia <tapia@eitig.com>
+	* (Global): the shelf view now uses Gecko instead of Gnome.Canvas. Lots
+	of performance improvements, and less code to write :-)
+	
+2005-02-06  Christopher Murphy <Christopher.Murphy@students.olin.edu>
+	* src/Main.cs: Fixed a zoom issue (Patch 1116372)
+
+2005-02-03  Cesar Garcia Tapia <tapia@eitig.com>
+	* src/Catalog.cs
+	* src/dialogs/AddAlbumDialog.cs
+	* resources/Database.cs
+		* Added new Albums catalog.
+
+2005-02-01  Angel Abad <angel@ikusnet.com>
+	* mcatalog.desktop.in: Fixed a gnome menu problem.
+
+2005-01-25  Cesar Garcia Tapia <tapia@eitig.com>
+	* src/Main.cs: Removed lots of redundant calls to the database, so
+	mCatalog starts much faster.
+	
+2005-01-19  Cesar Garcia Tapia <tapia@eitig.com>
+	* (lots of files): Allow to order the shelf by each field of the
+	database.
+
+2005-01-14  Cesar Garcia Tapia <tapia@eitig.com>
+	* src/ItemShelf.cs: Double click on an empty space shows the "New Item" dialog.
+
+2005-01-12  Cesar Garcia Tapia <tapia@eitig.com>
+	* src/Item.cs: Fixed #1100087
+
+2005-01-10  Cesar Garcia Tapia <tapia@eitig.com>
+	* src/Database.cs: Saves the catalog view in the database.
+	* src/CatalogList.cs: Saves the catalog view in the database.
+
+2004-12-30  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* src/dialogs/AddBookDialog.cs: Fixed #1059065
+	* src/dialogs/AddFilmDialog.cs: Fixed #1059065
+	* src/Item.cs: Fixed #1092698
+	
+2004-12-28  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* src/Database.cs: Updates the database version.
+
+2004-12-16  Cesar Garcia Tapia <tapia@eitig.com>
+	
+	* src/Item.cs: Fixed #1060632
+
+2004-12-11  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* Makefile.am: Fixed the mcatalog.applications install.
+
+2004-12-07  Cesar Garcia Tapia <tapia@eitig.com>
+	
+	* resources/Database.sql: Added "Medium" entry for films.
+	* resources/dialogaddfilm.glade: Added "Medium" (DVD/VHS...).
+	
+2004-12-07  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* src/dialogs/AddBookDialog.cs: Added "Original Title" entry.
+	* src/dialogs/AddFilmDialog.cs: Added "Original Title" entry.
+	* resources/Database.sql: Added "Original Title" entry.
+	* resources/dialogaddbook.glade: Added "Original Title" entry.
+	* resources/dialogaddfilm.glade: Added "Original Title" entry.
+
+2004-12-03  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* src/ItemList.cs: Double click on an item shows the "Edit" dialog.
+	* src/ItemShelf.cs: Double click on an item shows the "Edit" dialog.
+
+2004-12-03  Ricardo Markiewicz <gazerzoser@users.sourceforge.net>
+
+	* src/CatalogList.cs: Fix a redraw problem when changing between
+	views.
+	* src/ItemShelf.cs: Initializes the zoom.
+	* src/Main.cs: Active menuItemShelfView or menuItemListView when
+	buttonShelf or buttonList was pressed.
+	
+2004-12-03  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* Changed all the "Overview" references to "Shelf"
+
+2004-11-29  Christoph Brill <egore@gmx.de>
+
+        * po/de.po: Added german translation
+
+2004-11-29  Fabio Bonelli <fabiobonelli@libero.it>
+
+	* po/it.po: Added italian translation
+
+2004-10-25  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* mcatalog.schemas.in: Added support for ordering the overview
+	* src/ItemOverview.cs: Started the order support
+	* src/Database.cs: Started the order support for overview
+
+2004-10-25  Cesar Garcia Tapia <tapia@eitig.com>
+	
+	* mcatalog.schemas.in: Fixed bug 1047712
+
+2004-10-25  Ricardo Markiewicz <gazerzoser@users.sourceforge.net>
+
+	* src/Main.cs: Add Gnome Proxy support.
+
+2004-10-24  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* src/dialogs/AddBookDialog.cs: Set the focus in the "Title" field.
+	* src/dialogs/AddFilmDialog.cs: Set the focus in the "Title" field.
+	* src/dialogs/AmazonSelectDialog.cs: Fixed the dialog size problems.
+	* src/dialogs/AmazonSelectDialog.cs: Double click in the TreeView adds
+	                                     the selected item.
+	
+2004-10-22  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* src/Main.cs: GUI fixes.
+
+2004-10-19  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* src/ItemOverview.cs: Performance improvements
+
+2004-10-16  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* configure.in: Fixed some issues.
+	* src/Makefile.am: Defines.cs.in should not be deleted on make clean
+
+2004-10-13  Ondra Kudlik <kepi@orthank.net>
+	
+	* po/cs.po: New translation.
+
+2004-10-13  Török Gábor (Gabó) <gabo@linuxportal.hu>
+	
+	* po/hu.po: New translation.
+	
+2004-10-10  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* images/default: Default theme.
+	* images/grass: New theme.
+	* images/leather: New theme.
+	* images/metal: New theme.
+	* images/wood: New theme.
+
+2004-10-07  Cesar Garcia Tapia <tapia@eitig.com>
+
+	* src/Defines.cs.in: Fixed.
+	* src/ItemOverview.cs: Added theme support.
+	* src/Conf.cs: Fixed some issues with the application basedir.

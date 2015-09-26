@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<project name="tests" default="run">
+
+	<include buildfile="nunit.inc" />	
+
+	<target name="run" depends="compile" if="${nant.tasks.nunit2}">
+		<nunit2>       
+			<formatter type="Plain" />
+			<test>
+				<assemblies basedir="build">				
+					<include name="*.Tests.dll" />			
+				</assemblies>
+			</test>
+		</nunit2>
+		
+	</target>
+	
+	<target name="compile" depends="init">
+		<csc
+			target="library"
+			output="build/CsDO.Tests.dll" >
+			
+			<sources>
+				<include name="src/Lib/*.cs" />
+			</sources>
+			
+			<references basedir="build">
+				<include name="${nunit.framework.dll}" />
+				<include name="CsDO.dll" />
+				<include name="System.Data.dll" />
+			</references>
+		</csc>
+	
+		<csc
+			target="library"
+			output="build/CsDO.Driver.Npgsql.Tests.dll">
+			
+			<sources>
+				<include name="src/Drivers/CsDO.Driver.Npgsql*.cs" />
+			</sources>
+			
+			<references basedir="build">
+				<include name="${nunit.framework.dll}" />
+				<include name="CsDO.dll" />
+				<include name="CsDO.Driver.Npgsql.dll" />
+				<include name="Npgsql.dll" />
+				<include name="System.Data.dll" />
+			</references>			
+		</csc>
+
+		<csc
+			target="library"
+			output="build/CsDO.Driver.OleDb.Tests.dll"
+			if="${platform::is-win32()}">
+
+			<sources>
+				<include name="src/Drivers/CsDO.Driver.OleDb*.cs" />
+			</sources>
+			
+			<references basedir="build">
+				<include name="${nunit.framework.dll}" />
+				<include name="CsDO.dll" />
+				<include name="CsDO.Driver.OleDb.dll" />
+				<include name="System.Data.dll" />
+			</references>			
+		</csc>
+	</target>
+	
+	<target name="init">
+		<delete dir="build" if="${directory::exists('build')}" />
+		<mkdir dir="build" />
+		<copy todir="build">
+			<fileset basedir="../build">
+				<include name="*.dll" />
+				<include name="*.pdb" />
+				<include name="pt/*.dll" />
+			</fileset>
+		</copy>
+		<copy todir="build">
+			<fileset basedir="../lib">
+				<include name="*.dll" />
+				<include name="*.mdb" />
+				<include name="*.xml" />
+			</fileset>
+		</copy>
+		<copy todir="build" file="${nunit.framework.dll}" />
+	</target>
+</project>

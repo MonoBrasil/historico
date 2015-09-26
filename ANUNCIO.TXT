@@ -1,0 +1,67 @@
+
+Lançamento do Projeto MONO Brasil!!!!
+-------------------------------------------------------------------
+
+É com imenso prazer e com grande euforia que venho
+lhes trazer a notícia do lançamento do Projeto MONO BRASIL.
+Este projeto tem como objetivos: criar um comunidade
+desenvolvedora para a plaforma MONO, gerar cases de sucesso
+de utilização do MONO, criação de documentação em portugues,
+gerar projetos  brasileiros inovadores em MONO. 
+
+O projeto já começa apresentando a comunidade projetos
+brasileiros já aceitos pela comunidade MONO internacional.
+Gostaria de ressaltar aqui o Rafael Teixeira (MONO Hacker desde
+2001) é autor e atual mantenedor do compilador Basic, MonoBasic.
+Do servidor de filas MonoQLE. Outra pessoa de 
+importância é o Francisco Figueiredo desenvolvedor projeto
+Npgsql que é camada de acesso ao banco de dados PostGreSQL.
+
+A equipe do MONO BRASIL já conta com 10 participantes
+entre eles Ricardo Guimarães ex-coordenador da LDP-BR
+(Linux Documentation Project) assume a a área de documentação 
+do projeto MONO BRSAIL. 
+
+O lançamento será feito na próxima semana no evento 
+Semana de Software Livre do Legislativo em Brasília,
+com a presença do criador do MONO, Miguel de Icaza. 
+Estará representando o Projeto Mono Brasil o sr. 
+Francisco Figueiredo (Mono Hacker) e representantes
+do PSL-BR. Para celebrar a criação deste projeto 
+teremos no dia 21/08 as 16:55hs no evento 
+do Legislativo a palestra "Projeto Mono" com o 
+Francisco Figueiredo.
+
+O site do projeto MONO Brasil deve entrar em operação
+no próximo dia 22 de agosto. Aguardem que logo estaremos
+disponibilizando a URL. 
+As pessoas tiverem interesse em participar do projeto
+deve entrar em contato com : Alessandro Binhara  
+email binhara@yahoo.com ou no telefone da 
+Sucesu-PR (41) 222-7613
+
+
+Alessandro Binhara
+Coord. Projeto MONO BRASIL
+Diretor Técnico REDE SOL
+Coord. Gu OpenSystem  
+
+
+Entidades Apoiadoras do projeto :
+REDE SOL 
+PSL-RS
+PSL-BR
+Gnome Fundation
+Ximian Corpotation 
+Faculdades Eseei
+SUCESU-PR
+
+
+
+
+
+
+
+
+
+

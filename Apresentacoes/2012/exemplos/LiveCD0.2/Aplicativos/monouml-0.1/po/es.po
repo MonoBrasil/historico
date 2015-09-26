@@ -1,0 +1,883 @@
+# Spanish translation of MonoUML.
+# Copyright (C) 2005 MonoUML Team.
+# This file is distributed under the same license as the MonoUML package.
+# Eduardo García <enzo@enzolutions.com>, 2005.
+# Mario Carrión <mario@monouml.org>, 2005.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: MonoUML 0.01\n"
+"Report-Msgid-Bugs-To: http://bugzilla.monouml.org\n"
+"POT-Creation-Date: 2005-05-29 06:13-0500\n"
+"PO-Revision-Date: 2005-04-29 22:37-0600\n"
+"Last-Translator: Eduardo García <enzo@enzolutions.com>\n"
+"Language-Team: Spanish <es@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/GUI/Glade/gui.glade:9
+msgid "MonoUML"
+msgstr "MonoUML"
+
+#: src/GUI/Glade/gui.glade:38
+msgid "_Project"
+msgstr "_Proyecto"
+
+#: src/GUI/Glade/gui.glade:47
+msgid "Create new project"
+msgstr "Crear nuevo proyecto"
+
+#: src/GUI/Glade/gui.glade:49
+msgid "_New"
+msgstr "_Nuevo"
+
+#: src/GUI/Glade/gui.glade:108
+msgid "_Insert"
+msgstr "_Insertar"
+
+#: src/GUI/Glade/gui.glade:117
+msgid "Insert new UML element"
+msgstr "Insertar nuevo elemento UML"
+
+#: src/GUI/Glade/gui.glade:118
+msgid "New _UML element..."
+msgstr "Nuevo elemento _UML..."
+
+#: src/GUI/Glade/gui.glade:127
+msgid "Insert new UML diagram"
+msgstr "Insertar nuevo diagrama UML"
+
+#: src/GUI/Glade/gui.glade:128
+msgid "New UML diagram..."
+msgstr "Nuevo diagrama UML..."
+
+#: src/GUI/Glade/gui.glade:141
+msgid "_Tools"
+msgstr "_Herramientas"
+
+#: src/GUI/Glade/gui.glade:150
+msgid "Generate code from UML models"
+msgstr "Generar código desde modelos UML"
+
+#: src/GUI/Glade/gui.glade:151
+msgid "_Code Generation"
+msgstr "Generación de código"
+
+#: src/GUI/Glade/gui.glade:172
+msgid "Import models from .NET files"
+msgstr "Importar modelos desde archivos de .NET"
+
+#: src/GUI/Glade/gui.glade:173
+msgid "_Reverse Engineering"
+msgstr "Ingeniería Inversa"
+
+#: src/GUI/Glade/gui.glade:194
+msgid "Import models and diagrams from other tools"
+msgstr "Importar modelos y diagramas desde otras herramientas"
+
+#: src/GUI/Glade/gui.glade:195
+msgid "_Import"
+msgstr "_Importar"
+
+#: src/GUI/Glade/gui.glade:261
+msgid "New solution"
+msgstr "Nueva solución"
+
+#: src/GUI/Glade/gui.glade:277
+msgid "Open solution"
+msgstr "Abrir solución"
+
+#: src/GUI/Glade/gui.glade:293
+msgid "Save current solution"
+msgstr "Guardar solución actual"
+
+#: src/GUI/Glade/gui.glade:309
+msgid "Save solution as"
+msgstr "Guardar solución como"
+
+#: src/GUI/Glade/gui.glade:418
+msgid "Preferences"
+msgstr ""
+
+#: src/GUI/Glade/gui.glade:522
+msgid "Show _grid"
+msgstr "Mostrar grilla"
+
+#: src/GUI/Glade/gui.glade:541
+msgid "_Snap to grid"
+msgstr "Ajustar a la grilla"
+
+#: src/GUI/Glade/gui.glade:563
+msgid "<b>Diagram aspect</b>"
+msgstr "<b>Aspecto del diagrama</b>"
+
+#: src/GUI/Glade/gui.glade:619
+msgid "_Use default values"
+msgstr "_Usar valores por defecto"
+
+#: src/GUI/Glade/gui.glade:644
+msgid "Grid _color: "
+msgstr "Color de _Grilla"
+
+#: src/GUI/Glade/gui.glade:698
+msgid "_Font color: "
+msgstr "Color de _Fuente"
+
+#: src/GUI/Glade/gui.glade:749
+msgid "<b>Colors</b>"
+msgstr "<b>Colores</b>"
+
+#: src/GUI/Glade/gui.glade:785
+msgid "_Default values"
+msgstr "Valores por _defecto"
+
+#: src/GUI/MonoUML.cs:56
+msgid ""
+"You are running a MonoUML development version. This version\n"
+"MIGHT HAVE bugs, if have found any please report it to\n"
+"our bugzilla site:\n"
+"http://bugzilla.monouml.org\n"
+"Any help is very appreciated.\n"
+"\n"
+"More information in the mailing list.If you want to test, there are some "
+"samples in the 'samples/' directory.\n"
+"\n"
+"Regards\n"
+"----\n"
+"MonoUML Team."
+msgstr ""
+"Usted esta ejecutando una versión de desarrollo de MonoUML. Esta versión "
+"PODRÍA TENER errores; si usted encuentra alguno, por favor repórtelo en "
+"nuestro sitio bugzilla:\n"
+"http://bugzilla.monouml.org\n"
+"Cualquier ayuda es muy bien recibida.\n"
+"Más información en la lista de correo. Si desea hacer pruebas, en el "
+"directorio samples/ encontrará algunos ejemplos.\n"
+"\n"
+"Saludos\n"
+"----\n"
+"Equipo MonoUML"
+
+#: src/GUI/MonoUML.cs:115
+msgid "UML Properties"
+msgstr "Propiedades UML"
+
+#: src/GUI/MonoUML.cs:162
+msgid "Select a model or diagram file"
+msgstr "Seleccione un modelo o archivo de diagrama"
+
+#: src/GUI/MonoUML.cs:168 src/Widgets/Hub.cs:376 src/Widgets/Hub.cs:422
+msgid "XMI files"
+msgstr "Archivos XMI"
+
+#: src/GUI/MonoUML.cs:173
+msgid "Argo files"
+msgstr "Archivos Argo"
+
+#: src/GUI/MonoUML.cs:178
+msgid "Poseidon files"
+msgstr "Archivos Poseidon"
+
+#: src/GUI/MonoUML.cs:208
+msgid ""
+"The CASE tool for Mono\n"
+"(SVN pre-alpha version)"
+msgstr ""
+"Herramienta CASE para MONO\n"
+"(version SVN pre-alfa)"
+
+#: src/GUI/MonoUML.cs:347
+msgid ""
+"\n"
+"\n"
+"Help us by translating to your native language."
+msgstr ""
+"\n"
+"Ayúdenos traduciendo a su lenguaje nativo."
+
+#: src/GUI/SelectProjectDialog.cs:42
+msgid "Select project"
+msgstr "Seleccione un proyecto"
+
+#: src/GUI/SelectProjectDialog.cs:136
+msgid "Select some option from the icon list."
+msgstr "Seleccione una opción de la lista de iconos."
+
+#: src/GUI/SelectProjectDialog.cs:163
+msgid "New Project"
+msgstr "Nuevo Proyecto"
+
+#: src/GUI/SelectProjectDialog.cs:164
+msgid "Open Project"
+msgstr "Abrir Proyecto"
+
+#: src/GUI/SelectProjectDialog.cs:165
+msgid "From other format"
+msgstr "Desde otro formato"
+
+#: src/GUI/SelectProjectDialog.cs:166
+msgid "From Reverse Engineering"
+msgstr "Desde Ingeniería Inversa"
+
+#: src/CodeGeneration/Wizard.cs:37
+msgid "Code generation"
+msgstr "Generación de código"
+
+#: src/CodeGeneration/Wizard.cs:54
+msgid "Code Generation"
+msgstr "Generación de Código"
+
+#: src/CodeGeneration/Wizard.cs:55
+msgid ""
+"In the following pages you will be able to create source code from the UML "
+"model.\n"
+"\n"
+"Click Forward to continue"
+msgstr ""
+"En las siguientes páginas usted podrá crear código fuente a partir del "
+"modelo UML.\n"
+"\n"
+"Presione siguiente para continuar"
+
+#: src/CodeGeneration/Wizard.cs:57
+msgid "Start code generation"
+msgstr "Iniciar la generación de código"
+
+#: src/CodeGeneration/Wizard.cs:58
+msgid ""
+"Click Apply to proceed the code generation, when finished a dialog window "
+"will pop up."
+msgstr ""
+"Presione Aplicar para iniciar la generación de código. Cuando finalice, una "
+"ventana emergente aparecerá."
+
+#: src/CodeGeneration/Wizard.cs:92
+msgid "Required values"
+msgstr "Valores requeridos"
+
+#: src/CodeGeneration/Wizard.cs:109
+msgid "Available code generators"
+msgstr "Generadores de código disponibles"
+
+#: src/CodeGeneration/Wizard.cs:112
+msgid "Select a model processor"
+msgstr "Seleccione un procesador de modelos"
+
+#: src/CodeGeneration/Wizard.cs:208
+msgid ""
+"Your code couldn't be generated:\n"
+"\n"
+msgstr ""
+"Su código no pudo ser generado.\n"
+"\n"
+
+#: src/CodeGeneration/Wizard.cs:210
+msgid ""
+"\n"
+"\n"
+"Try again."
+msgstr ""
+"\n"
+"\n"
+"Intente de nuevo."
+
+#: src/CodeGeneration/Wizard.cs:214
+msgid "Code generation done."
+msgstr "Generación de código finalizada."
+
+#: src/CodeGeneration/Wizard.cs:242
+msgid "No dlls found"
+msgstr "No se encontraron dlls"
+
+#: src/CodeGeneration/Wizard.cs:276
+msgid ""
+"You don't have any code-generation assembly.\n"
+"\n"
+"Remember that you must create a folder called 'generators/' where all the "
+"assemblies must exist, try again."
+msgstr ""
+"Usted no tiene algún ensamblado de generación de código.\n"
+"\n"
+"Recuerde que debe crear un directorio llamado 'generators/' donde todos los "
+"ensamblados deben residir. Intente de nuevo."
+
+#: src/CodeGeneration/Wizard.cs:299
+msgid "Please select the programming language for generating your code"
+msgstr ""
+"Por favor seleccione el lenguaje de programación para la generación del "
+"código"
+
+#: src/CodeGeneration/Wizard.cs:318
+msgid "Please fill the required value"
+msgstr "Por favor rellene todos los campos requeridos"
+
+#: src/ReverseEngineering/Wizard.cs:34 src/ReverseEngineering/Wizard.cs:46
+msgid "Reverse Engineering"
+msgstr "Ingeniería Reversa"
+
+#: src/ReverseEngineering/Wizard.cs:47
+msgid ""
+"In the following pages you will be able to import .NET assemblies and then "
+"build its UML model.\n"
+"\n"
+"Click Forward to continue"
+msgstr ""
+"En las siguientes páginas usted podrá importar ensamblados de .NET y "
+"construir su correspondiente modelo UML.\n"
+"\n"
+"Presione Siguiente para continuar"
+
+#: src/ReverseEngineering/Wizard.cs:49
+msgid "Start reverse engineering"
+msgstr "Comenzar la ingeniería inversa"
+
+#: src/ReverseEngineering/Wizard.cs:50
+msgid ""
+"Click Apply to proceed the reverse engineering, when finished a dialog "
+"window will pop up."
+msgstr ""
+"Presione Aplicar para iniciar la ingeniería inversa; cuando finalice, una "
+"ventana emergente aparecerá."
+
+#: src/ReverseEngineering/Wizard.cs:86
+msgid "Add assemblies for importing"
+msgstr "Agregue ensamblados para importar"
+
+#: src/ReverseEngineering/Wizard.cs:125
+msgid "Select importing level"
+msgstr "Seleccione el nivel de importación"
+
+#: src/ReverseEngineering/Wizard.cs:127
+msgid "Import _only elements within assembly."
+msgstr "Importar s_olamente elementos del ensamblado"
+
+#: src/ReverseEngineering/Wizard.cs:129
+msgid "F_ull import from assembly."
+msgstr "Importación _completa desde el ensamblado"
+
+#: src/ReverseEngineering/Wizard.cs:144 src/ReverseEngineering/Wizard.cs:194
+msgid "Set your importing parameters"
+msgstr "Establezca sus parámetros de importación"
+
+#: src/ReverseEngineering/Wizard.cs:151
+msgid "Import _public methods"
+msgstr "Importar métodos _públicos"
+
+#: src/ReverseEngineering/Wizard.cs:154
+msgid "Import p_rivate methods"
+msgstr "Importar métodos p_rivados"
+
+#: src/ReverseEngineering/Wizard.cs:157
+msgid "Import pr_otected methods"
+msgstr "Importar métodos pr_otegidos"
+
+#: src/ReverseEngineering/Wizard.cs:160
+msgid "Import public fiel_ds"
+msgstr "Importar _campos públicos"
+
+#: src/ReverseEngineering/Wizard.cs:163
+msgid "Import private f_ields"
+msgstr "Importar _campos privados"
+
+#: src/ReverseEngineering/Wizard.cs:166
+msgid "Import protected fi_elds"
+msgstr "Importar campos protegidos"
+
+#: src/ReverseEngineering/Wizard.cs:179
+msgid "Classes"
+msgstr "Clases"
+
+#: src/ReverseEngineering/Wizard.cs:183
+msgid "Classes and Interfaces"
+msgstr "Clases e Interfaces"
+
+#: src/ReverseEngineering/Wizard.cs:196
+msgid "Import _Classes"
+msgstr "Importar Clases"
+
+#: src/ReverseEngineering/Wizard.cs:199
+msgid "Import _Enumerations"
+msgstr "Importar Enumeraciones"
+
+#: src/ReverseEngineering/Wizard.cs:202
+msgid "Import _Interfaces"
+msgstr "Importar Interfaces"
+
+#: src/ReverseEngineering/Wizard.cs:205
+msgid "Import _Structs"
+msgstr "Importar _Estructuras"
+
+#: src/ReverseEngineering/Wizard.cs:208
+msgid "Import E_vents"
+msgstr "Importar E_ventos"
+
+#: src/ReverseEngineering/Wizard.cs:211
+msgid "Import _Delegates"
+msgstr "Importar _Delegados"
+
+#: src/ReverseEngineering/Wizard.cs:229
+msgid "Select your .NET assembly"
+msgstr "Seleccione su ensamblado .NET"
+
+#: src/ReverseEngineering/Wizard.cs:235
+msgid ".NET Assembly files"
+msgstr "Archivos de ensamblado .NET"
+
+#: src/ReverseEngineering/Wizard.cs:240
+msgid ".NET Executable files"
+msgstr "Archivos ejecutable .NET"
+
+#: src/ReverseEngineering/Wizard.cs:245
+msgid "Other files"
+msgstr "Archivos Argo"
+
+#: src/ReverseEngineering/Wizard.cs:268
+msgid "Filename: "
+msgstr "Nombre del archivo:"
+
+#: src/ReverseEngineering/Wizard.cs:270
+msgid ""
+" is not a .NET assembly:\n"
+"\n"
+msgstr ""
+" no es un ensamblado .NET:\n"
+"\n"
+
+#: src/ReverseEngineering/Wizard.cs:384
+msgid "Serializating..."
+msgstr "Serializando..."
+
+#: src/ReverseEngineering/Wizard.cs:387
+msgid ""
+"The Reverse Engineering has finished.\n"
+"\n"
+"Starting to load."
+msgstr ""
+"La Ingeniería Inversa ha finalizado.\n"
+"\n"
+"Iniciando la carga."
+
+#: src/ReverseEngineering/Wizard.cs:414
+msgid "Add at least one assembly before proceeding the next step."
+msgstr ""
+"Agregue al menos un ensamblado antes de proceder con el siguiente paso."
+
+#: src/ReverseEngineering/Wizard.cs:449
+msgid "Importing..."
+msgstr "Importando..."
+
+#: src/ReverseEngineering/Wizard.cs:466
+msgid "Please wait while loading..."
+msgstr "Por favor espere mientras carga.."
+
+#: src/Widgets/Toolbar/ToolbarUseCase.cs:40
+msgid "Add an Actor"
+msgstr "Agregar un actor"
+
+#: src/Widgets/Toolbar/ToolbarUseCase.cs:41
+msgid "Add an Use Case"
+msgstr "Agregar un Caso de Uso"
+
+#: src/Widgets/Toolbar/ToolbarClass.cs:43
+msgid "Add a class"
+msgstr "Agregar una clase"
+
+#: src/Widgets/Toolbar/ToolbarBase.cs:41
+msgid "Show grid"
+msgstr "Mostrar grilla"
+
+#: src/Widgets/Toolbar/ToolbarBase.cs:45
+msgid "Snap to grid"
+msgstr "Ajustar a la grilla"
+
+#: src/Widgets/AggregationKindViewer.cs:31
+msgid "Aggregation kind:"
+msgstr "Tipo de Agregación:"
+
+#: src/Widgets/AggregationKindViewer.cs:33
+msgid "none"
+msgstr "ninguna"
+
+#: src/Widgets/AggregationKindViewer.cs:37
+msgid "shared"
+msgstr "compartida"
+
+#: src/Widgets/AggregationKindViewer.cs:41
+msgid "composite"
+msgstr "compuesta"
+
+#: src/Widgets/CommentsViewer.cs:29
+msgid "Owned comments:"
+msgstr "Comentarios propios:"
+
+#: src/Widgets/CommentsViewer.cs:34
+msgid "<<New comment>>"
+msgstr "<<Nuevo comentario>>"
+
+#: src/Widgets/ElementChooserDialog.cs:29
+msgid "Choose an element"
+msgstr "Escoja un elemento"
+
+#: src/Widgets/ElementChooserDialog.cs:39 src/Widgets/MultiChooserDialog.cs:35
+msgid "_Cancel"
+msgstr "_Cancelar "
+
+#: src/Widgets/ElementChooserDialog.cs:40 src/Widgets/MultiChooserDialog.cs:36
+msgid "_Accept"
+msgstr "_Aceptar "
+
+#: src/Widgets/DiagramTypeChooserDialog.cs:29
+msgid "Choose a diagram type"
+msgstr "Escoja el tipo de diagrama"
+
+#: src/Widgets/DiagramTypeChooserDialog.cs:31
+msgid "_Class"
+msgstr "Clase"
+
+#: src/Widgets/DiagramTypeChooserDialog.cs:33
+msgid "_Use Case"
+msgstr "Caso de _Uso"
+
+#: src/Widgets/ExtendViewer.cs:28
+msgid "Extends:"
+msgstr "Extiende:"
+
+#: src/Widgets/ExtendViewer.cs:58
+msgid "Extend #"
+msgstr "Extensión #"
+
+#: src/Widgets/ExtendedCaseViewer.cs:28
+msgid "Extended case:"
+msgstr "Caso de uso extendido:"
+
+#: src/Widgets/ExtendConditionViewer.cs:28
+msgid "Extend condition:"
+msgstr "Condición de extensión:"
+
+#: src/Widgets/ExtendConditionViewer.cs:67
+msgid "<<A constraint>>"
+msgstr "<<Una restricción>>"
+
+#: src/Widgets/ExtensionLocationViewer.cs:29
+msgid "Extension locations:"
+msgstr "Ubicaciones de las extensiones:"
+
+#: src/Widgets/GeneralizationsViewer.cs:30
+msgid "Generalizations:"
+msgstr "Generalizaciones:"
+
+#: src/Widgets/GeneralizationsViewer.cs:76
+msgid "<<anonymous Generalization>>"
+msgstr "<<Generalización anónima>>"
+
+#: src/Widgets/GeneralizationGeneralViewer.cs:28
+msgid "General:"
+msgstr "General:"
+
+#: src/Widgets/Hub.cs:281
+msgid ""
+"There are no elements in the model; you should create some elements first."
+msgstr "No hay elementos en el modelo; primero debe crear algún elemento."
+
+#: src/Widgets/Hub.cs:296
+msgid "Choose a namespace"
+msgstr "Escoja un espacio de nombres"
+
+#: src/Widgets/Hub.cs:370
+msgid "Select your project"
+msgstr "Seleccione su proyecto."
+
+#: src/Widgets/Hub.cs:381
+msgid "All files"
+msgstr "Todos los archivos"
+
+#: src/Widgets/Hub.cs:416
+msgid "Save your project as"
+msgstr "Guardar su proyecto como"
+
+#: src/Widgets/Hub.cs:444
+#, csharp-format
+msgid ""
+"A file named {0} already exists.\n"
+"Do you want to replace it with the one you are saving?"
+msgstr ""
+"Un archivo llamado {0} ya existe.\n"
+"¿Ustede quiere reemplazarlo con este que esta salvando?"
+
+#: src/Widgets/Helper.cs:61
+msgid "New element name:"
+msgstr "Nuevo nombre de elemento:"
+
+#: src/Widgets/InterfaceRealizationContractViewer.cs:28
+msgid "Contract:"
+msgstr "Contrato:"
+
+#: src/Widgets/IncludeViewer.cs:28
+msgid "Includes:"
+msgstr "Incluye:"
+
+#: src/Widgets/IncludeViewer.cs:58
+msgid "Include #"
+msgstr "Inclusión #"
+
+#: src/Widgets/NoteBookLabel.cs:66
+msgid "Close diagram"
+msgstr "Cerrar diagrama"
+
+#: src/Widgets/NamedElementVisibilityViewer.cs:31
+msgid "Visibility:"
+msgstr "Visibilidad:"
+
+#: src/Widgets/NamedElementVisibilityViewer.cs:33
+msgid "public"
+msgstr "público"
+
+#: src/Widgets/NamedElementVisibilityViewer.cs:37
+msgid "private"
+msgstr "privado"
+
+#: src/Widgets/NamedElementVisibilityViewer.cs:41
+msgid "protected"
+msgstr "protegido"
+
+#: src/Widgets/NamedElementVisibilityViewer.cs:45
+msgid "package"
+msgstr "paquete"
+
+#: src/Widgets/MultiChooserDialog.cs:34
+msgid "Choose elements"
+msgstr "Escoja elementos"
+
+#: src/Widgets/MixedElementsViewer.cs:125
+#: src/Widgets/OwnedAttributesViewer.cs:120
+msgid "anonymous"
+msgstr "anónimo"
+
+#: src/Widgets/OwnedAttributesViewer.cs:30
+msgid "Owned attributes:"
+msgstr "Atributos propios:"
+
+#: src/Widgets/OwnedAttributesViewer.cs:42
+msgid "<<New Property>>"
+msgstr "<<Nueva propiedad>>"
+
+#: src/Widgets/OwnedAttributesViewer.cs:49
+msgid "<<New End>>"
+msgstr "<<Nuevo Extremo>>"
+
+#: src/Widgets/OwnedOperationsViewer.cs:30
+msgid "Owned operations:"
+msgstr "Operaciones propias:"
+
+#: src/Widgets/OwnedOperationsViewer.cs:37
+msgid "<<New Operation>>"
+msgstr "<<Nueva Operación>>"
+
+#: src/Widgets/OwnedTypeViewer.cs:29
+msgid "Owned types:"
+msgstr "Tipos propios:"
+
+#: src/Widgets/ParameterDirectionKindViewer.cs:31
+msgid "Direction:"
+msgstr "Dirección:"
+
+#: src/Widgets/ParameterDirectionKindViewer.cs:45
+msgid "return"
+msgstr "retorna"
+
+#: src/Widgets/RootLevelElementChooserDialog.cs:29
+msgid "Choose a root-level element"
+msgstr "Escoja un elemento raíz"
+
+#: src/Widgets/RootLevelElementChooserDialog.cs:31
+msgid "Model"
+msgstr "Modelo"
+
+#: src/Widgets/RootLevelElementChooserDialog.cs:33
+msgid "Package"
+msgstr "Paquete"
+
+#: src/Widgets/RootLevelElementChooserDialog.cs:34
+msgid "Profile"
+msgstr "Perfil"
+
+#: src/Widgets/UMLPropertiesTab.cs:37
+msgid "Name:"
+msgstr "Nombre:"
+
+#: src/Widgets/UMLPropertiesTab.cs:60
+msgid "Abstract:"
+msgstr "Abstracto:"
+
+#: src/Widgets/UMLPropertiesTab.cs:62
+msgid "Derived:"
+msgstr "Derivado:"
+
+#: src/Widgets/UMLPropertiesTab.cs:64
+msgid "Leaf:"
+msgstr "Hoja:"
+
+#: src/Widgets/UMLPropertiesTab.cs:66
+msgid "Query:"
+msgstr "Consulta:"
+
+#: src/Widgets/UMLPropertiesTab.cs:68
+msgid "Read only:"
+msgstr "Sólo lectura:"
+
+#: src/Widgets/UMLPropertiesTab.cs:70
+msgid "Static:"
+msgstr "Estático:"
+
+#: src/Widgets/UMLPropertiesTab.cs:93
+msgid "Extension points:"
+msgstr "Puntos de extensión:"
+
+#: src/Widgets/UMLPropertiesTab.cs:107
+msgid "Owned literals:"
+msgstr "Literales propios:"
+
+#: src/Widgets/UMLPropertiesTab.cs:111
+msgid "Owned parameters:"
+msgstr "Parámetros propios:"
+
+#: src/Widgets/UMLPropertiesTab.cs:116
+msgid "Nested packages:"
+msgstr "Paquetes anidados:"
+
+#: src/Widgets/UMLPropertiesTab.cs:125
+msgid "Owned ends:"
+msgstr "Extremos propios:"
+
+#: src/Widgets/UMLPropertiesTab.cs:128
+msgid "Member ends:"
+msgstr "Extremos miembros:"
+
+#: src/Widgets/UMLPropertiesTab.cs:138
+msgid "Interface Realizations:"
+msgstr "Implementaciones de interfaz:"
+
+#: src/Widgets/UMLPropertiesTab.cs:144
+msgid "Package imports:"
+msgstr "Importaciones de paquete:"
+
+#: src/Widgets/UMLPropertiesTab.cs:147
+msgid "Element imports:"
+msgstr "Importaciones de elemento:"
+
+#: src/Widgets/UMLPropertiesTab.cs:152
+msgid "Owned use cases:"
+msgstr "Casos de uso propios:"
+
+#: src/Widgets/TypeKindChooserDialog.cs:29
+msgid "Choose a type"
+msgstr "Escoja un tipo"
+
+#: src/Widgets/TypeKindChooserDialog.cs:37
+msgid "Activity"
+msgstr "Actividad"
+
+#: src/Widgets/TypeKindChooserDialog.cs:39
+msgid "Actor"
+msgstr "Actor"
+
+#: src/Widgets/TypeKindChooserDialog.cs:40
+msgid "Artifact"
+msgstr "Artefacto"
+
+#: src/Widgets/TypeKindChooserDialog.cs:41
+msgid "Association"
+msgstr "Asociación"
+
+#: src/Widgets/TypeKindChooserDialog.cs:42
+msgid "AssociationClass"
+msgstr "Clase Asociación"
+
+#: src/Widgets/TypeKindChooserDialog.cs:43
+msgid "Class"
+msgstr "Clase"
+
+#: src/Widgets/TypeKindChooserDialog.cs:44
+msgid "Collaboration"
+msgstr "Colaboración"
+
+#: src/Widgets/TypeKindChooserDialog.cs:49
+msgid "CommunicationPath"
+msgstr "Ruta de Comunicación"
+
+#: src/Widgets/TypeKindChooserDialog.cs:50
+msgid "Component"
+msgstr "Componente"
+
+#: src/Widgets/TypeKindChooserDialog.cs:51
+msgid "DataType"
+msgstr "Tipo de Dato"
+
+#: src/Widgets/TypeKindChooserDialog.cs:52
+msgid "DeploymentSpecification"
+msgstr "Especificación de Despliegue"
+
+#: src/Widgets/TypeKindChooserDialog.cs:53
+msgid "Device"
+msgstr "Dispositivo"
+
+#: src/Widgets/TypeKindChooserDialog.cs:54
+msgid "Enumeration"
+msgstr "Enumeración"
+
+#: src/Widgets/TypeKindChooserDialog.cs:55
+msgid "ExecutionEnvironment"
+msgstr "Entorno de Ejecución"
+
+#: src/Widgets/TypeKindChooserDialog.cs:60
+msgid "Extension"
+msgstr "Extensión"
+
+#: src/Widgets/TypeKindChooserDialog.cs:61
+msgid "InformationItem"
+msgstr "Ítem de Información"
+
+#: src/Widgets/TypeKindChooserDialog.cs:62
+msgid "Interaction"
+msgstr "Interacción"
+
+#: src/Widgets/TypeKindChooserDialog.cs:63
+msgid "Interface"
+msgstr "Interfaz"
+
+#: src/Widgets/TypeKindChooserDialog.cs:64
+msgid "Node"
+msgstr "Nodo"
+
+#: src/Widgets/TypeKindChooserDialog.cs:65
+msgid "PrimitiveType"
+msgstr "Tipo Primitivo"
+
+#: src/Widgets/TypeKindChooserDialog.cs:66
+msgid "ProtocolStateMachine"
+msgstr "Máquina de Estados de Protocolo"
+
+#: src/Widgets/TypeKindChooserDialog.cs:71
+msgid "Signal"
+msgstr "Señal"
+
+#: src/Widgets/TypeKindChooserDialog.cs:72
+msgid "StateMachine"
+msgstr "Máquina de Estados"
+
+#: src/Widgets/TypeKindChooserDialog.cs:73
+msgid "Stereotype"
+msgstr "Estereotipo"
+
+#: src/Widgets/TypeKindChooserDialog.cs:74
+msgid "UseCase"
+msgstr "Caso de Uso"
+
+#: src/Widgets/TypedElementTypeViewer.cs:28
+msgid "Type:"
+msgstr "Tipo:"
+
+#~ msgid "About MonoUML"
+#~ msgstr "Acerca de MonoUML"

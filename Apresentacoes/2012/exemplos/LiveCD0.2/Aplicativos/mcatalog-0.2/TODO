@@ -1,0 +1,17 @@
+BUGS/LACKS:
+-----------
+
+- Fix the bug not allow to render images in the TreeView (bug 63972 in 
+  ximian's bugzilla) 
+- Improve the treeview. Limit the string length, don't show the \n's...
+
+FEATURES:
+---------
+
+- Write a "export" feature. Create web catalog, covers for DVDs...
+- Amazon country should be configurable.
+- Allow to have more than a item for each medium. You can have several films
+  in a DVD, by example. Lending one of them, the others should appear as
+  lended, too.
+- Allow drag and drop in the shelf view?
+- Allow to create user-defined catalogs.

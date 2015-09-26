@@ -1,0 +1,16 @@
+<Combine fileversion="1.0" name="SovereChat" description="">
+  <StartMode startupentry="SovereChat" single="True">
+    <Execute entry="SovereChat" type="None" />
+  </StartMode>
+  <Entries>
+    <Entry filename="./SovereChat.prjx" />
+  </Entries>
+  <Configurations active="Debug">
+    <Configuration name="Release">
+      <Entry name="SovereChat" configurationname="Debug" build="False" />
+    </Configuration>
+    <Configuration name="Debug">
+      <Entry name="SovereChat" configurationname="Debug" build="False" />
+    </Configuration>
+  </Configurations>
+</Combine>

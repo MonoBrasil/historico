@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCountLib", "WordCountLib\WordCountLib.csproj", "{25FC9398-76CF-4CC0-BA23-5315BB5FF176}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyClass", "MyClass\MyClass.csproj", "{C6C8159B-4610-43F6-B10A-768F63501947}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGUIWordCount", "TestGUIWordCount\TestGUIWordCount.csproj", "{BE3772AC-AE0B-4575-A610-6AEAABF8D5FD}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{25FC9398-76CF-4CC0-BA23-5315BB5FF176}.Debug.ActiveCfg = Debug|.NET
+		{25FC9398-76CF-4CC0-BA23-5315BB5FF176}.Debug.Build.0 = Debug|.NET
+		{25FC9398-76CF-4CC0-BA23-5315BB5FF176}.Release.ActiveCfg = Release|.NET
+		{25FC9398-76CF-4CC0-BA23-5315BB5FF176}.Release.Build.0 = Release|.NET
+		{C6C8159B-4610-43F6-B10A-768F63501947}.Debug.ActiveCfg = Debug|.NET
+		{C6C8159B-4610-43F6-B10A-768F63501947}.Debug.Build.0 = Debug|.NET
+		{C6C8159B-4610-43F6-B10A-768F63501947}.Release.ActiveCfg = Release|.NET
+		{C6C8159B-4610-43F6-B10A-768F63501947}.Release.Build.0 = Release|.NET
+		{BE3772AC-AE0B-4575-A610-6AEAABF8D5FD}.Debug.ActiveCfg = Debug|.NET
+		{BE3772AC-AE0B-4575-A610-6AEAABF8D5FD}.Debug.Build.0 = Debug|.NET
+		{BE3772AC-AE0B-4575-A610-6AEAABF8D5FD}.Release.ActiveCfg = Release|.NET
+		{BE3772AC-AE0B-4575-A610-6AEAABF8D5FD}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

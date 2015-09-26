@@ -1,0 +1,1 @@
+constraint pk_$SchemaName!_$TableName! primary key ($PrimaryKey* $MoreColumn!)

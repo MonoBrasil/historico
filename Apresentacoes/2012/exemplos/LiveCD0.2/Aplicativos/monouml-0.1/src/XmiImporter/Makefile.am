@@ -1,0 +1,34 @@
+# MonoUML. CASE tool
+# http://www.monouml.org
+DESTDIR=
+
+MONOUML_DLL_IMPORTER_SOURCES=\
+	AssemblyInfo.cs \
+	Importer.cs
+
+MONOUML_DLL_IMPORTER_RESOURCES=\
+	fromXMI1_0.xslt \
+	fromXMI1_2.xslt
+
+MONOUML_DLL_IMPORTER_RESOURCES_BUILD=$(foreach res,$(MONOUML_DLL_IMPORTER_RESOURCES), $(addprefix -resource:,$(res)),$(notdir $(res)))
+
+DLL_REFERENCES=\
+	ICSharpCode.SharpZipLib.dll \
+	System.Xml.dll
+
+DLL_REFERENCES_BUILD=$(addprefix -r:, $(DLL_REFERENCES))
+
+EXTRA_DIST=$(MONOUML_DLL_IMPORTER_RESOURCES) $(MONOUML_DLL_IMPORTER_SOURCES)
+
+all: $(MONOUML_DLL_IMPORTER)
+	@echo 'Done: MonUML.DI.dll'
+
+$(MONOUML_DLL_IMPORTER): $(MONOUML_DLL_IMPORTER_SOURCES) $(MONOUML_DLL_IMPORTER_RESOURCES)
+	$(MCS) -t:library $(DLL_REFERENCES_BUILD) -out:$(MONOUML_DLL_IMPORTER) $(MONOUML_DLL_IMPORTER_SOURCES) $(MONOUML_DLL_IMPORTER_RESOURCES_BUILD)
+
+clean:
+	rm -f $(MONOUML_DLL_IMPORTER)
+
+install-exec-am: all
+	mkdir -p $(DESTDIR)$(prefix)/$(PACKAGE)/; \
+	$(INSTALL) -m 664 $(MONOUML_DLL_IMPORTER) $(DESTDIR)$(prefix)/$(PACKAGE)/;

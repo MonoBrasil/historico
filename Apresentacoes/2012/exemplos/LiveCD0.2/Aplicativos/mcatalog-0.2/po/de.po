@@ -1,0 +1,440 @@
+# German translation of mcatalog.
+# Copyright (C) 2004, 2005 Cesar Garcia Tapia <tapia@eitig.com>
+# This file is distributed under the same license as the mcatalog package.
+# Christoph Brill <egore@gmx.de>, 2004.
+# Frank Arnold <frank@scirocco-5v-turbo.de>, 2005.
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: mcatalog\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-05-24 17:01+0200\n"
+"PO-Revision-Date: 2005-05-24 17:00+0200\n"
+"Last-Translator: Frank Arnold <frank@scirocco-5v-turbo.de>\n"
+"Language-Team: German GNOME Translations <gnome-de@gnome.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../mcatalog.schemas.in.h:1
+msgid "Default catalog"
+msgstr "Vorgabekatalog"
+
+#: ../mcatalog.schemas.in.h:2
+msgid "Height of borrowers list"
+msgstr "Höhe der Entleiherliste"
+
+#: ../mcatalog.schemas.in.h:3
+msgid "Height of main window"
+msgstr "Höhe des Hauptfensters"
+
+#: ../mcatalog.schemas.in.h:4
+msgid "Save preview images in a cache"
+msgstr "Ablegen von Vorschaubildern in einem Zwischenspeicher"
+
+#: ../mcatalog.schemas.in.h:5
+msgid "Save preview images in a cache (faster rendering)"
+msgstr ""
+"Ablegen von Vorschaubildern in einem Zwischenspeicher (schnellere "
+"Darstellung)"
+
+#: ../mcatalog.schemas.in.h:6
+msgid "The active theme."
+msgstr "Das eingestellte Thema."
+
+#: ../mcatalog.schemas.in.h:7
+msgid "The default actived catalog."
+msgstr "Der per Vorgabe eingestellte Katalog."
+
+#: ../mcatalog.schemas.in.h:8
+msgid "The height of the borrowers list."
+msgstr "Die Höhe der Entleiherliste."
+
+#: ../mcatalog.schemas.in.h:9
+msgid "The height of the main window."
+msgstr "Die Höhe des Hauptfensters."
+
+#: ../mcatalog.schemas.in.h:10
+msgid "The width of the catalog list."
+msgstr "Die Breite der Katalogliste."
+
+#: ../mcatalog.schemas.in.h:11
+msgid "The width of the item list."
+msgstr "Die Breite der Eintragsliste."
+
+#: ../mcatalog.schemas.in.h:12
+msgid "The width of the main window."
+msgstr "Die Breite des Hauptfensters."
+
+#: ../mcatalog.schemas.in.h:13 ../src/dialogs/PreferencesDialog.cs:32
+#: ../src/dialogs/PreferencesDialog.cs:48
+msgid "Theme"
+msgstr "Thema"
+
+#: ../mcatalog.schemas.in.h:14
+msgid "Width of catalog list"
+msgstr "Breite der Katalogliste"
+
+#: ../mcatalog.schemas.in.h:15
+msgid "Width of item list"
+msgstr "Breite der Eintragsliste"
+
+#: ../mcatalog.schemas.in.h:16
+msgid "Width of the main window"
+msgstr "Breite des Hautfensters"
+
+#: ../resources/dialogaddalbum.glade.h:1 ../resources/dialogaddbook.glade.h:1
+#: ../resources/dialogaddfilm.glade.h:1
+msgid "<b>Comments: </b>"
+msgstr "<b>Kommentare: </b>"
+
+#: ../resources/dialogaddalbum.glade.h:2
+msgid "ASIN: "
+msgstr "ASIN: "
+
+#: ../resources/dialogaddalbum.glade.h:3
+msgid "Add a new album"
+msgstr "Neues Album hinzufügen"
+
+#: ../resources/dialogaddalbum.glade.h:4
+msgid "Artists: "
+msgstr "Künstler: "
+
+#: ../resources/dialogaddalbum.glade.h:5 ../resources/dialogaddbook.glade.h:5
+#: ../resources/dialogaddfilm.glade.h:4
+msgid "Date: "
+msgstr "Datum: "
+
+# Platten-Label
+#: ../resources/dialogaddalbum.glade.h:6
+msgid "Label: "
+msgstr "Label: "
+
+#: ../resources/dialogaddalbum.glade.h:7 ../resources/dialogaddfilm.glade.h:9
+msgid "Medium: "
+msgstr "Medium: "
+
+#: ../resources/dialogaddalbum.glade.h:8 ../resources/dialogaddbook.glade.h:12
+#: ../resources/dialogaddfilm.glade.h:11
+msgid "Rating: "
+msgstr "Bewertung: "
+
+#: ../resources/dialogaddalbum.glade.h:9 ../resources/dialogaddfilm.glade.h:12
+msgid "Runtime: "
+msgstr "Laufzeit: "
+
+#: ../resources/dialogaddalbum.glade.h:10
+#: ../resources/dialogaddbook.glade.h:13 ../resources/dialogaddfilm.glade.h:13
+msgid "Search Amazon"
+msgstr "Amazon durchsuchen"
+
+#: ../resources/dialogaddalbum.glade.h:11
+msgid "Style: "
+msgstr "Stilrichtung: "
+
+#: ../resources/dialogaddalbum.glade.h:12
+#: ../resources/dialogaddbook.glade.h:14 ../resources/dialogaddfilm.glade.h:15
+msgid "Title: "
+msgstr "Titel: "
+
+#: ../resources/dialogaddalbum.glade.h:13
+msgid "Tracks: "
+msgstr "Musiktitel: "
+
+#: ../resources/dialogaddbook.glade.h:2 ../src/dialogs/AddBookDialog.cs:49
+msgid "Add a new book"
+msgstr "Neues Buch hinzufügen"
+
+#: ../resources/dialogaddbook.glade.h:3
+msgid "Author: "
+msgstr "Autor: "
+
+#: ../resources/dialogaddbook.glade.h:4 ../resources/dialogaddfilm.glade.h:3
+msgid "Country: "
+msgstr "Land: "
+
+#: ../resources/dialogaddbook.glade.h:6 ../resources/dialogaddfilm.glade.h:7
+msgid "Genre: "
+msgstr "Genre: "
+
+#: ../resources/dialogaddbook.glade.h:7
+msgid "ISBN: "
+msgstr "ISBN: "
+
+#: ../resources/dialogaddbook.glade.h:8 ../resources/dialogaddfilm.glade.h:8
+msgid "Language: "
+msgstr "Sprache: "
+
+#: ../resources/dialogaddbook.glade.h:9 ../resources/dialogaddfilm.glade.h:10
+msgid "Original title: "
+msgstr "Originaltitel: "
+
+#: ../resources/dialogaddbook.glade.h:10
+msgid "Pages: "
+msgstr "Seiten: "
+
+#: ../resources/dialogaddbook.glade.h:11
+msgid "Publisher: "
+msgstr "Verleger: "
+
+#: ../resources/dialogaddfilm.glade.h:2 ../src/dialogs/AddFilmDialog.cs:50
+msgid "Add a new film"
+msgstr "Neuen Film hinzufügen"
+
+#: ../resources/dialogaddfilm.glade.h:5
+msgid "Director: "
+msgstr "Regisseur: "
+
+#: ../resources/dialogaddfilm.glade.h:6
+msgid "Distributor: "
+msgstr "Herausgeber: "
+
+#: ../resources/dialogaddfilm.glade.h:14
+msgid "Starring: "
+msgstr "Hauptrollen: "
+
+#: ../resources/mainwindow.glade.h:1
+msgid "<b>Borrowers</b>"
+msgstr "<b>Entleiher</b>"
+
+#: ../resources/mainwindow.glade.h:2
+msgid "<b>Collections</b>"
+msgstr "<b>Sammlungen</b>"
+
+#: ../resources/mainwindow.glade.h:3
+msgid "Actual view"
+msgstr "Aktuelle Ansicht"
+
+#: ../resources/mainwindow.glade.h:4
+msgid "Add item"
+msgstr "Eintrag hinzufügen"
+
+#: ../resources/mainwindow.glade.h:5 ../src/ItemList.cs:251
+#: ../src/ItemShelf.cs:334 ../src/dialogs/AddAlbumDialog.cs:55
+#: ../src/dialogs/AddFilmDialog.cs:57
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: ../resources/mainwindow.glade.h:6 ../src/ItemList.cs:261
+#: ../src/ItemShelf.cs:342 ../src/Main.cs:322
+#: ../src/dialogs/LendItemDialog.cs:25
+msgid "Lend"
+msgstr "Verleihen"
+
+#: ../resources/mainwindow.glade.h:7
+msgid "List"
+msgstr "Liste"
+
+#: ../resources/mainwindow.glade.h:8
+msgid "Normal Size"
+msgstr "Normale Größe"
+
+#: ../resources/mainwindow.glade.h:9
+msgid "Remove item"
+msgstr "Eintrag entfernen"
+
+#: ../resources/mainwindow.glade.h:10
+msgid "Search: "
+msgstr "Suchen: "
+
+#: ../resources/mainwindow.glade.h:11
+msgid "Shelf"
+msgstr "Regal"
+
+#: ../resources/mainwindow.glade.h:12
+msgid "Zoom"
+msgstr "Ansichtsgröße"
+
+#: ../resources/mainwindow.glade.h:13
+msgid "Zoom In"
+msgstr "Vergrößern"
+
+#: ../resources/mainwindow.glade.h:14
+msgid "Zoom Out"
+msgstr "Verkleinern"
+
+#: ../resources/title.glade.h:1
+msgid ","
+msgstr ","
+
+#: ../resources/title.glade.h:2 ../src/TitleWidget.cs:56
+msgid "by"
+msgstr "von"
+
+#: ../src/AmazonQuery.cs:52
+msgid "No matches for your query"
+msgstr "Keine Treffer für diese Abfrage"
+
+#: ../src/Catalog.cs:276
+#, csharp-format
+msgid "Return {0}?"
+msgstr "{0} zurücknehmen?"
+
+#: ../src/Database.cs:713 ../src/Database.cs:732 ../src/Database.cs:750
+msgid "Id"
+msgstr "ID"
+
+#: ../src/Database.cs:714 ../src/Database.cs:733 ../src/Database.cs:751
+msgid "Image"
+msgstr "Bild"
+
+#: ../src/Database.cs:715 ../src/Database.cs:734 ../src/Database.cs:752
+msgid "Rating"
+msgstr "Bewertung"
+
+#: ../src/Database.cs:716 ../src/Database.cs:735 ../src/Database.cs:753
+#: ../src/dialogs/AmazonSelectDialog.cs:65
+msgid "Title"
+msgstr "Titel"
+
+#: ../src/Database.cs:717 ../src/Database.cs:736
+msgid "Original Title"
+msgstr "Originaltitel"
+
+#: ../src/Database.cs:718 ../src/dialogs/AmazonSelectDialog.cs:68
+msgid "Director"
+msgstr "Regisseur"
+
+#: ../src/Database.cs:719
+msgid "Starring"
+msgstr "Hauptrollen"
+
+#: ../src/Database.cs:720 ../src/Database.cs:738 ../src/Database.cs:756
+msgid "Date"
+msgstr "Datum"
+
+#: ../src/Database.cs:721 ../src/Database.cs:739
+msgid "Genre"
+msgstr "Genre"
+
+#: ../src/Database.cs:722 ../src/Database.cs:761
+msgid "Runtime"
+msgstr "Laufzeit"
+
+#: ../src/Database.cs:723 ../src/Database.cs:743
+msgid "Country"
+msgstr "Land"
+
+#: ../src/Database.cs:724 ../src/Database.cs:744
+msgid "Language"
+msgstr "Sprache"
+
+#: ../src/Database.cs:725
+msgid "Distributor"
+msgstr "Herausgeber"
+
+#: ../src/Database.cs:726 ../src/Database.cs:760
+msgid "Medium"
+msgstr "Medium"
+
+#: ../src/Database.cs:727 ../src/Database.cs:745 ../src/Database.cs:762
+msgid "Comments"
+msgstr "Kommentare"
+
+#: ../src/Database.cs:737 ../src/Database.cs:754
+#: ../src/dialogs/AmazonSelectDialog.cs:71
+msgid "Author"
+msgstr "Autor"
+
+#: ../src/Database.cs:740
+msgid "Pages"
+msgstr "Seiten"
+
+#: ../src/Database.cs:741
+msgid "Publisher"
+msgstr "Verleger"
+
+#: ../src/Database.cs:742
+msgid "ISBN"
+msgstr "ISBN"
+
+# Platten-Label
+#: ../src/Database.cs:755
+msgid "Label"
+msgstr "Label"
+
+#: ../src/Database.cs:757
+msgid "Style"
+msgstr "Stilrichtung"
+
+#: ../src/Database.cs:758
+msgid "ASIN"
+msgstr "ASIN"
+
+#: ../src/Database.cs:759
+msgid "Tracks"
+msgstr "Musiktitel"
+
+#: ../src/ItemList.cs:91
+msgid "Cover"
+msgstr "Einband"
+
+#: ../src/ItemList.cs:257 ../src/ItemShelf.cs:338 ../src/Main.cs:319
+msgid "Return"
+msgstr "Zurücknehmen"
+
+#: ../src/Main.cs:400
+msgid "Remove the selected items?"
+msgstr "Die gewählten Einträge entfernen?"
+
+#: ../src/Main.cs:492
+msgid "translator-credits"
+msgstr ""
+"Christoph Brill\n"
+"Frank Arnold <frank@scirocco-5v-turbo.de>"
+
+#: ../src/Main.cs:497
+msgid "Media cataloger"
+msgstr "Medienkatalogisierung"
+
+#: ../src/dialogs/AddAlbumDialog.cs:48
+msgid "Add a new Album"
+msgstr "Neues Album hinzufügen"
+
+#: ../src/dialogs/AddBookDialog.cs:56
+msgid "Editing"
+msgstr "Bearbeitung"
+
+#: ../src/dialogs/AmazonSelectDialog.cs:51
+msgid "Select your choice"
+msgstr "Treffen Sie Ihre Auswahl"
+
+#: ../src/dialogs/AmazonSelectDialog.cs:74
+msgid "Artists"
+msgstr "Künstler"
+
+#: ../src/dialogs/CatalogPropertiesDialog.cs:38
+#, csharp-format
+msgid "{0} properties"
+msgstr "Eigenschaften von {0}"
+
+#: ../src/dialogs/CatalogPropertiesDialog.cs:48
+msgid "Columns to show"
+msgstr "Anzuzeigende Spalten"
+
+#: ../src/dialogs/LendItemDialog.cs:46
+msgid "Borrower:"
+msgstr "Entleiher:"
+
+#: ../src/dialogs/LendItemDialog.cs:107
+msgid "You must write the borrower name"
+msgstr "Sie müssen den Namen des Entleihers eingeben"
+
+#: ../src/dialogs/PreferencesDialog.cs:18
+msgid "Preferences"
+msgstr "Einstellungen"
+
+#: ../src/dialogs/ProgressDialog.cs:36
+msgid "Wait, please"
+msgstr "Bitte warten"
+
+#: ../src/dialogs/ProgressDialog.cs:42
+msgid "Searching Amazon...."
+msgstr "Amazon wird durchsucht…"
+
+#~ msgid "Multimedia cataloguer"
+#~ msgstr "Multimedia-Katalogisierung"
+
+#~ msgid "mCatalog"
+#~ msgstr "mCatalog"

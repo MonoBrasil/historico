@@ -1,0 +1,17 @@
+//
+// Author: 
+//   Mikael Hallendal <micke@imendio.com>
+//
+// (C) 2004 Imendio HB
+// 
+
+// Hack to get the locale directory into the source
+
+public class Defines {
+	public static string VERSION = "@version@";
+	public static string DATADIR = "@prefix@/share";
+	public static string APP_DATADIR = DATADIR + "/mcatalog";
+	public static string IMAGE_DATADIR = APP_DATADIR + "/pixmaps";
+	public static string TEMPLATES_DATADIR = APP_DATADIR + "/templates";
+	public static string GNOME_LOCALE_DIR = DATADIR + "/locale";
+}

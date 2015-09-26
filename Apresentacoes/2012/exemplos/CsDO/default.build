@@ -1,0 +1,513 @@
+﻿<?xml version="1.0"?>
+<project name="CsDO" default="all">
+
+	<property name="major.minor.release.version" value="0.0.1" />
+	<property name="svn.revision" value="29" />
+	<property name="version" value="${major.minor.release.version}.${svn.revision}" dynamic="true" />
+	
+	<property name="debug" value="true" />
+	<property name="optimize" value="false" />
+
+	<property name="NAnt.Core.dll" value="${nant.location}/NAnt.Core.dll" />
+	<property name="ngen.exe" value="${nant.settings.currentframework.frameworkdirectory}/ngen.exe" />
+
+	<property name="skip.ngen" value="False" />
+
+	<property name="build.dir" value="build" />
+
+	<property name="install.prefix" value="/usr/local" />
+	<property name="install.destdir" value="/" />
+
+	<property name="install.share" value="${path::combine(install.prefix,'share')}" />
+	<property name="install.bindir" value="${path::combine(install.prefix,'bin')}" />
+	<property name="install.libdir" value="${path::combine(install.prefix,'lib')}" />
+	<property name="install.csdolib" value="${path::combine(install.libdir,'csdo')}" />
+
+	<property name="fakeroot.csdolib" value="${install.destdir}/${install.csdolib}" />
+	<property name="fakeroot.bindir" value="${install.destdir}/${install.bindir}" />
+	<property name="fakeroot.libdir" value="${install.destdir}/${install.libdir}" />
+	<property name="fakeroot.share" value="${install.destdir}/${install.share}" />
+
+	<include buildfile="build.properties" if="${file::exists('build.properties')}" />
+
+	<target name="all" depends="CsDO.Lib, CsDO.Drivers">	
+	</target>
+	
+	<target name="test" depends="all">
+		<nant buildfile="tests/default.build" target="run" />
+	</target>
+	
+	<target name="compile-tests" depends="all">
+		<nant buildfile="tests/default.build" target="compile" />
+	</target>
+	
+	<target name="CsDO.Lib" depends="init">
+		<csc 
+			target="library"
+			output="build/CsDO.dll"
+			debug="${debug}"
+			optimize="${optimize}">
+
+			<sources basedir="src/Lib">
+				<include name="*.cs" />
+			</sources>
+
+			<references>
+				<include name="System.Data.dll" />
+			</references>
+		</csc>
+	</target>
+
+	<target name="CsDO.Drivers" depends="CsDO.Lib">
+		<csc 
+			target="library"
+			output="build/CsDO.Driver.Npgsql.dll"
+			debug="${debug}"
+			optimize="${optimize}">
+
+			<sources basedir="src/Drivers">
+				<include name="CsDO.Driver.Npgsql*.cs" />
+			</sources>
+
+			<references>
+				<include name="build/CsDO.dll" />
+				<include name="System.Data.dll" />
+				<include name="Npgsql.dll" />
+			</references>
+		</csc>
+		<csc 
+			target="library"
+			output="build/CsDO.Driver.OleDb.dll"
+			debug="${debug}"
+			optimize="${optimize}">
+
+			<sources basedir="src/Drivers">
+				<include name="CsDO.Driver.OleDb*.cs" />
+			</sources>
+
+			<references>
+				<include name="build/CsDO.dll" />
+				<include name="System.Data.dll" />
+			</references>
+		</csc>
+	</target>
+	
+	<target name="update-bin" depends="all">
+		<mkdir dir="bin" />
+		<copy todir="bin">
+			<fileset basedir="build">
+				<!-- include name="pt/Boo.Lang.resources.dll" /-->
+				<include name="CsDO.dll" />	
+				<include name="CsDO.Driver.Npgsql.dll" />
+				<include name="CsDO.Driver.OleDb.dll" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="CsDo.Lang" depends="resources">
+		<csc
+			target="library"
+			output="build/CsDO.Lang.dll"
+			debug="${debug}"
+			optimize="${optimize}"
+			if="${nant.platform.win32}">
+
+			<sources basedir="src/Lang">
+				<include name="**/*.cs" />
+			</sources>
+			
+			<resources basedir="build">
+				<include name="strings.resources" />
+			</resources>
+			<resources basedir="build/pt">
+				<include name="strings.pt.resources" />
+			</resources>
+		</csc>
+		
+		<csc
+			target="library"
+			output="build/CsDO.Lang.dll"
+			debug="${debug}"
+			optimize="${optimize}"
+			unless="${nant.platform.win32}">
+			
+			<sources basedir="src/Lang">
+				<include name="**/*.cs" />
+			</sources>
+			
+			<resources basedir="build">
+				<include name="strings.resources" />
+			</resources>
+		</csc>
+	</target>
+	
+	<target name="csdo-pkgconfig">
+		<copy file="extras/csdo.pc.in" tofile="build/csdo.pc" if="${not(platform::is-win32())}" inputencoding="ASCII">
+			<filterchain>
+				<replacestring from="@prefix@" to="${install.prefix}" />
+				<replacestring from="@VERSION@" to="${csdo.version}" />
+			</filterchain>
+		</copy>
+	</target>
+
+	<target name="install" depends="CsDO.Lib, CsDO.Drivers">
+		<call target="install-win32" if="${platform::is-win32()}"/>
+		<call target="install-linux" if="${not(platform::is-win32())}"/>
+	</target>
+
+	<target name="install-linux" depends="CsDO.Lib, CsDO.Drivers">
+		<!--
+		Use pkg-config to find the proper locations for several
+		key files for mime detection, etc
+		-->
+
+		<property name="sharedmime.prefix" value="${pkg-config::get-variable('shared-mime-info','prefix')}" />
+		<property name="fakeroot.sharedmime" value="${install.destdir}/${sharedmime.prefix}" />
+		<property name="gsv.prefix" value="${pkg-config::get-variable('gtksourceview-1.0','prefix')}" />
+		<property name="fakeroot.gsv" value="${install.destdir}/${gsv.prefix}" />
+
+		<mkdir dir="${fakeroot.csdolib}"/>
+		<mkdir dir="${fakeroot.bindir}"/>
+
+		<copy todir="${fakeroot.csdolib}">
+			<fileset basedir="build">
+				<include name="*.dll"/>
+				<include name="*.rsp"/>
+			</fileset>
+		</copy>
+
+		<foreach item="File" property="filename">
+		<in>
+			<items>
+				<include name="build/CsDO.Lang*.dll" />
+			</items>
+		</in>
+		<do>
+			<exec program="gacutil" useruntimeengine="false" workingdir="build">
+				<arg value="/i" />
+				<arg value="${path::get-file-name(filename)}" />
+				<arg value="/package" />
+				<arg value="csdo" />
+				<arg value="/root" />
+				<arg value="${fakeroot.libdir}" />
+			</exec>
+		</do>
+		</foreach>
+		
+		<copy todir="${fakeroot.csdolib}/pt">
+			<fileset basedir="${build.dir}/pt">
+				<include name="*"/>
+			</fileset>
+		</copy>
+
+		<copy file="build/csdo.pc" todir="${fakeroot.libdir}/pkgconfig/" />
+	</target>
+
+	<target name="install-win32" depends="all">
+	
+		<fail unless="${property::exists('mono.prefix')}">
+		Please set the property 'mono.prefix' to point to the prefix of your
+		mono installation (example: c:\dotnet\mono-1.1.8).
+		</fail>
+		
+		<copy todir="${path::combine(mono.prefix, 'lib/csdo')}">
+			<fileset basedir="build">
+				<include name="*.dll"/>
+				<include name="*.rsp"/>
+			</fileset>
+		</copy>
+
+		<foreach item="File" property="filename">
+		<in>
+			<items>
+				<include name="build/CsDO.Lang*.dll" />
+			</items>
+		</in>
+		<do>
+			<exec program="${path::combine(mono.prefix, 'bin/gacutil.bat')}"
+				useruntimeengine="false" workingdir="build">
+				<arg value="/i" />
+				<arg value="${path::get-file-name(filename)}" />
+				<arg value="/package" />
+				<arg value="boo" />
+			</exec>
+		</do>
+		</foreach>
+
+	</target>
+	
+	<target name="uninstall">
+		<call target="uninstall-linux" if="${not(platform::is-win32())}"/>
+		<call target="uninstall-win32" if="${platform::is-win32()}"/>
+	</target>
+
+	<target name="uninstall-linux">
+		<!--
+		Use pkg-config to find the proper locations for several
+		key files for mime detection, etc
+		-->
+
+		<property name="sharedmime.prefix" value="${pkg-config::get-variable('shared-mime-info','prefix')}" />
+		<property name="fakeroot.sharedmime" value="${install.destdir}/${sharedmime.prefix}" />
+		<property name="gsv.prefix" value="${pkg-config::get-variable('gtksourceview-1.0','prefix')}" />
+		<property name="fakeroot.gsv" value="${install.destdir}/${gsv.prefix}" />
+		
+		<foreach item="File" property="filename">
+		<in>
+			<items>
+				<include name="bin/CsDO.Lang*.dll" />
+			</items>
+		</in>
+		<do>
+			<exec program="gacutil" useruntimeengine="false">
+				<arg value="/u" />
+				<arg value="${path::get-file-name-without-extension(filename)}" />
+				<arg value="/package" />
+				<arg value="csdo" />
+			</exec>
+		</do>
+		</foreach>
+		
+		<delete dir="${fakeroot.csdolib}" />
+		
+		<delete file="${fakeroot.libdir}/pkgconfig/csdo.pc" />
+	</target>
+	
+	<target name="uninstall-win32">
+		<exec program='${ngen.exe}' if="${file::exists(ngen.exe)}" unless="${skip.ngen}">
+			<arg value='/delete' />
+			<arg value='CsDO.Lang' />
+			<arg file='build/*.dll' />
+		</exec>
+	</target>
+	
+	<target name="update-stable-branch">
+		<!--boo src="scripts/update-stable-branch.boo">
+			<references basedir="build">
+				<include name="SVNUtil.dll" />
+			</references>
+		</boo-->		
+	</target>
+	
+	<target name="create-distro-tag">
+		<!--boo src="scripts/create-distro-tag.boo">
+			<references basedir="build">
+				<include name="SVNUtil.dll" />
+			</references>
+		</boo-->
+	</target>
+	
+	
+	<target name="upload-distro" depends="distro, make-bin-dist">
+		<exec program="scp">
+			<arg value="-B" />
+			<arg file="csdo-${version}-bin.zip" />
+			<arg file="csdo-${version}-src.zip" />
+			<arg file="csdo-${version}-bin.tar.bz2" />
+			<arg file="csdo-${version}-src.tar.bz2" />
+			<arg file="csdo-${version}.tar.gz" />
+			<arg value="${distro-user}@beaver.codehaus.org:/home/projects/boo/dist/distributions/" />
+		</exec>
+	</target>
+	
+	<target name="distro" depends="src-distro">
+	</target>
+	
+	<target name="insert-license">
+		<insertLicense license="notice.txt">
+			<fileset basedir="src">
+				<include name="**/*.cs" />
+			</fileset>
+			<fileset basedir="tests">
+				<include name="**/*.boo" />
+			</fileset>
+		</insertLicense>
+	</target>
+
+	<target name="prepare-bin-distro" depends="insert-license">
+		<property name="distro.dir" value="${build.dir}/csdo-${version}" />
+		
+		<delete dir="${distro.dir}" if="${directory::exists(distro.dir)}" />
+		<mkdir dir="${distro.dir}" />
+		
+		<copy todir="${distro.dir}">
+			<fileset>
+				<include name="readme.txt" />
+				<include name="license.txt" />
+				<include name="bin/**/*.dll" />
+				<include name="bin/*.exe" />
+				<include name="bin/*.rsp" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="bin-distro" depends="prepare-bin-distro">
+		<zip zipfile="csdo-${version}-bin.zip" ziplevel="9">
+			<fileset basedir="${distro.dir}">
+				<include name="**" />
+			</fileset>
+		</zip>
+		
+		<tar destfile="csdo-${version}-bin.tar.bz2" compression="BZip2">
+			<fileset basedir="${build.dir}">
+				<include name="csdo-${version}/**/*"/>
+			</fileset>
+		</tar>
+	</target>
+	
+	<target name="prepare-src-distro" depends="bin-distro">
+		<copy todir="${distro.dir}">
+			<fileset>				
+				<include name="default.build" />
+				<include name="notice.txt" />
+				
+				<include name="src/**/*.cs" />
+				<include name="src/**/*.prjx" />
+				<include name="src/**/*.cmbx" />
+				<include name="src/CsDO.Lang/Resources/**/*.txt" />
+				
+				<include name="tests/nunit.inc" />
+				<include name="tests/**/*.cs" />
+				<include name="tests/**/*.build" />
+				<include name="tests/**/*.prjx" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="src-distro" depends="prepare-src-distro">
+		<zip zipfile="csdo-${version}-src.zip" ziplevel="9">
+			<fileset basedir="${distro.dir}">
+				<include name="**" />
+			</fileset>
+		</zip>
+		
+		<tar destfile="csdo-${version}-src.tar.bz2" compression="BZip2">
+			<fileset basedir="${build.dir}">
+				<include name="csdo-${version}/**/*"/>
+			</fileset>
+		</tar>
+	</target>
+
+	<target name="make-bin-dist">
+		<copy file="configure.in.in" tofile="configure.in" inputencoding="ASCII">
+			<filterchain>
+				<replacestring from="VERSION" to="${version}" />
+			</filterchain>
+		</copy>
+
+		<!-- Needed to keep automake from freaking -->
+		<touch file="NEWS"/>
+		<touch file="AUTHORS"/>
+		<touch file="ChangeLog"/>
+		<touch file="README"/>
+
+		<!-- "./autogen.sh", effectively -->
+		<exec program="aclocal" useruntimeengine="false" />
+		<exec program="autoconf" useruntimeengine="false" />
+		<exec program="automake" useruntimeengine="false">
+			<arg value="--add-missing" />
+		</exec>
+
+		<exec program="./configure" useruntimeengine="false" />
+
+		<exec program="make" useruntimeengine="false">
+			<arg value="dist" />
+		</exec>
+
+		<exec program="make" useruntimeengine="false">
+			<arg value="distclean" />
+		</exec>
+
+		<!-- Clean up all the crap autotools spits out everywhere -->
+		<delete>
+			<fileset>
+				<include name="NEWS" />
+				<include name="AUTHORS" />
+				<include name="ChangeLog" />
+				<include name="README" />
+				<include name="COPYING" />
+				<include name="INSTALL" />
+				<include name="**/Makefile.in" />
+				<exclude name="lib/**/*.*" />
+				<include name="configure" />
+				<include name="autom4te.cache/*" />
+				<include name="autom4te.cache" />
+				<include name="aclocal.m4" />
+				<include name="install-sh" />
+				<include name="missing" />
+				<include name="configure.in" />
+			</fileset>
+		</delete>
+	</target>
+	
+	<target name="resources" depends="init">
+		<resgen
+			input="src/CsDO.Lang/Resources/strings.txt"
+			output="build/strings.resources" />
+	
+		<property name="locale" value="pt" />
+		<call target="build-resource" />
+	</target>
+	
+	<target name="build-resource">
+		<mkdir dir="${build.dir}/${locale}" />
+		<resgen
+			input="src/CsDO.Lang/Resources/${locale}/strings.txt"
+			output="build/${locale}/strings.${locale}.resources" />
+	</target>
+
+	<target name="update-svn-revision-number">
+	    <!--boo>
+			<references basedir="build">
+				<include name="SVNUtil.dll" />
+				<include name="Boo.Lang.Useful.dll" />
+			</references>
+			
+			import Useful.IO.TextFile
+			
+			output = svn("info")
+			revision = /Revision:\s+(\d+)/.Match(output).Groups[1].Value
+			Project.Properties["boo.svn.revision"] = revision
+			print Project.Properties["boo.version"]
+			
+			contents = ReadFile("default.build")
+			newContents = /property\s+name="boo.svn.revision"\s+value="\d*"/.Replace(
+								contents,
+								"property name=\"boo.svn.revision\" value=\"${revision}\"")
+			WriteFile("default.build", newContents) if contents != newContents
+		</boo-->
+	</target>
+	
+	<target name="update-assembly-attributes" depends="update-svn-revision-number">
+    		<updateAssemblyVersion
+			version="${version}">
+			<fileset basedir="src">
+				<include name="**/AssemblyInfo.cs" />
+			</fileset>
+		</updateAssemblyVersion>
+		
+		<updateAssemblyVersion
+			copyright="(C) 2004-2005 Alexandre Rocha Lima e Marcondes e Alessandro de Oliveira Binhara">
+			<fileset basedir="src">
+				<include name="**/AssemblyInfo.cs" />
+			</fileset>
+		</updateAssemblyVersion>
+	</target>
+
+	<target name="clean">
+		<delete dir="build" failonerror="false" />
+	</target>
+
+	<target name="init">
+		<delete dir="build" if="${directory::exists('build')}" />
+		<mkdir dir="build" />
+		<copy todir="build">
+			<fileset basedir="lib">
+				<include name="*.dll" />
+				<include name="*.pdb" />
+				<include name="pt/*.dll" />
+			</fileset>
+		</copy>
+	</target>
+
+</project>

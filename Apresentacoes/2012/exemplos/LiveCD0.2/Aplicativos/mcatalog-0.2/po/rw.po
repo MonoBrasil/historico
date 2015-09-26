@@ -1,0 +1,421 @@
+# translation of mcatalog to Kinyarwanda.
+# Copyright (C) 2005 Free Software Foundation, Inc.
+# This file is distributed under the same license as the mcatalog package.
+# Steve Murphy <murf@e-tools.com>, 2005
+# Steve performed initial rough translation from compendium built from translations provided by the following translators:
+# Philibert Ndandali  <ndandali@yahoo.fr>, 2005.
+# Viateur MUGENZI <muvia1@yahoo.fr>, 2005.
+# Noëlla Mupole <s24211045@tuks.co.za>, 2005.
+# Carole Karema <karemacarole@hotmail.com>, 2005.
+# JEAN BAPTISTE NGENDAHAYO <ngenda_denis@yahoo.co.uk>, 2005.
+# Augustin KIBERWA  <akiberwa@yahoo.co.uk>, 2005.
+# Donatien NSENGIYUMVA <ndonatienuk@yahoo.co.uk>, 2005..
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mcatalog HEAD\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-04-01 16:01-0700\n"
+"PO-Revision-Date: 2005-03-31 20:55-0700\n"
+"Last-Translator: Steve Murphy <murf@e-tools.com>\n"
+"Language-Team: Kinyarwanda <translation-team-rw@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"ULL NAME <EMAIL@ADDRESS>\n"
+
+#: mcatalog.desktop.in.h:1
+msgid "Multimedia cataloguer"
+msgstr ""
+
+#: mcatalog.desktop.in.h:2
+msgid "mCatalog"
+msgstr ""
+
+#: mcatalog.schemas.in.h:1
+#, fuzzy
+msgid "Default catalog"
+msgstr "Agatabo"
+
+#: mcatalog.schemas.in.h:2
+#, fuzzy
+msgid "Height of borrowers list"
+msgstr "Bya Urutonde"
+
+#: mcatalog.schemas.in.h:3
+#, fuzzy
+msgid "Height of main window"
+msgstr "Bya Idirishya"
+
+#: mcatalog.schemas.in.h:4
+#, fuzzy
+msgid "Save preview images in a cache"
+msgstr "Kubika Igaragazambere Ishusho in a Ubwihisho"
+
+#: mcatalog.schemas.in.h:5
+#, fuzzy
+msgid "Save preview images in a cache (faster rendering)"
+msgstr "Kubika Igaragazambere Ishusho in a Ubwihisho Isubizwa"
+
+#: mcatalog.schemas.in.h:6
+#, fuzzy
+msgid "The active theme."
+msgstr "Gikora"
+
+#: mcatalog.schemas.in.h:7
+#, fuzzy
+msgid "The default actived catalog."
+msgstr "Mburabuzi Agatabo"
+
+#: mcatalog.schemas.in.h:8
+#, fuzzy
+msgid "The height of the borrowers list."
+msgstr "Ubuhagarike Bya i Urutonde"
+
+#: mcatalog.schemas.in.h:9
+#, fuzzy
+msgid "The height of the main window."
+msgstr "Ubuhagarike Bya i Idirishya"
+
+#: mcatalog.schemas.in.h:10
+#, fuzzy
+msgid "The width of the catalog list."
+msgstr "Ubugari Bya i Agatabo Urutonde"
+
+#: mcatalog.schemas.in.h:11
+#, fuzzy
+msgid "The width of the item list."
+msgstr "Ubugari Bya i Ikintu Urutonde"
+
+#: mcatalog.schemas.in.h:12
+#, fuzzy
+msgid "The width of the main window."
+msgstr "Ubugari Bya i Idirishya"
+
+#: mcatalog.schemas.in.h:13 src/dialogs/PreferencesDialog.cs:30
+#: src/dialogs/PreferencesDialog.cs:46
+msgid "Theme"
+msgstr ""
+
+#: mcatalog.schemas.in.h:14
+#, fuzzy
+msgid "Width of catalog list"
+msgstr "Bya Agatabo Urutonde"
+
+#: mcatalog.schemas.in.h:15
+#, fuzzy
+msgid "Width of item list"
+msgstr "Bya Ikintu Urutonde"
+
+#: mcatalog.schemas.in.h:16
+#, fuzzy
+msgid "Width of the main window"
+msgstr "Bya i Idirishya"
+
+#: resources/dialogaddalbum.glade.h:1 resources/dialogaddbook.glade.h:1
+#: resources/dialogaddfilm.glade.h:1
+#, fuzzy
+msgid "<b>Comments: </b>"
+msgstr "<B B"
+
+# sc/source\core\src\compiler.src:RID_SC_FUNCTION_NAMES.SC_OPCODE_ARC_SIN.text
+#: resources/dialogaddalbum.glade.h:2
+#, fuzzy
+msgid "ASIN: "
+msgstr "ASIN"
+
+#: resources/dialogaddalbum.glade.h:3
+#, fuzzy
+msgid "Add a new album"
+msgstr "a Gishya"
+
+#: resources/dialogaddalbum.glade.h:4
+msgid "Artists: "
+msgstr ""
+
+# svx/source\items\svxitems.src:RID_SVXITEMS_DATE_COMPLETE.text
+#: resources/dialogaddalbum.glade.h:5 resources/dialogaddbook.glade.h:5
+#: resources/dialogaddfilm.glade.h:4
+msgid "Date: "
+msgstr "Itariki:"
+
+#: resources/dialogaddalbum.glade.h:6
+#, fuzzy
+msgid "Label: "
+msgstr "Akayobozi:"
+
+# officecfg/registry\schema\org\openoffice\Office\Math.xcs:....FontFormat.Weight..6.text
+#: resources/dialogaddalbum.glade.h:7 resources/dialogaddfilm.glade.h:9
+#, fuzzy
+msgid "Medium: "
+msgstr "biringaniye"
+
+#: resources/dialogaddalbum.glade.h:8 resources/dialogaddbook.glade.h:12
+#: resources/dialogaddfilm.glade.h:11
+#, fuzzy
+msgid "Rating: "
+msgstr "Ipima"
+
+#: resources/dialogaddalbum.glade.h:9 resources/dialogaddfilm.glade.h:12
+msgid "Runtime: "
+msgstr ""
+
+#: resources/dialogaddalbum.glade.h:10 resources/dialogaddbook.glade.h:13
+#: resources/dialogaddfilm.glade.h:13
+msgid "Search Amazon"
+msgstr ""
+
+# sfx2/source\dialog\filedlghelper.src:STR_LB_IMAGE_TEMPLATE.text
+#: resources/dialogaddalbum.glade.h:11
+#, fuzzy
+msgid "Style: "
+msgstr "Imisusire"
+
+# sch/source\ui\app\menu.src:RID_MENU.WORKAROUND_22.SID_INSERT_TITLE.text
+#: resources/dialogaddalbum.glade.h:12 resources/dialogaddbook.glade.h:14
+#: resources/dialogaddfilm.glade.h:15
+#, fuzzy
+msgid "Title: "
+msgstr "Umutwe..."
+
+#: resources/dialogaddalbum.glade.h:13
+msgid "Tracks: "
+msgstr ""
+
+#: resources/dialogaddbook.glade.h:2 src/dialogs/AddBookDialog.cs:65
+#, fuzzy
+msgid "Add a new book"
+msgstr "a Gishya Igitabo"
+
+# svx/source\items\svxitems.src:RID_SVXITEMS_AUTHOR_COMPLETE.text
+#: resources/dialogaddbook.glade.h:3
+msgid "Author: "
+msgstr "Umuhanzi:"
+
+#: resources/dialogaddbook.glade.h:4 resources/dialogaddfilm.glade.h:3
+#, fuzzy
+msgid "Country: "
+msgstr "igihugu"
+
+#: resources/dialogaddbook.glade.h:6 resources/dialogaddfilm.glade.h:7
+msgid "Genre: "
+msgstr ""
+
+#: resources/dialogaddbook.glade.h:7
+#, fuzzy
+msgid "ISBN: "
+msgstr "ISBN"
+
+# svx/source\dialog\thesdlg.src:RID_SVXDLG_THESAURUS.BTN_LANGUAGE.text
+#: resources/dialogaddbook.glade.h:8 resources/dialogaddfilm.glade.h:8
+#, fuzzy
+msgid "Language: "
+msgstr "Ururimi..."
+
+#: resources/dialogaddbook.glade.h:9 resources/dialogaddfilm.glade.h:10
+#, fuzzy
+msgid "Original title: "
+msgstr "Umutwe"
+
+# filter/source\pdf\impdialog.src:RID_PDF_EXPORT_DLG.FL_PAGES.text
+#: resources/dialogaddbook.glade.h:10
+#, fuzzy
+msgid "Pages: "
+msgstr "Amapaji"
+
+#: resources/dialogaddbook.glade.h:11
+#, fuzzy
+msgid "Publisher: "
+msgstr "Uwasohoye inyandiko"
+
+#: resources/dialogaddfilm.glade.h:2 src/dialogs/AddFilmDialog.cs:67
+#, fuzzy
+msgid "Add a new film"
+msgstr "a Gishya"
+
+#: resources/dialogaddfilm.glade.h:5
+#, fuzzy
+msgid "Director: "
+msgstr "Umuyobozi"
+
+#: resources/dialogaddfilm.glade.h:6
+msgid "Distributor: "
+msgstr ""
+
+#: resources/dialogaddfilm.glade.h:14
+msgid "Starring: "
+msgstr ""
+
+#: resources/mainwindow.glade.h:1
+#, fuzzy
+msgid "<b>Borrowers</b>"
+msgstr "<B B"
+
+#: resources/mainwindow.glade.h:2
+#, fuzzy
+msgid "<b>Collections</b>"
+msgstr "<B B"
+
+#: resources/mainwindow.glade.h:3
+#, fuzzy
+msgid "Actual view"
+msgstr "Kureba"
+
+#: resources/mainwindow.glade.h:4
+#, fuzzy
+msgid "Add item"
+msgstr "Kongeraho Ikintu"
+
+# #-#-#-#-#  officecfg.pot (PACKAGE VERSION)  #-#-#-#-#
+# officecfg/registry\schema\org\openoffice\Office\Writer.xcs:....DefaultFont.List.text
+# #-#-#-#-#  officecfg.pot (PACKAGE VERSION)  #-#-#-#-#
+# officecfg/registry\schema\org\openoffice\Office\Writer.xcs:....DefaultFontCJK.List.text
+# #-#-#-#-#  officecfg.pot (PACKAGE VERSION)  #-#-#-#-#
+# officecfg/registry\schema\org\openoffice\Office\Writer.xcs:....DefaultFontCTL.List.text
+#: resources/mainwindow.glade.h:5
+msgid "List"
+msgstr "Urutonde"
+
+#: resources/mainwindow.glade.h:6
+msgid "Normal Size"
+msgstr ""
+
+#: resources/mainwindow.glade.h:7
+#, fuzzy
+msgid "Remove item"
+msgstr "Ikintu"
+
+# #-#-#-#-#  so3.pot (PACKAGE VERSION)  #-#-#-#-#
+# so3/src\svuidlg.src:MD_INSERT_OLEOBJECT.BTN_FILEPATH.text
+# #-#-#-#-#  so3.pot (PACKAGE VERSION)  #-#-#-#-#
+# so3/src\svuidlg.src:MD_INSERT_OBJECT_APPLET.BTN_CLASS.text
+#: resources/mainwindow.glade.h:8
+#, fuzzy
+msgid "Search: "
+msgstr "Gushakisha..."
+
+#: resources/mainwindow.glade.h:9
+msgid "Shelf"
+msgstr ""
+
+#: resources/mainwindow.glade.h:10
+msgid "Zoom"
+msgstr "Ihindurangano"
+
+# sc/sdi\scslots.src:SID_PREVIEW_ZOOMIN.text
+#: resources/mainwindow.glade.h:11
+msgid "Zoom In"
+msgstr "Ihindurangano wongera"
+
+# sc/sdi\scslots.src:SID_PREVIEW_ZOOMOUT.text
+#: resources/mainwindow.glade.h:12
+msgid "Zoom Out"
+msgstr "Ihindurangano ugabanya"
+
+#: resources/title.glade.h:1
+msgid ","
+msgstr ","
+
+# sc/source\ui\src\globstr.src:RID_GLOBSTR.STR_BY.text
+#: resources/title.glade.h:2 src/TitleWidget.cs:51
+msgid "by"
+msgstr "ku"
+
+#: src/AmazonQuery.cs:51
+#, fuzzy
+msgid "No matches for your query"
+msgstr "kugirango Ikibazo#"
+
+#: src/Catalog.cs:276
+#, fuzzy, csharp-format
+msgid "Return {0}?"
+msgstr "0"
+
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+# #-#-#-#-#  dbaccess.pot (PACKAGE VERSION)  #-#-#-#-#
+#: src/ItemList.cs:246 src/ItemShelf.cs:322 src/dialogs/AddAlbumDialog.cs:112
+#: src/dialogs/AddFilmDialog.cs:104
+msgid "Edit"
+msgstr "Kwandika"
+
+#: src/ItemList.cs:252 src/ItemShelf.cs:326
+msgid "Return"
+msgstr "Garuka"
+
+#: src/ItemList.cs:256 src/ItemShelf.cs:330 src/dialogs/LendItemDialog.cs:22
+msgid "Lend"
+msgstr ""
+
+#: src/Main.cs:327
+#, fuzzy
+msgid "Remove the selected items?"
+msgstr "i Byahiswemo"
+
+#: src/Main.cs:415
+#, fuzzy
+msgid "translator-credits"
+msgstr "Umusemuzi"
+
+#: src/Main.cs:420
+msgid "Media cataloger"
+msgstr ""
+
+#: src/dialogs/AddAlbumDialog.cs:68
+#, fuzzy
+msgid "Add a new Album"
+msgstr "a Gishya"
+
+#: src/dialogs/AddBookDialog.cs:103
+msgid "Editing"
+msgstr ""
+
+#: src/dialogs/AmazonSelectDialog.cs:48
+msgid "Select your choice"
+msgstr ""
+
+#: src/dialogs/AmazonSelectDialog.cs:62
+msgid "Title"
+msgstr "Umutwe"
+
+#: src/dialogs/AmazonSelectDialog.cs:65
+msgid "Director"
+msgstr "Umuyobozi"
+
+# sc/source\ui\miscdlgs\acredlin.src:RID_POPUP_CHANGES.SC_SUB_SORT.SC_SORT_AUTHOR.text
+#: src/dialogs/AmazonSelectDialog.cs:68
+msgid "Author"
+msgstr "Umwanditsi"
+
+#: src/dialogs/AmazonSelectDialog.cs:71
+msgid "Artists"
+msgstr ""
+
+#: src/dialogs/CatalogPropertiesDialog.cs:36
+#, fuzzy, csharp-format
+msgid "{0} properties"
+msgstr "{0 Indangakintu..."
+
+#: src/dialogs/CatalogPropertiesDialog.cs:46
+#, fuzzy
+msgid "Columns to show"
+msgstr "Kuri Garagaza"
+
+#: src/dialogs/LendItemDialog.cs:43
+msgid "Borrower:"
+msgstr ""
+
+# extracted from content/PrefsWindow.xul
+# LOCALIZATION NOTE : FILE UI for the outer parts of the Prefs dialog
+#: src/dialogs/PreferencesDialog.cs:16
+msgid "Preferences"
+msgstr "Ibyahisemo"
+
+#: src/dialogs/ProgressDialog.cs:34
+msgid "Wait, please"
+msgstr ""
+
+#: src/dialogs/ProgressDialog.cs:40
+msgid "Searching Amazon...."
+msgstr ""
